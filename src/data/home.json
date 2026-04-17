@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": "Revenue-First Performance Engineering",
+    "subtitle": "Stop paying for vanity metrics. At Reven, we build high-octane growth engines using deterministic data and algorithmic scaling to dominate the Indian and Global markets.",
+    "cta": {
+      "text": "Start Scaling Now",
+      "link": "/contact"
+    },
+    "image": "/assets/hero-home.png"
+  },
+  "stats": [
+    { "label": "Revenue Generated (INR)", "value": "100Cr+" },
+    { "label": "Regional Brands Scaled", "value": "150+" },
+    { "label": "Average ROAS", "value": "4.2x" },
+    { "label": "Client Retention", "value": "94%" }
+  ],
+  "methodology": [
+    {
+      "step": "01",
+      "title": "Audit & Attribution",
+      "description": "Deep-layer audit of your current tracking. We fix your attribution before we spend a single rupee."
+    },
+    {
+      "step": "02",
+      "title": "Regional Dominance",
+      "description": "Deploying data-backed campaigns tailored for Tamil Nadu and broader Indian demographics with bilingual precision."
+    },
+    {
+      "step": "03",
+      "title": "Algorithmic Scaling",
+      "description": "Scaling winning creative and audiences across Meta, Google, and WhatsApp with real-time bid orchestration."
+    },
+    {
+      "step": "04",
+      "title": "Profit Max",
+      "description": "Aggressive CRO and retention strategies to maximize LTV and ensure sustainable unit economics."
+    }
+  ],
+  "verticals": [
+    {
+      "title": "D2C E-commerce",
+      "focus": "Scaling Retail Brands to Global Sales",
+      "metrics": ["CAC reduction", "Cart Value"]
+    },
+    {
+      "title": "B2B SaaS / Tech",
+      "focus": "High-Intent Lead Gen for Global Challengers",
+      "metrics": ["MQL to SQL", "ACV Expansion"]
+    },
+    {
+      "title": "Real Estate",
+      "focus": "Quality Lead Engines for Premium Developments",
+      "metrics": ["Conversion Rate", "Sales Pipeline"]
+    }
+  ],
+  "featuredTestimonial": {
+    "client": "IndoVibe Retail",
+    "title": "From 1L to 25L Monthly Revenue in 3 Months",
+    "result": "Reven reconstructed our entire Facebook funnel and integrated WhatsApp marketing, resulting in a 5x ROAS jump.",
+    "image": "/assets/analytics-viz.png"
+  },
+  "techStack": [
+    { "name": "Google Ads", "icon": "Search" },
+    { "name": "Meta Ads", "icon": "Users" },
+    { "name": "HubSpot", "icon": "Layers" },
+    { "name": "Shopify Plus", "icon": "ShoppingBag" },
+    { "name": "Segment", "icon": "Database" }
+  ]
+}

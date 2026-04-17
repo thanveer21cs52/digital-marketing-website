@@ -1,0 +1,36 @@
+{
+  "title": "Success Chronicles",
+  "description": "Evidence of impact across industries. We don't just deliver reports; we deliver tangible growth and market dominance.",
+  "items": [
+    {
+      "id": "1",
+      "client": "IndoVibe Retail",
+      "sector": "E-commerce",
+      "stat": "500% Revenue Lift",
+      "quote": "Reven didn't just run ads; they restructured our entire digital ecosystem. Our ROAS in Tamil Nadu alone jumped by 300% within the first peak season.",
+      "author": "Vijay Kumar",
+      "designation": "Founder & CEO",
+      "image": "/assets/analytics-viz.png"
+    },
+    {
+      "id": "2",
+      "client": "TechEdge Solutions",
+      "sector": "B2B SaaS",
+      "stat": "4x SQL Velocity",
+      "quote": "The depth of their attribution modeling is unmatched. We finally have a single source of truth for our marketing spend across LinkedIn and Google.",
+      "author": "Ananya Rao",
+      "designation": "Director of Marketing",
+      "image": "/assets/hero-home.png"
+    },
+    {
+      "id": "3",
+      "client": "LuxSquare Realty",
+      "sector": "Real Estate",
+      "stat": "60% Lower CPL",
+      "quote": "Lead quality was our biggest bottleneck. Reven's automated nurture flows and CRM integration saved our sales team hundreds of hours.",
+      "author": "Siddharth Malhotra",
+      "designation": "Managing Director",
+      "image": "/assets/about-hero.png"
+    }
+  ]
+}

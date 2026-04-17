@@ -1,0 +1,30 @@
+{
+  "terms": {
+    "title": "Service Agreement Protocol",
+    "lastUpdated": "April 17, 2026",
+    "content": [
+      {
+        "heading": "Agency Engagement",
+        "text": "Reven Digital Marketing (the 'Agency') provides performance-based digital marketing services. Engaging with our services constitutes acceptance of our data-driven protocols."
+      },
+      {
+        "heading": "Performance Benchmarks",
+        "text": "While we strive for extreme revenue velocity, performance is subject to market volatility and algorithmic shifts across third-party platforms."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Data Sovereignty & Privacy",
+    "lastUpdated": "April 17, 2026",
+    "content": [
+      {
+        "heading": "Data Extraction",
+        "text": "We only collect deterministic signals required for high-fidelity attribution and campaign optimization."
+      },
+      {
+        "heading": "Security Infrastructure",
+        "text": "All client data is encrypted using military-grade protocols to ensure absolute sovereignty."
+      }
+    ]
+  }
+}

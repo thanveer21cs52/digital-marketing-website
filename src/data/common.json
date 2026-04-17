@@ -1,0 +1,19 @@
+{
+  "companyName": "Reven Digital Marketing",
+  "shortName": "Reven",
+  "founder": "Thanv",
+  "hq": {
+    "address": "414/4A2, Nellikuppam Road, Kayarambedu",
+    "city": "Chennai, Tamil Nadu",
+    "pincode": "603202",
+    "phone": "+91 98765 43210",
+    "email": "contact@revendigital.com"
+  },
+  "socials": {
+    "instagram": "https://instagram.com/revendigital",
+    "linkedin": "https://linkedin.com/company/revendigital",
+    "twitter": "https://twitter.com/revendigital",
+    "whatsapp": "https://wa.me/919876543210"
+  },
+  "locales": ["English", "Tamil"]
+}

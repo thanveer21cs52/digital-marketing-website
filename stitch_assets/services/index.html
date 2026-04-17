@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#261a00",
+                    "surface-container": "#191f31",
+                    "background": "#0c1324",
+                    "surface-container-highest": "#2e3447",
+                    "primary-fixed-dim": "#f9bd22",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "surface-container-low": "#151b2d",
+                    "outline-variant": "#46464c",
+                    "on-background": "#dce1fb",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "tertiary-fixed-dim": "#f9bd22",
+                    "surface-container-high": "#23293c",
+                    "on-tertiary-fixed": "#261a00",
+                    "surface-tint": "#f9bd22",
+                    "on-surface-variant": "#c6c6cd",
+                    "primary-fixed": "#ffdf9f",
+                    "surface": "#0c1324",
+                    "surface-dim": "#0c1324",
+                    "on-secondary": "#213145",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "inverse-primary": "#795900",
+                    "secondary": "#b7c8e1",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-bright": "#33394c",
+                    "surface-variant": "#2e3447",
+                    "primary-container": "#0b0600",
+                    "on-tertiary": "#402d00",
+                    "secondary-container": "#3a4a5f",
+                    "on-surface": "#dce1fb",
+                    "inverse-on-surface": "#2a3043",
+                    "tertiary": "#f9bd22",
+                    "on-tertiary-container": "#997200",
+                    "on-primary": "#402d00",
+                    "tertiary-container": "#0b0600",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary": "#f9bd22",
+                    "secondary-fixed": "#d3e4fe",
+                    "surface-container-lowest": "#070d1f",
+                    "tertiary-fixed": "#ffdf9f",
+                    "on-primary-container": "#997200",
+                    "on-error": "#690005",
+                    "inverse-surface": "#dce1fb",
+                    "on-secondary-container": "#a9bad3",
+                    "outline": "#909097"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0c1324; color: #dce1fb; font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(220, 225, 251, 0.05); backdrop-filter: blur(20px); }
+        .arch-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl">
+<nav class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto font-['Inter'] tracking-tight font-medium">
+<div class="text-2xl font-black tracking-tighter text-slate-50">ARCHITECT</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Work</a>
+<a class="text-amber-400 border-b-2 border-amber-400 pb-1" href="#">Services</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Methodology</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-sm font-bold tracking-tight hover:brightness-110 transition-all duration-300">
+                Start Project
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section: Precision & Intent -->
+<section class="mb-24 arch-grid">
+<div class="col-span-12 md:col-span-8">
+<span class="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">EXPERT CAPABILITIES</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+                    Architectural <br/>Digital Precision.
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    We dismantle standard marketing templates to rebuild performance from the ground up. Our services are engineered for authority, high-growth, and measurable ROI.
+                </p>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
+<!-- Performance Marketing (Large Card) -->
+<div class="md:col-span-2 glass-card p-10 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-12">
+<div class="bg-primary/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="ads_click">ads_click</span>
+</div>
+<div class="text-right">
+<span class="block text-3xl font-extrabold text-on-surface">4.2x</span>
+<span class="text-xs uppercase tracking-widest text-primary font-bold">Avg ROAS Increase</span>
+</div>
+</div>
+<h3 class="text-3xl font-extrabold tracking-tight mb-4">Performance Marketing</h3>
+<p class="text-on-surface-variant mb-8 max-w-md">Precision-engineered paid campaigns across Google, Meta, and LinkedIn, focusing on result-driven acquisition and predictive scaling.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-primary mr-2 text-lg" data-icon="check_circle">check_circle</span> Multi-Channel Paid Campaigns</li>
+<li class="flex items-center text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-primary mr-2 text-lg" data-icon="check_circle">check_circle</span> Data-Led Budget Optimization</li>
+</ul>
+<img alt="Metrics Visualization" class="absolute -bottom-12 -right-12 w-64 h-64 object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700 rounded-full" data-alt="abstract visualization of high-tech data charts and growth metrics in glowing amber and deep navy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCKa8IjIKypOH7TvbPgjS2dSaM2dhevY-d8qGzIZPfwC8lJRiuvaGwOy9cYJ5j8UDjDPJKlRQ-A7wqEUrqeb5aoASJJoNbJuPzfwBa-MjviZAWe1OQpi_KIY83TZtV3JaAdYnNR3yXqPz_N1aqoBjDjlIbC42vBKRUMl7Qnc_7NSvgoI4qTFXTJvZvPrPxBgjxuliCS8GxuK_PeT_1KaMt8_Q1Mel7u3czgXiid2FsYxwf0J_QDGBogs0IGTy8Ra8cDuXYrL2IPHc"/>
+</div>
+<!-- High-Authority SEO (Tall Card) -->
+<div class="bg-surface-container p-10 rounded-xl flex flex-col justify-between">
+<div>
+<div class="bg-primary/10 p-4 rounded-xl w-fit mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="language">language</span>
+</div>
+<h3 class="text-3xl font-extrabold tracking-tight mb-4">High-Authority SEO</h3>
+<p class="text-on-surface-variant mb-8">Specialized technical SEO for International &amp; SaaS markets. We engineer visibility through structural integrity and topical authority.</p>
+</div>
+<div class="pt-8 border-t border-outline-variant/15">
+<div class="text-4xl font-extrabold text-on-surface mb-1">+120%</div>
+<div class="text-xs uppercase tracking-widest text-primary font-bold">Organic Growth Target</div>
+</div>
+</div>
+<!-- Social Media Growth -->
+<div class="bg-surface-container p-10 rounded-xl">
+<div class="bg-primary/10 p-4 rounded-xl w-fit mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="share">share</span>
+</div>
+<h3 class="text-2xl font-extrabold tracking-tight mb-4">Social Media Growth</h3>
+<p class="text-on-surface-variant mb-8 text-sm">Result-driven social strategies designed to build brand resonance and community-led revenue through engineered creative.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-800"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-700"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-600"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">8M+ Total Reach</span>
+</div>
+</div>
+<!-- Marketing Automation -->
+<div class="glass-card p-10 rounded-xl relative overflow-hidden">
+<div class="bg-primary/10 p-4 rounded-xl w-fit mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<h3 class="text-2xl font-extrabold tracking-tight mb-4">Marketing Automation</h3>
+<p class="text-on-surface-variant mb-8 text-sm">Eliminate friction with precision engineering of CRM workflows and lead nurturing cycles that convert at scale.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest p-3 rounded-sm">
+<div class="text-xs text-primary font-bold">EFFICIENCY</div>
+<div class="text-xl font-bold">+45%</div>
+</div>
+<div class="bg-surface-container-highest p-3 rounded-sm">
+<div class="text-xs text-primary font-bold">SALES VEL.</div>
+<div class="text-xl font-bold">+32%</div>
+</div>
+</div>
+</div>
+<!-- Content Strategy -->
+<div class="bg-surface-container p-10 rounded-xl">
+<div class="bg-primary/10 p-4 rounded-xl w-fit mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-2xl font-extrabold tracking-tight mb-4">Content Strategy</h3>
+<p class="text-on-surface-variant mb-8 text-sm">A blueprint-first approach to editorial. We build high-intent content assets that serve as the foundation of your funnel.</p>
+<div class="flex items-center text-xs text-on-surface-variant bg-surface-container-lowest py-2 px-3 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    Authority Assets
+                </div>
+</div>
+</section>
+<!-- Custom Component: Methodology/Tension -->
+<section class="bg-surface-container-low rounded-xl p-16 mb-32 arch-grid items-center">
+<div class="col-span-12 md:col-span-6">
+<h2 class="text-4xl font-extrabold tracking-tight mb-6">The Architect Method</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">We don't just "run ads." We build integrated revenue ecosystems. Our methodology is rooted in structural integrity, ensuring your growth is not just fast, but sustainable.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 border border-primary/20 flex items-center justify-center text-primary font-bold">01</div>
+<div>
+<div class="font-bold mb-1">Deep Audit</div>
+<p class="text-xs text-on-surface-variant">We identify the structural cracks in your current funnel.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 border border-primary/20 flex items-center justify-center text-primary font-bold">02</div>
+<div>
+<div class="font-bold mb-1">Blueprint Phase</div>
+<p class="text-xs text-on-surface-variant">Custom strategies built for high-scale conversion.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 md:col-start-8 relative">
+<div class="aspect-square bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl">
+<img alt="Architectural Integrity" class="w-full h-full object-cover" data-alt="ultra-modern glass and steel skyscraper reaching into the night sky with glowing yellow light panels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Ec7MMj0yQKkKdYGua4PcH90H1gwxICyBfjjd1BxZCxjAh3FvGz-uBobyWpLivaIfv-xNE--6dF_1vnj6Y3SM9yB0TaHDakXJ4st6hIrHGK1tJd5s7Y7v5uYLvmuPIi7qPOgR6W4O_Lddfn391lnMKTVgqp1pkD9PCnovh_aBpZK-8GiLfUBgH3W3ZWZ_OkKSVzki7XaLw-vv6quCHWhn_sFFsdKGZ9d_lzY-97W1Q0Gcp_IpLOkR9Dzx8Bl6QO2pkiORpagHOjc"/>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg max-w-[240px]">
+<div class="text-primary text-3xl font-black mb-1">98%</div>
+<div class="text-xs font-bold uppercase tracking-widest leading-tight">Retention rate of our founding clients.</div>
+</div>
+</div>
+</section>
+<!-- Blueprints CTA Section -->
+<section class="bg-primary text-on-primary rounded-xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="relative z-10">
+<span class="text-[10px] font-black uppercase tracking-[0.4em] mb-6 block">NEXT STEPS</span>
+<h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-10 max-w-4xl mx-auto leading-none">
+                    Ready to scale with <br/>uncompromising precision?
+                </h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="bg-on-primary-fixed text-primary px-10 py-4 font-extrabold tracking-tight hover:scale-105 transition-transform duration-300">
+                        GET YOUR BLUEPRINT
+                    </button>
+<button class="border border-on-primary/20 px-10 py-4 font-bold tracking-tight hover:bg-on-primary/10 transition-all">
+                        View Pricing
+                    </button>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-on-primary/5 -skew-x-12 transform translate-x-1/2"></div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-slate-950 w-full py-16 px-8 border-t border-slate-800/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto font-['Inter'] text-sm tracking-wide">
+<div class="md:col-span-1">
+<div class="text-xl font-black text-slate-50 mb-6">ARCHITECT</div>
+<p class="text-slate-500 max-w-xs leading-relaxed">High-performance digital engineering for brands that refuse to settle for average.</p>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6 uppercase tracking-widest text-xs">Capabilities</h4>
+<ul class="space-y-4 text-slate-500">
+<li><a class="hover:text-slate-50 transition-all" href="#">Performance Media</a></li>
+<li><a class="hover:text-slate-50 transition-all" href="#">Growth Strategy</a></li>
+<li><a class="hover:text-slate-50 transition-all" href="#">Content Engine</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6 uppercase tracking-widest text-xs">Connect</h4>
+<ul class="space-y-4 text-slate-500">
+<li><a class="hover:text-slate-50 transition-all" href="#">LinkedIn</a></li>
+<li><a class="hover:text-slate-50 transition-all" href="#">Instagram</a></li>
+<li><a class="hover:text-slate-50 transition-all" href="#">Twitter / X</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6 uppercase tracking-widest text-xs">Legal</h4>
+<ul class="space-y-4 text-slate-500">
+<li><a class="hover:text-slate-50 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-slate-50 transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-slate-500 text-[10px] tracking-widest">© 2024 ARCHITECT PRECISION. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-8">
+<span class="text-amber-400 font-bold uppercase text-[10px] tracking-widest">Global Headquarters: NYC</span>
+</div>
+</div>
+</footer>
+</body></html>

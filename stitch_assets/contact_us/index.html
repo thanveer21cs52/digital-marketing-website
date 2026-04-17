@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#261a00",
+            "surface-container": "#191f31",
+            "background": "#0c1324",
+            "surface-container-highest": "#2e3447",
+            "primary-fixed-dim": "#f9bd22",
+            "error-container": "#93000a",
+            "on-error-container": "#ffdad6",
+            "error": "#ffb4ab",
+            "surface-container-low": "#151b2d",
+            "outline-variant": "#46464c",
+            "on-background": "#dce1fb",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "tertiary-fixed-dim": "#f9bd22",
+            "surface-container-high": "#23293c",
+            "on-tertiary-fixed": "#261a00",
+            "surface-tint": "#f9bd22",
+            "on-surface-variant": "#c6c6cd",
+            "primary-fixed": "#ffdf9f",
+            "surface": "#0c1324",
+            "surface-dim": "#0c1324",
+            "on-secondary": "#213145",
+            "on-primary-fixed-variant": "#5c4300",
+            "inverse-primary": "#795900",
+            "secondary": "#b7c8e1",
+            "secondary-fixed-dim": "#b7c8e1",
+            "on-secondary-fixed": "#0b1c30",
+            "surface-bright": "#33394c",
+            "surface-variant": "#2e3447",
+            "primary-container": "#0b0600",
+            "on-tertiary": "#402d00",
+            "secondary-container": "#3a4a5f",
+            "on-surface": "#dce1fb",
+            "inverse-on-surface": "#2a3043",
+            "tertiary": "#f9bd22",
+            "on-tertiary-container": "#997200",
+            "on-primary": "#402d00",
+            "tertiary-container": "#0b0600",
+            "on-secondary-fixed-variant": "#38485d",
+            "primary": "#f9bd22",
+            "secondary-fixed": "#d3e4fe",
+            "surface-container-lowest": "#070d1f",
+            "tertiary-fixed": "#ffdf9f",
+            "on-primary-container": "#997200",
+            "on-error": "#690005",
+            "inverse-surface": "#dce1fb",
+            "on-secondary-container": "#a9bad3",
+            "outline": "#909097"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0c1324;
+      color: #dce1fb;
+      font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(220, 225, 251, 0.05);
+      backdrop-filter: blur(20px);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #f9bd22;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .custom-bezier {
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto font-['Inter'] tracking-tight font-medium">
+<div class="text-2xl font-black tracking-tighter text-slate-50">ARCHITECT</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Work</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Services</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Methodology</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 font-bold text-sm tracking-tight hover:brightness-110 transition-all custom-bezier">Initialize Portal</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 space-y-12">
+<div class="space-y-4">
+<span class="text-primary text-xs font-black uppercase tracking-[0.2em] block">Global Inquiry Portal</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-background leading-[0.95]">Architecture of Growth.</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">Secure your position in our next deployment cycle. Use the Direct Protocol for expedited strategic review.</p>
+</div>
+<div class="space-y-8">
+<div class="group flex items-start gap-5 cursor-pointer">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-wider mb-1">Direct Protocol</p>
+<p class="text-xl font-medium">priority@architect.agency</p>
+<p class="text-[10px] text-on-surface-variant/60 uppercase tracking-widest mt-1">Response Latency: &lt; 2 Hours</p>
+</div>
+</div>
+<div class="group flex items-start gap-5 cursor-pointer">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">phone_iphone</span>
+</div>
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-wider mb-1">WhatsApp Business</p>
+<p class="text-xl font-medium">+1 (555) 892-0402</p>
+</div>
+</div>
+<div class="group flex items-start gap-5 cursor-pointer">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lan</span>
+</div>
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-wider mb-1">Global Phone</p>
+<p class="text-xl font-medium">800-PRECISION</p>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl border border-outline-variant/10 group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent z-10"></div>
+<img alt="Headquarters" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="modern minimalist glass and steel skyscraper architecture at twilight with warm interior lighting and cinematic blue hour atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVK6xOQ_1PAje889W15_Ddn64GJ01dyp1TOPBjf5FhnM0fHB27qA9noSUUISZkpPKLl09dqvapA9VANXtV4dnCGkXIOtxkKXhL67DyhmFpXoHS48T_cfvVVUw6S8kwyzlN-mz5i82f41wQieueylqwGRG8-QMsNHyiQ0DEmAVSpzS4GBBTnew2efyvA3bpTM8rygVwe4eRtgFCel43w6QgJX01WmZKXMKFQ0BzC8vOSiwYpoWDqSKfnI38jMCE8pnrFUU_-_CS3UM"/>
+<div class="absolute bottom-6 left-6 z-20">
+<p class="text-xs text-primary font-bold uppercase tracking-widest mb-1">HQ / Singapore</p>
+<p class="text-sm font-medium text-on-surface">Architectural Precision District 01</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container-low p-8 md:p-12 rounded-xl border border-outline-variant/5 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[120px] -mr-32 -mt-32"></div>
+<form class="space-y-10 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 text-on-surface p-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline/50" placeholder="e.g. Alexander Sterling" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Enterprise Email</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 text-on-surface p-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline/50" placeholder="sterling@enterprise.com" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Primary Objective</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="sector" type="radio"/>
+<div class="p-4 bg-surface-container border border-outline-variant/10 text-center text-[11px] font-bold uppercase tracking-wider peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary/50 transition-all">Scale Expansion</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="sector" type="radio"/>
+<div class="p-4 bg-surface-container border border-outline-variant/10 text-center text-[11px] font-bold uppercase tracking-wider peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary/50 transition-all">Market Entry</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="sector" type="radio"/>
+<div class="p-4 bg-surface-container border border-outline-variant/10 text-center text-[11px] font-bold uppercase tracking-wider peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary/50 transition-all">AI Integration</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="sector" type="radio"/>
+<div class="p-4 bg-surface-container border border-outline-variant/10 text-center text-[11px] font-bold uppercase tracking-wider peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary/50 transition-all">Digital Refresh</div>
+</label>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Monthly Growth Investment</label>
+<span class="text-primary font-black text-lg">$50,000+</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer accent-primary" max="250000" min="10000" step="10000" type="range"/>
+<div class="flex justify-between text-[10px] text-outline uppercase tracking-widest font-bold">
+<span>$10,000</span>
+<span>$100,000</span>
+<span>$250,000+</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Strategic Requirements</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/15 text-on-surface p-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline/50" placeholder="Outline your performance benchmarks and critical KPIs..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-6 text-base font-black uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all custom-bezier shadow-lg shadow-primary/20" type="submit">
+            Request Marketing Blueprint
+          </button>
+<p class="text-center text-[10px] text-outline uppercase tracking-widest font-medium">By initiating, you agree to our Priority Engagement protocols.</p>
+</form>
+</div>
+</div>
+</main>
+<footer class="bg-slate-950 w-full py-16 px-8 border-t border-slate-800/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto font-['Inter'] text-sm tracking-wide">
+<div class="space-y-6">
+<div class="text-xl font-black text-slate-50">ARCHITECT</div>
+<p class="text-slate-500 leading-relaxed max-w-[200px]">Precision engineering for global digital dominance.</p>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6">Network</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Work</a></li>
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Services</a></li>
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Methodology</a></li>
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Insights</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-50 font-bold mb-6">Social</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">LinkedIn</a></li>
+<li><a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Instagram</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs">© 2024 ARCHITECT PRECISION. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 items-center">
+<span class="flex items-center gap-2 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-black uppercase tracking-widest">System Operational</span>
+</span>
+</div>
+</div>
+</footer>
+</body></html>

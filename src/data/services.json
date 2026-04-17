@@ -1,0 +1,54 @@
+{
+  "title": "Growth Specializations",
+  "description": "We don’t just provide services; we engineer the entire trajectory of your digital presence. Each module is optimized for maximum revenue velocity.",
+  "items": [
+    {
+      "id": "performance-ads",
+      "title": "Performance Ads (Meta & Google)",
+      "shortDesc": "Aggressive scaling across the world's most powerful ad auctions.",
+      "description": "Dominating the auction with real-time bid orchestration and high-signal audience modeling. We specialize in Meta (FB/IG) and Google Ads for high-intent lead gen and D2C sales.",
+      "features": ["Multi-Touch Attribution", "Creative Velocity Testing", "Dynamic Bid Automation"],
+      "image": "/assets/service-paid.png"
+    },
+    {
+      "id": "seo-dominance",
+      "title": "Search Dominance (SEO)",
+      "shortDesc": "Top-tier search rankings for sustainable organic traffic.",
+      "description": "Beyond keywords. We reverse-engineer search intent to dominate results pages through technical authority and programmatic content depth.",
+      "features": ["Topical Authority Mapping", "Local Search Optimization", "Content Data Engineering"],
+      "image": "/assets/service-paid.png"
+    },
+    {
+      "id": "social-scale",
+      "title": "Social Signal Scaling (SMM)",
+      "shortDesc": "Building brand authority that converts into community.",
+      "description": "Creating viral-ready content ecosystems that build community and drive sales. We handle everything from content strategy to influencer management.",
+      "features": ["Influencer Orchestration", "Viral Content Strategy", "Community Management"],
+      "image": "/assets/service-paid.png"
+    },
+    {
+      "id": "whatsapp-marketing",
+      "title": "WhatsApp Marketing & CRM",
+      "shortDesc": "The highest conversion channel in the Indian market.",
+      "description": "Leveraging India's primary communication channel for extreme engagement. We automate lead nurture, order alerts, and promotional broadcasts.",
+      "features": ["Official API Integration", "Automated Nurture Flows", "Direct Response Broadcasts"],
+      "image": "/assets/about-hero.png"
+    },
+    {
+      "id": "content-ecosystems",
+      "title": "Content Ecosystems",
+      "shortDesc": "High-fidelity video and copy that converts.",
+      "description": "Storytelling backed by data. We produce short-form video, editorial copy, and sales landing pages designed for cognitive resonance.",
+      "features": ["Short-Form Video Production", "High-Converting Copy", "Brand Storyboarding"],
+      "image": "/assets/service-paid.png"
+    },
+    {
+      "id": "data-analytics",
+      "title": "Attribution & Analytics",
+      "shortDesc": "Removing the guesswork with pure data.",
+      "description": "Establishing a single source of truth. We build custom dashboards and server-side tracking to ensure every rupee is accounted for.",
+      "features": ["Server-Side GTM", "Custom Looker Dashboards", "Incremental Lift Analysis"],
+      "image": "/assets/analytics-viz.png"
+    }
+  ]
+}

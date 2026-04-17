@@ -1,0 +1,18 @@
+{
+  "title": "Build Your Growth Engine",
+  "subtitle": "Ready to scale your business with Reven? Reach out for a performance audit and let's discuss your revenue trajectory.",
+  "office": {
+    "address": "414/4A2, Nellikuppam Road, Kayarambedu",
+    "city": "Chennai, Tamil Nadu",
+    "pincode": "603202",
+    "email": "contact@revendigital.com",
+    "phone": "+91 98765 43210"
+  },
+  "formfields": [
+    { "label": "Company/Brand Name", "type": "text", "required": true },
+    { "label": "Full Name", "type": "text", "required": true },
+    { "label": "Work Email", "type": "email", "required": true },
+    { "label": "Monthly Ad Spend", "type": "select", "options": ["< 1L", "1L - 5L", "5L - 25L", "25L+"] },
+    { "label": "Growth Goals", "type": "textarea", "required": true }
+  ]
+}

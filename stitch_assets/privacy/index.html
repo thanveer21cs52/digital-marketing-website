@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#261a00",
+                    "surface-container": "#191f31",
+                    "background": "#0c1324",
+                    "surface-container-highest": "#2e3447",
+                    "primary-fixed-dim": "#f9bd22",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "surface-container-low": "#151b2d",
+                    "outline-variant": "#46464c",
+                    "on-background": "#dce1fb",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "tertiary-fixed-dim": "#f9bd22",
+                    "surface-container-high": "#23293c",
+                    "on-tertiary-fixed": "#261a00",
+                    "surface-tint": "#f9bd22",
+                    "on-surface-variant": "#c6c6cd",
+                    "primary-fixed": "#ffdf9f",
+                    "surface": "#0c1324",
+                    "surface-dim": "#0c1324",
+                    "on-secondary": "#213145",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "inverse-primary": "#795900",
+                    "secondary": "#b7c8e1",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-bright": "#33394c",
+                    "surface-variant": "#2e3447",
+                    "primary-container": "#0b0600",
+                    "on-tertiary": "#402d00",
+                    "secondary-container": "#3a4a5f",
+                    "on-surface": "#dce1fb",
+                    "inverse-on-surface": "#2a3043",
+                    "tertiary": "#f9bd22",
+                    "on-tertiary-container": "#997200",
+                    "on-primary": "#402d00",
+                    "tertiary-container": "#0b0600",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary": "#f9bd22",
+                    "secondary-fixed": "#d3e4fe",
+                    "surface-container-lowest": "#070d1f",
+                    "tertiary-fixed": "#ffdf9f",
+                    "on-primary-container": "#997200",
+                    "on-error": "#690005",
+                    "inverse-surface": "#dce1fb",
+                    "on-secondary-container": "#a9bad3",
+                    "outline": "#909097"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(21, 27, 45, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto font-['Inter'] tracking-tight font-medium">
+<div class="text-2xl font-black tracking-tighter text-slate-50">ARCHITECT</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Work</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Services</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Methodology</a>
+<a class="text-slate-300 hover:text-amber-400 transition-colors duration-300" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-sm font-bold text-sm tracking-wide hover:brightness-110 transition-all">Start Project</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-20">
+<!-- Sidebar Navigation (Architectural Anchor) -->
+<aside class="md:w-1/4 sticky top-40 h-fit hidden md:block">
+<div class="flex flex-col space-y-4">
+<span class="text-[0.65rem] font-bold text-primary tracking-[0.2em] uppercase mb-4">Legal Framework</span>
+<a class="group flex items-center space-x-3 text-amber-400 border-l-2 border-amber-400 pl-4 py-1 transition-all" href="#overview">
+<span class="text-sm font-bold tracking-tight">Overview</span>
+</a>
+<a class="group flex items-center space-x-3 text-slate-500 hover:text-on-surface border-l-2 border-transparent hover:border-outline-variant pl-4 py-1 transition-all" href="#data-collection">
+<span class="text-sm font-medium tracking-tight">Strategic Acquisition</span>
+</a>
+<a class="group flex items-center space-x-3 text-slate-500 hover:text-on-surface border-l-2 border-transparent hover:border-outline-variant pl-4 py-1 transition-all" href="#cookies">
+<span class="text-sm font-medium tracking-tight">Micro-Gradients</span>
+</a>
+<a class="group flex items-center space-x-3 text-slate-500 hover:text-on-surface border-l-2 border-transparent hover:border-outline-variant pl-4 py-1 transition-all" href="#third-party">
+<span class="text-sm font-medium tracking-tight">Controlled Integration</span>
+</a>
+<a class="group flex items-center space-x-3 text-slate-500 hover:text-on-surface border-l-2 border-transparent hover:border-outline-variant pl-4 py-1 transition-all" href="#rights">
+<span class="text-sm font-medium tracking-tight">User Rights</span>
+</a>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="flex-1 max-w-3xl">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-none mb-6">
+                        Privacy <br/> Policy
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Last updated October 24, 2024. Our commitment to data integrity and architectural precision defines the foundation of our client trust protocols.
+                    </p>
+</header>
+<div class="space-y-24">
+<!-- Section: Overview -->
+<section class="scroll-mt-32" id="overview">
+<div class="flex flex-col space-y-6">
+<span class="text-[0.75rem] font-bold text-primary tracking-widest uppercase">01 / Introduction</span>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Precision in Data Governance</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                                At ARCHITECT, we treat information architecture with the same rigor as structural engineering. Our governance framework ensures that radical transparency is not a secondary objective, but a primary system requirement. We operate a zero-monetization policy; data is utilized exclusively to refine operational efficiency and elevate the user interface through technical precision.
+                            </p>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<h4 class="text-sm font-bold text-on-surface mb-2 tracking-tight">Governance Mandates</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Absolute prohibition of third-party data brokerage or commercial exploitation.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Enterprise-grade cryptographic standards (AES-256 at rest / TLS 1.3 in transit).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Full alignment with international compliance standards, including GDPR and CCPA.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section: Data Collection -->
+<section class="scroll-mt-32" id="data-collection">
+<div class="flex flex-col space-y-6">
+<span class="text-[0.75rem] font-bold text-primary tracking-widest uppercase">02 / Data Collection</span>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Strategic Acquisition</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                                We engage in the targeted acquisition of data essential for high-performance service execution. This data stream is meticulously filtered into two primary vectors of utility:
+                            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4">person</span>
+<h3 class="font-bold text-on-surface mb-2">Direct Provision</h3>
+<p class="text-xs text-on-surface-variant leading-normal">Explicitly surrendered information including identity markers, secure credentials, and bespoke project specifications provided via encrypted portals.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4">analytics</span>
+<h3 class="font-bold text-on-surface mb-2">Technical Telemetry</h3>
+<p class="text-xs text-on-surface-variant leading-normal">Automated system diagnostics, architectural environment markers, and session-state metadata engineered to optimize backend latency and frontend responsiveness.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Cookies -->
+<section class="scroll-mt-32" id="cookies">
+<div class="flex flex-col space-y-6">
+<span class="text-[0.75rem] font-bold text-primary tracking-widest uppercase">03 / Cookies Policy</span>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Micro-Gradients of UX</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                                We utilize micro-data packets (cookies) to maintain ephemeral session states and harden user authentication layers. These persistent and transient elements are foundational to our platform's security architecture and cannot be decoupled without compromising system integrity.
+                            </p>
+<div class="overflow-hidden rounded-xl border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-on-surface uppercase tracking-wider">Classification</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface uppercase tracking-wider">Persistence</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface uppercase tracking-wider">Operational Utility</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="bg-surface-container-low">
+<td class="px-6 py-4 text-sm font-medium text-primary">Structural</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant italic">Volatile (Session)</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Mandatory for authentication protocols and CSRF threat mitigation.</td>
+</tr>
+<tr class="bg-surface-container-low">
+<td class="px-6 py-4 text-sm font-medium text-primary">Optimization</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant italic">30 Day Cycle</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Preservation of locale preferences and interface scaling parameters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section: Third-party -->
+<section class="scroll-mt-32" id="third-party">
+<div class="flex flex-col space-y-6">
+<span class="text-[0.75rem] font-bold text-primary tracking-widest uppercase">04 / Disclosures</span>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Controlled Integration</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                                Information flow is strictly limited to our vetted ecosystem of Tier-1 technology partners. These integrations are restricted to essential service infrastructure, including secure cloud compute and encrypted payment gateways. All external entities operate under a mandatory Data Processing Agreement (DPA) that mirrors our rigorous internal security protocols.
+                            </p>
+<div class="flex items-center gap-6 p-6 bg-surface-container-highest/30 rounded-xl">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">shield</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Data Sovereignty</h4>
+<p class="text-xs text-on-surface-variant">We prioritize high-availability data centers within the E.U. and U.S. jurisdictions to ensure maximum legal protection and compliance for our global client base.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Rights -->
+<section class="scroll-mt-32 pb-20 border-b border-outline-variant/10" id="rights">
+<div class="flex flex-col space-y-8">
+<span class="text-[0.75rem] font-bold text-primary tracking-widest uppercase">05 / Your Rights</span>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">The Right to Erasure</h2>
+<div class="grid grid-cols-1 gap-6">
+<div class="flex items-start gap-4">
+<span class="text-primary font-black text-2xl opacity-40">01</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Access &amp; Portability</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">You may request a machine-readable copy of all data points associated with your profile at any frequency.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary font-black text-2xl opacity-40">02</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Rectification</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Immediate correction of inaccurate metadata or project details upon request via our secure portal.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary font-black text-2xl opacity-40">03</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Total Erasure</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">The "Right to be Forgotten." Upon request, we will purge all non-legal retention data within 72 hours.</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<button class="inline-flex items-center gap-3 text-primary font-bold group">
+                                    Submit a Privacy Request
+                                    <span class="h-[1px] w-12 bg-primary transition-all group-hover:w-20"></span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-16 px-8 border-t border-slate-800/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto font-['Inter'] text-sm tracking-wide">
+<div class="flex flex-col space-y-6">
+<div class="text-xl font-black text-slate-50">ARCHITECT</div>
+<p class="text-slate-500 leading-relaxed max-w-xs">
+                    Engineering digital authority through technical precision and architectural design.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-slate-50 font-bold tracking-tighter">Resources</span>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Project Portal</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Documentation</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">API Access</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-slate-50 font-bold tracking-tighter">Legal</span>
+<a class="text-amber-400" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Compliance</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-slate-50 font-bold tracking-tighter">Network</span>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Instagram</a>
+<a class="text-slate-500 hover:text-slate-50 transition-all" href="#">Dribbble</a>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-[0.65rem] tracking-[0.1em] uppercase">© 2024 ARCHITECT PRECISION. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<span class="text-slate-700 text-[0.65rem] tracking-[0.1em] uppercase">Status: 100% Operational</span>
+<span class="text-slate-700 text-[0.65rem] tracking-[0.1em] uppercase">V: 4.2.0-Stable</span>
+</div>
+</div>
+</footer>
+</body></html>

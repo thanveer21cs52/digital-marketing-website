@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a;
+  --color-primary-container: #1e293b;
+  --color-secondary: #0d9488;
+  --color-accent: #22d3ee;
+  --color-gold: #fbbf24;
+  --color-surface: #f8fafc;
+  --color-surface-low: #f1f5f9;
+  --color-surface-lowest: #ffffff;
+  
+  --font-inter: "Inter", sans-serif;
+  
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 30px rgba(34, 211, 238, 0.2);
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+  body {
+    @apply font-inter bg-surface text-slate-900 selection:bg-accent/30;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-6 lg:px-12 w-full;
+  }
+
+  .glass {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/20 shadow-premium;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/5 shadow-premium;
+  }
+
+  .reven-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #0d1e3a 50%, #064e3b 100%);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  }
+
+  .btn {
+    @apply inline-flex items-center px-8 py-4 rounded-xl font-bold transition-all duration-500 uppercase tracking-widest text-xs;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-slate-800 hover:scale-105 hover:shadow-glow;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-primary hover:brightness-110 hover:scale-105 hover:shadow-glow;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-primary hover:brightness-110 hover:scale-105;
+  }
+
+  .editorial-layout {
+    @apply grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-premium;
+  }
+}
+
+.section-padding {
+  @apply py-24 md:py-40;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; text-shadow: 0 0 30px rgba(34, 211, 238, 0.8); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}

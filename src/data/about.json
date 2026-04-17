@@ -1,0 +1,23 @@
+{
+  "title": "Revenue Over Vanity.",
+  "vision": "We represent the convergence of high-fidelity data engineering and aggressive performance marketing in the context of the Indian digital landscape. Born in Chennai, scaling globally.",
+  "values": [
+    { 
+      "title": "Performance First", 
+      "description": "We remove the guesswork. Every decision is driven by high-confidence data signals and incremental performance metrics. We focus on ROI, not just clicks." 
+    },
+    { 
+      "title": "Localized Dominance", 
+      "description": "Understanding the nuances of the Indian consumer. We build strategies that resonate from the streets of Chennai to the boardrooms of Mumbai." 
+    },
+    { 
+      "title": "Unfiltered Transparency", 
+      "description": "No hidden metrics. We build the tracking stacks that reveal precisely where every rupee is working, ensuring complete client-agency alignment." 
+    }
+  ],
+  "team": [
+    { "name": "Thanv", "role": "CEO & Founder", "image": "/assets/team-1.png" },
+    { "name": "Arjun Das", "role": "Head of Regional Performance", "image": "/assets/team-2.png" },
+    { "name": "Sarah Venkatesh", "role": "Director of Social Strategy", "image": "/assets/team-3.png" }
+  ]
+}
