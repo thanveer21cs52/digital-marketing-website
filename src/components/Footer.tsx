@@ -45,10 +45,15 @@ const Footer = () => {
         <div>
           <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">Navigation</h4>
           <ul className="space-y-4">
-            <li><Link to="/about" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">About Agency</Link></li>
-            <li><Link to="/testimonials" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">Case Studies</Link></li>
-            <li><Link to="/privacy" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">Privacy Protocol</Link></li>
-            <li><Link to="/terms" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">Service Agreement</Link></li>
+            {commonData.navLinks.filter(l => l.type === 'link').map(link => (
+              <li key={link.href}>
+                <Link to={link.href} className="text-slate-500 hover:text-white transition-colors text-sm font-medium">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li><Link to="/privacy" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">{commonData.ui.privacyTitle}</Link></li>
+            <li><Link to="/terms" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">{commonData.ui.termsTitle}</Link></li>
           </ul>
         </div>
 
@@ -67,10 +72,10 @@ const Footer = () => {
       </div>
 
       <div className="container px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-black tracking-[.4em] text-slate-700 uppercase">
-        <span>© {new Date().getFullYear()} {commonData.companyName}</span>
+        <span>{commonData.ui.copyright.replace('{year}', new Date().getFullYear().toString())}</span>
         <div className="flex space-x-8 mt-4 md:mt-0">
-          <span>Global / Region: IN-TN</span>
-          <span className="text-slate-800">Developed with precision by Reven</span>
+          <span>{commonData.ui.region}</span>
+          <span className="text-slate-800">{commonData.ui.developedBy}</span>
         </div>
       </div>
     </footer>

@@ -1,18 +1,47 @@
 {
-  "title": "Build Your Growth Engine",
-  "subtitle": "Ready to scale your business with Reven? Reach out for a performance audit and let's discuss your revenue trajectory.",
-  "office": {
-    "address": "414/4A2, Nellikuppam Road, Kayarambedu",
-    "city": "Chennai, Tamil Nadu",
-    "pincode": "603202",
-    "email": "contact@revendigital.com",
-    "phone": "+91 98765 43210"
+  "ui": {
+    "pageTitle": "Contact Us",
+    "generalInquiry": "General Inquiry",
+    "directLine": "Call Us",
+    "officeTitle": "Our Office",
+    "formTitle": "Get Free Marketing Consultation",
+    "locationTitle": "Our Locations",
+    "labels": {
+      "fullName": "Full Name",
+      "emailAddress": "Email Address",
+      "serviceType": "Service Interested In",
+      "message": "Tell Us About Your Business"
+    }
   },
+
+  "title": "Let’s Grow Your Business.",
+  "subtitle": "Talk to our digital marketing experts and discover how we can help you generate more leads, increase sales, and scale your brand.",
+
   "formfields": [
-    { "label": "Company/Brand Name", "type": "text", "required": true },
+    { "label": "Company / Brand Name", "type": "text", "required": true },
     { "label": "Full Name", "type": "text", "required": true },
     { "label": "Work Email", "type": "email", "required": true },
-    { "label": "Monthly Ad Spend", "type": "select", "options": ["< 1L", "1L - 5L", "5L - 25L", "25L+"] },
-    { "label": "Growth Goals", "type": "textarea", "required": true }
+    {
+      "label": "Service Required",
+      "type": "select",
+      "options": [
+        "SEO (Search Engine Optimization)",
+        "Google Ads (PPC)",
+        "Social Media Marketing",
+        "Website Development",
+        "Complete Digital Marketing"
+      ],
+      "required": true
+    },
+    {
+      "label": "Monthly Marketing Budget",
+      "type": "select",
+      "options": ["Below ₹50K", "₹50K - ₹2L", "₹2L - ₹10L", "₹10L+"]
+    },
+    {
+      "label": "Your Business Goals",
+      "type": "textarea",
+      "required": true
+    }
   ]
 }

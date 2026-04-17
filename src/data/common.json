@@ -1,19 +1,63 @@
 {
   "companyName": "Reven Digital Marketing",
   "shortName": "Reven",
-  "founder": "Thanv",
+  "tagline": "Performance-Driven Digital Marketing Agency",
+  "founder": "Thanveer",
+
   "hq": {
     "address": "414/4A2, Nellikuppam Road, Kayarambedu",
     "city": "Chennai, Tamil Nadu",
     "pincode": "603202",
-    "phone": "+91 98765 43210",
-    "email": "contact@revendigital.com"
+    "country": "India",
+    "phone": "+91 73582 56590",
+    "email": "contact@revendigital.com",
+    "mapEmbed": "https://maps.google.com/?q=Kayarambedu+Chennai"
   },
+
+  "navLinks": [
+    { "name": "Home", "href": "/", "type": "link" },
+    {
+      "name": "Services",
+      "type": "dropdown",
+      "items": [
+        { "name": "SEO Services", "href": "/services/seo-dominance" },
+        { "name": "Google Ads", "href": "/services/performance-ads" },
+        { "name": "Social Media Marketing", "href": "/services/social-scale" },
+        { "name": "WhatsApp Marketing", "href": "/services/whatsapp-marketing" }
+      ]
+    },
+    { "name": "Case Studies", "href": "/case-studies", "type": "link" },
+    { "name": "About Us", "href": "/about", "type": "link" },
+    { "name": "Contact", "href": "/contact", "type": "link" }
+  ],
+
+  "ui": {
+    "primaryCta": "Get Free Consultation",
+    "auditCta": "Request Free Audit",
+    "sessionCta": "Book Strategy Call",
+    "freeSessionCta": "Free Strategy Session",
+    "directLine": "Call Us:",
+    "whatsappCta": "Chat on WhatsApp",
+    "copyright": "© {year} Reven Digital Marketing. All rights reserved.",
+    "developedBy": "Built by Reven Digital Team",
+    "region": "Serving Clients Across India & Globally",
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service"
+  },
+
   "socials": {
     "instagram": "https://instagram.com/revendigital",
     "linkedin": "https://linkedin.com/company/revendigital",
     "twitter": "https://twitter.com/revendigital",
-    "whatsapp": "https://wa.me/919876543210"
+    "whatsapp": "https://wa.me/917358256590"
   },
+
+  "trustSignals": [
+    "Google Ads Certified",
+    "Meta Ads Partner",
+    "Data-Driven Campaigns",
+    "ROI-Focused Strategy"
+  ],
+
   "locales": ["English", "Tamil"]
 }

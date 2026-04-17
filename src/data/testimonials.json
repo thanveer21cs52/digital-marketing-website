@@ -1,36 +1,48 @@
 {
-  "title": "Success Chronicles",
-  "description": "Evidence of impact across industries. We don't just deliver reports; we deliver tangible growth and market dominance.",
+  "ui": {
+    "pageTitle": "Case Studies",
+    "resultLabel": "Results Achieved",
+    "ctaTitle": "Want Similar Results?",
+    "ctaSubtitle": "Let’s analyze your business and create a strategy to generate more leads, sales, and growth.",
+    "ctaButton": "Get Free Growth Analysis"
+  },
+
+  "title": "Real Results for Real Businesses",
+  "subtitle": "We help businesses grow with data-driven digital marketing strategies. Here are some of the results we’ve delivered.",
+
+  "summaryStats": [
+    {
+      "label": "Average Revenue Growth",
+      "value": "4.2x"
+    },
+    {
+      "label": "Average ROAS",
+      "value": "5.5x"
+    },
+    {
+      "label": "Clients Served",
+      "value": "100+"
+    }
+  ],
+
   "items": [
     {
-      "id": "1",
-      "client": "IndoVibe Retail",
-      "sector": "E-commerce",
-      "stat": "500% Revenue Lift",
-      "quote": "Reven didn't just run ads; they restructured our entire digital ecosystem. Our ROAS in Tamil Nadu alone jumped by 300% within the first peak season.",
-      "author": "Vijay Kumar",
-      "designation": "Founder & CEO",
-      "image": "/assets/analytics-viz.png"
+      "name": "Vijay Kumar",
+      "company": "IndoVibe Retail",
+      "result": "500% Revenue Growth",
+      "content": "We restructured their ad campaigns and optimized targeting across Meta and Google Ads. Within 3 months, revenue increased by 500% and ROAS improved significantly."
     },
     {
-      "id": "2",
-      "client": "TechEdge Solutions",
-      "sector": "B2B SaaS",
-      "stat": "4x SQL Velocity",
-      "quote": "The depth of their attribution modeling is unmatched. We finally have a single source of truth for our marketing spend across LinkedIn and Google.",
-      "author": "Ananya Rao",
-      "designation": "Director of Marketing",
-      "image": "/assets/hero-home.png"
+      "name": "Ananya Rao",
+      "company": "TechEdge Solutions",
+      "result": "4x Increase in Qualified Leads",
+      "content": "We implemented a lead generation strategy across Google and LinkedIn, improving lead quality and increasing sales-qualified leads by 4x."
     },
     {
-      "id": "3",
-      "client": "LuxSquare Realty",
-      "sector": "Real Estate",
-      "stat": "60% Lower CPL",
-      "quote": "Lead quality was our biggest bottleneck. Reven's automated nurture flows and CRM integration saved our sales team hundreds of hours.",
-      "author": "Siddharth Malhotra",
-      "designation": "Managing Director",
-      "image": "/assets/about-hero.png"
+      "name": "Siddharth Malhotra",
+      "company": "LuxSquare Realty",
+      "result": "60% Reduction in Cost per Lead",
+      "content": "We optimized ad creatives, targeting, and landing pages, reducing cost per lead by 60% while improving lead quality."
     }
   ]
 }

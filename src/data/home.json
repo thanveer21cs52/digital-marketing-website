@@ -1,69 +1,137 @@
 {
+  "ui": {
+    "protocolVersion": "Growth Marketing Framework v1.0",
+    "caseStudiesCta": "Explore Success Stories",
+    "growthVisualizationLabel": "Client Revenue Growth",
+    "growthStatValue": "+280% Avg Growth",
+    "methodologyPreTitle": "Our Approach",
+    "methodologyTitle": "Data-Driven Growth System",
+    "methodologyCta": "See How We Work",
+    "verticalsPreTitle": "Industries We Serve",
+    "verticalsTitle": "Driving Growth Across Key Industries",
+    "ctaTitle": "Ready to scale your business?",
+    "ctaSubtitle": "Partner with a performance-driven digital marketing agency focused on measurable results and sustainable growth."
+  },
+
   "hero": {
-    "title": "Revenue-First Performance Engineering",
-    "subtitle": "Stop paying for vanity metrics. At Reven, we build high-octane growth engines using deterministic data and algorithmic scaling to dominate the Indian and Global markets.",
+    "title": "Rayan Digital Marketing Agency",
+    "subtitle": "We help businesses grow with performance marketing, data-driven strategies, and scalable digital systems. No guesswork—only measurable results.",
     "cta": {
-      "text": "Start Scaling Now",
+      "text": "Get Free Consultation",
       "link": "/contact"
     },
     "image": "/assets/hero-home.png"
   },
+
   "stats": [
-    { "label": "Revenue Generated (INR)", "value": "100Cr+" },
-    { "label": "Regional Brands Scaled", "value": "150+" },
-    { "label": "Average ROAS", "value": "4.2x" },
-    { "label": "Client Retention", "value": "94%" }
+    { "label": "Revenue Generated for Clients", "value": "₹150Cr+" },
+    { "label": "Brands Worked With", "value": "120+" },
+    { "label": "Average ROAS", "value": "5.8x" },
+    { "label": "Client Retention Rate", "value": "92%" }
   ],
+
   "methodology": [
     {
       "step": "01",
-      "title": "Audit & Attribution",
-      "description": "Deep-layer audit of your current tracking. We fix your attribution before we spend a single rupee."
+      "title": "Business & Marketing Audit",
+      "description": "We analyze your current marketing, tracking systems, and funnels to identify gaps and opportunities for growth."
     },
     {
       "step": "02",
-      "title": "Regional Dominance",
-      "description": "Deploying data-backed campaigns tailored for Tamil Nadu and broader Indian demographics with bilingual precision."
+      "title": "Strategy & Funnel Planning",
+      "description": "We design a tailored marketing strategy with optimized funnels focused on lead generation, conversions, and revenue."
     },
     {
       "step": "03",
-      "title": "Algorithmic Scaling",
-      "description": "Scaling winning creative and audiences across Meta, Google, and WhatsApp with real-time bid orchestration."
+      "title": "Campaign Execution",
+      "description": "We launch and manage high-performing campaigns across Google, Meta, and other platforms with continuous optimization."
     },
     {
       "step": "04",
-      "title": "Profit Max",
-      "description": "Aggressive CRO and retention strategies to maximize LTV and ensure sustainable unit economics."
+      "title": "Optimization & Scaling",
+      "description": "We continuously test, analyze, and scale campaigns to maximize ROI and long-term growth."
     }
   ],
+
   "verticals": [
     {
-      "title": "D2C E-commerce",
-      "focus": "Scaling Retail Brands to Global Sales",
-      "metrics": ["CAC reduction", "Cart Value"]
+      "title": "E-commerce & D2C",
+      "focus": "Scaling online stores with performance marketing and conversion optimization.",
+      "metrics": ["ROAS", "Conversion Rate"]
     },
     {
-      "title": "B2B SaaS / Tech",
-      "focus": "High-Intent Lead Gen for Global Challengers",
-      "metrics": ["MQL to SQL", "ACV Expansion"]
+      "title": "B2B & SaaS",
+      "focus": "Generating high-quality leads and building strong sales pipelines.",
+      "metrics": ["Cost per Lead", "Pipeline Growth"]
     },
     {
       "title": "Real Estate",
-      "focus": "Quality Lead Engines for Premium Developments",
-      "metrics": ["Conversion Rate", "Sales Pipeline"]
+      "focus": "Driving qualified leads and increasing property sales through targeted campaigns.",
+      "metrics": ["Lead Quality", "Conversion Rate"]
     }
   ],
+
   "featuredTestimonial": {
-    "client": "IndoVibe Retail",
-    "title": "From 1L to 25L Monthly Revenue in 3 Months",
-    "result": "Reven reconstructed our entire Facebook funnel and integrated WhatsApp marketing, resulting in a 5x ROAS jump.",
+    "client": "Logistics Solutions Pvt Ltd",
+    "title": "10X Increase in Qualified Leads",
+    "result": "The team transformed our digital marketing strategy and implemented automated lead systems, resulting in a 10X increase in high-quality leads within 3 months.",
     "image": "/assets/analytics-viz.png"
   },
+
   "techStack": [
     { "name": "Google Ads", "icon": "Search" },
     { "name": "Meta Ads", "icon": "Users" },
     { "name": "HubSpot", "icon": "Layers" },
-    { "name": "Shopify Plus", "icon": "ShoppingBag" },
-    { "name": "Segment", "icon": "Database" }
+    { "name": "Shopify", "icon": "ShoppingBag" },
+    { "name": "Google Analytics", "icon": "Database" }
+  ],
+  "pricing": [
+    {
+      "name": "Starter Protocol",
+      "price": "₹49,999",
+      "period": "Month",
+      "subtitle": "Essential Growth Foundation",
+      "features": [
+        "Google & Meta Ads Management",
+        "Basic Funnel Setup",
+        "Monthly Performance Reports",
+        "Standard Conversion Tracking",
+        "Email Support"
+      ],
+      "cta": "Select Starter",
+      "popular": false
+    },
+    {
+      "name": "Professional Scale",
+      "price": "₹99,999",
+      "period": "Month",
+      "subtitle": "High-Velocity Scaling",
+      "features": [
+        "Advanced Omni-channel Ads",
+        "Custom Landing Page Design",
+        "CRM & Automation Integration",
+        "Weekly Strategy Syncs",
+        "Dynamic Remarketing Setup",
+        "Priority Support"
+      ],
+      "cta": "Scale Now",
+      "popular": true
+    },
+    {
+      "name": "Elite Dominance",
+      "price": "Custom",
+      "period": "Protocol",
+      "subtitle": "Market Leadership Engine",
+      "features": [
+        "Omni-channel Dominance",
+        "Content Ecosystem Strategy",
+        "Full Growth Infrastructure",
+        "Dedicated Account Director",
+        "Predictive Data Analytics",
+        "Unlimited Consultations"
+      ],
+      "cta": "Contact for Elite",
+      "popular": false
+    }
   ]
 }

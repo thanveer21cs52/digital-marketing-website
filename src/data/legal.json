@@ -1,29 +1,91 @@
 {
+  "ui": {
+    "versionLabel": "Version",
+    "releaseDateLabel": "Last Updated",
+    "statusLabel": "Status",
+    "activeStatus": "Active",
+    "integrityTitle": "Data Protection Commitment",
+    "integrityDesc": "We are committed to maintaining accurate tracking, secure data handling, and transparent reporting across all campaigns.",
+    "principlesLabel": "Key Principles",
+    "principle1": "Accurate Tracking",
+    "principle2": "Secure Data Handling",
+    "principle3": "Transparent Reporting"
+  },
+
   "terms": {
-    "title": "Service Agreement Protocol",
+    "title": "Terms of Service",
+    "preTitle": "Client Agreement",
     "lastUpdated": "April 17, 2026",
-    "content": [
+    "version": "REV-TOS-2026.01",
+    "sections": [
       {
-        "heading": "Agency Engagement",
-        "text": "Reven Digital Marketing (the 'Agency') provides performance-based digital marketing services. Engaging with our services constitutes acceptance of our data-driven protocols."
+        "id": "01",
+        "heading": "Scope of Services",
+        "text": "Reven Digital Marketing ('Agency') provides digital marketing services including but not limited to advertising, SEO, social media management, and consulting as agreed with the Client."
       },
       {
-        "heading": "Performance Benchmarks",
-        "text": "While we strive for extreme revenue velocity, performance is subject to market volatility and algorithmic shifts across third-party platforms."
+        "id": "02",
+        "heading": "Performance Disclaimer",
+        "text": "While the Agency strives to improve marketing performance and return on investment, results are not guaranteed and depend on multiple factors including market conditions, competition, and platform algorithms."
+      },
+      {
+        "id": "03",
+        "heading": "Payments & Fees",
+        "text": "Clients agree to pay all service fees as outlined in the agreement. Failure to make timely payments may result in suspension or termination of services."
+      },
+      {
+        "id": "04",
+        "heading": "Intellectual Property",
+        "text": "All materials, strategies, and deliverables created by the Agency remain its property until full payment is received. Upon settlement, agreed deliverables may be transferred to the Client."
+      },
+      {
+        "id": "05",
+        "heading": "Client Responsibilities",
+        "text": "The Client agrees to provide accurate information, necessary access to accounts, and timely approvals required for campaign execution."
+      },
+      {
+        "id": "06",
+        "heading": "Termination",
+        "text": "Either party may terminate the agreement with prior written notice as defined in the service contract."
       }
     ]
   },
+
   "privacy": {
-    "title": "Data Sovereignty & Privacy",
+    "title": "Privacy Policy",
+    "preTitle": "Data Protection",
     "lastUpdated": "April 17, 2026",
-    "content": [
+    "version": "REV-PRIV-2026.01",
+    "sections": [
       {
-        "heading": "Data Extraction",
-        "text": "We only collect deterministic signals required for high-fidelity attribution and campaign optimization."
+        "id": "01",
+        "heading": "Information We Collect",
+        "text": "We collect basic personal and business information such as name, email, phone number, and marketing data required to deliver our services."
       },
       {
-        "heading": "Security Infrastructure",
-        "text": "All client data is encrypted using military-grade protocols to ensure absolute sovereignty."
+        "id": "02",
+        "heading": "How We Use Information",
+        "text": "We use collected information to provide services, communicate with clients, improve campaigns, and analyze performance."
+      },
+      {
+        "id": "03",
+        "heading": "Data Security",
+        "text": "We implement industry-standard security measures to protect client data from unauthorized access, disclosure, or misuse."
+      },
+      {
+        "id": "04",
+        "heading": "Third-Party Services",
+        "text": "We may use third-party platforms such as Google Ads, Meta Ads, and analytics tools to manage campaigns. These platforms have their own privacy policies."
+      },
+      {
+        "id": "05",
+        "heading": "Data Retention",
+        "text": "We retain client data only as long as necessary to provide services or comply with legal obligations."
+      },
+      {
+        "id": "06",
+        "heading": "User Rights",
+        "text": "Clients may request access, correction, or deletion of their personal data by contacting us."
       }
     ]
   }

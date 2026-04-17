@@ -1,23 +1,41 @@
 {
-  "title": "Revenue Over Vanity.",
-  "vision": "We represent the convergence of high-fidelity data engineering and aggressive performance marketing in the context of the Indian digital landscape. Born in Chennai, scaling globally.",
+  "ui": {
+    "pageTitle": "About Reven Digital Marketing",
+    "visionTitle": "Driving Measurable Growth.",
+    "valuesPreTitle": "Our Core Values",
+    "valuesTitle": "Built on Performance, Transparency, and Results"
+  },
+
+  "title": "We Help Businesses Grow with Digital Marketing.",
+  "subtitle": "Reven Digital Marketing is a performance-driven agency focused on helping businesses generate leads, increase sales, and scale sustainably using data-driven strategies.",
+
+  "image": "/assets/about-hero.png",
+
+  "story": [
+    "Founded in Chennai, Reven Digital Marketing was built to solve a common problem—businesses spending on marketing without clear results. We set out to change that by focusing on measurable performance and real ROI.",
+    "Our approach combines strategy, data analysis, and execution across platforms like Google Ads, social media, and SEO. Every campaign we run is optimized for growth, ensuring your marketing investment delivers tangible business outcomes."
+  ],
+
   "values": [
     { 
-      "title": "Performance First", 
-      "description": "We remove the guesswork. Every decision is driven by high-confidence data signals and incremental performance metrics. We focus on ROI, not just clicks." 
+      "icon": "Zap",
+      "title": "Performance-Driven Approach", 
+      "description": "We focus on results that matter—leads, sales, and revenue. Every campaign is optimized to deliver measurable ROI." 
     },
     { 
-      "title": "Localized Dominance", 
-      "description": "Understanding the nuances of the Indian consumer. We build strategies that resonate from the streets of Chennai to the boardrooms of Mumbai." 
+      "icon": "Target",
+      "title": "Market Understanding", 
+      "description": "We understand the Indian market and customer behavior, enabling us to create strategies that truly connect with your audience." 
     },
     { 
-      "title": "Unfiltered Transparency", 
-      "description": "No hidden metrics. We build the tracking stacks that reveal precisely where every rupee is working, ensuring complete client-agency alignment." 
+      "icon": "BarChart3",
+      "title": "Transparency & Reporting", 
+      "description": "We provide clear reports and insights so you always know where your budget is going and what results you're getting." 
+    },
+    { 
+      "icon": "TrendingUp",
+      "title": "Scalable Growth", 
+      "description": "We build systems that not only generate results today but can scale as your business grows." 
     }
-  ],
-  "team": [
-    { "name": "Thanv", "role": "CEO & Founder", "image": "/assets/team-1.png" },
-    { "name": "Arjun Das", "role": "Head of Regional Performance", "image": "/assets/team-2.png" },
-    { "name": "Sarah Venkatesh", "role": "Director of Social Strategy", "image": "/assets/team-3.png" }
   ]
 }
