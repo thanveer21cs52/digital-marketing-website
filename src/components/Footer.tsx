@@ -47,7 +47,7 @@ const Footer = () => {
           <ul className="space-y-4">
             {commonData.navLinks.filter(l => l.type === 'link').map(link => (
               <li key={link.href}>
-                <Link to={link.href} className="text-slate-500 hover:text-white transition-colors text-sm font-medium">
+                <Link to={link.href || '/'} className="text-slate-500 hover:text-white transition-colors text-sm font-medium">
                   {link.name}
                 </Link>
               </li>

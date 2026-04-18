@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight, Search, Zap, Target, BarChart3,
   MessageCircle, Database, ChevronDown, Rocket,
-  TrendingUp, Users, Layers, MoveUpRight
+  TrendingUp, Users
 } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';

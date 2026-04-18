@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Quote, Star, ArrowRight, TrendingUp, Target, Users, BarChart3 } from 'lucide-react';
+import { Star, ArrowRight, TrendingUp, Target, Users, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import testimonialsData from '../data/testimonials.json';
 import commonData from '../data/common.json';

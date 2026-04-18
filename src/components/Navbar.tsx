@@ -60,7 +60,7 @@ const Navbar = () => {
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <Link 
-                      to={link.href}
+                      to={link.href || '/services'}
                       className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-white/70 hover:text-accent transition-all"
                     >
                       {link.name} <ChevronDown size={10} className={`ml-2 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
@@ -110,7 +110,7 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <Link
-                    to={link.href}
+                    to={link.href || '/'}
                     className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70 hover:text-accent transition-all py-2 block relative group"
                   >
                     {link.name}
@@ -148,7 +148,7 @@ const Navbar = () => {
             {commonData.navLinks.map((link) => (
               <div key={link.name} className="flex flex-col items-center">
                 <Link 
-                  to={link.href} 
+                  to={link.href || '/'} 
                   onClick={() => setIsOpen(false)}
                   className="text-4xl sm:text-5xl font-black text-white hover:text-accent uppercase tracking-tighter"
                 >

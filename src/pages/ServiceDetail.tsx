@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import servicesData from '../data/services.json';
 import {
-  ArrowRight, Target, BarChart3, Search,
+  ArrowRight, BarChart3, Search,
   Zap, Database, Users, MessageCircle,
   Rocket, CheckCircle2
 } from 'lucide-react';
