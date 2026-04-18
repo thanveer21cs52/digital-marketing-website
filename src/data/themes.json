@@ -1,63 +1,63 @@
 {
   "themes": [
     {
-      "id": "reven",
-      "name": "Architect (Default)",
-      "colors": {
-        "primary": "#0f172a",
-        "primaryContainer": "#1e293b",
-        "secondary": "#0d9488",
-        "accent": "#22d3ee",
-        "surface": "#f8fafc",
-        "surfaceLow": "#f1f5f9"
-      }
-    },
-    {
-      "id": "engineering",
-      "name": "Dilli Engineering",
+      "id": "gold",
+      "name": "Monolith Gold",
       "colors": {
         "primary": "#0a0a0b",
         "primaryContainer": "#161618",
-        "secondary": "#942de8",
-        "accent": "#00e5ff",
+        "secondary": "#d4af37",
+        "accent": "#fbbf24",
         "surface": "#ffffff",
         "surfaceLow": "#f8f9fa"
       }
     },
     {
-      "id": "velocity",
-      "name": "Velocity Red",
+      "id": "blue",
+      "name": "Oceanic Fluid",
       "colors": {
-        "primary": "#000000",
-        "primaryContainer": "#111111",
-        "secondary": "#ef4444",
-        "accent": "#f97316",
+        "primary": "#0f172a",
+        "primaryContainer": "#1e293b",
+        "secondary": "#3b82f6",
+        "accent": "#00e5ff",
         "surface": "#ffffff",
-        "surfaceLow": "#fafafa"
+        "surfaceLow": "#f8fafc"
       }
     },
     {
-      "id": "monolith",
-      "name": "Luxury Monolith",
-      "colors": {
-        "primary": "#0c0c0c",
-        "primaryContainer": "#1a1a1a",
-        "secondary": "#d4af37",
-        "accent": "#fbbf24",
-        "surface": "#fdfbf7",
-        "surfaceLow": "#f5f2ed"
-      }
-    },
-    {
-      "id": "neon",
-      "name": "Cyber Neon",
+      "id": "green",
+      "name": "Bio Growth",
       "colors": {
         "primary": "#050505",
-        "primaryContainer": "#0f0f0f",
-        "secondary": "#a855f7",
+        "primaryContainer": "#0f1610",
+        "secondary": "#10b981",
         "accent": "#22c55e",
         "surface": "#ffffff",
         "surfaceLow": "#f0fdf4"
+      }
+    },
+    {
+      "id": "pink",
+      "name": "Vanguard Rose",
+      "colors": {
+        "primary": "#0c0a0c",
+        "primaryContainer": "#1a161a",
+        "secondary": "#db2777",
+        "accent": "#f472b6",
+        "surface": "#ffffff",
+        "surfaceLow": "#fdf2f8"
+      }
+    },
+    {
+      "id": "orange",
+      "name": "Kinetic Orange",
+      "colors": {
+        "primary": "#000000",
+        "primaryContainer": "#111111",
+        "secondary": "#ea580c",
+        "accent": "#f97316",
+        "surface": "#ffffff",
+        "surfaceLow": "#fff7ed"
       }
     }
   ]

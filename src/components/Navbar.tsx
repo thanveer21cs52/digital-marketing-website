@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Palette, Zap, Target, BarChart3, TrendingUp, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -11,6 +11,8 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const { currentTheme, setTheme, themes } = useTheme();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +33,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 h-20 flex items-center ${
-        scrolled ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
+        (scrolled || !isHome) ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}>
         <div className="container flex items-center justify-between px-6 lg:px-12">
           <Link to="/" className="text-xl sm:text-2xl font-black tracking-tighter flex items-center group" onClick={() => setIsOpen(false)}>
@@ -115,6 +117,23 @@ const Navbar = () => {
 
             <div className="h-4 w-[1px] bg-white/10"></div>
 
+            {/* Premium Theme Switcher (Desktop) */}
+            <div className="flex items-center gap-2">
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setTheme(t.id)}
+                  title={t.name}
+                  className={`w-4 h-4 rounded-full border border-white/20 transition-all hover:scale-125 hover:shadow-glow active:scale-90 ${
+                    currentTheme === t.id ? 'scale-125 border-white ring-2 ring-accent' : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100'
+                  }`}
+                  style={{ backgroundColor: t.id === 'gold' ? '#fbbf24' : t.id === 'blue' ? '#00e5ff' : t.id === 'green' ? '#22c55e' : t.id === 'pink' ? '#ec4899' : '#f97316' }}
+                />
+              ))}
+            </div>
+
+            <div className="h-4 w-[1px] bg-white/10"></div>
+
             <Link to="/contact" className="btn btn-accent !py-3 !px-8 text-[9px] shadow-glow flex items-center group/btn">
               <span>{commonData.ui.sessionCta.toUpperCase()}</span>
               <ArrowRight size={12} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
@@ -166,7 +185,24 @@ const Navbar = () => {
               </div>
             ))}
             
-            <div className="pt-12 w-full max-w-sm">
+            <div className="pt-12 w-full max-w-sm space-y-8">
+              {/* Theme Switcher (Mobile) */}
+              <div className="flex flex-col items-center gap-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Select Protocol</span>
+                <div className="flex items-center gap-4">
+                  {themes.map((t) => (
+                    <button
+                      key={t.id}
+                      onClick={() => setTheme(t.id)}
+                      className={`w-8 h-8 rounded-full border border-white/20 transition-all ${
+                        currentTheme === t.id ? 'scale-125 border-white ring-4 ring-accent' : 'opacity-40'
+                      }`}
+                      style={{ backgroundColor: t.id === 'gold' ? '#fbbf24' : t.id === 'blue' ? '#00e5ff' : t.id === 'green' ? '#22c55e' : t.id === 'pink' ? '#ec4899' : '#f97316' }}
+                    />
+                  ))}
+                </div>
+              </div>
+
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}

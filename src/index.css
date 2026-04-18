@@ -19,53 +19,63 @@
 }
 
 :root {
-  --primary: #0f172a;
-  --primary-container: #1e293b;
-  --secondary: #0d9488;
-  --accent: #22d3ee;
-  --accent-glow: rgba(34, 211, 238, 0.2);
-  --surface: #f8fafc;
-  --surface-low: #f1f5f9;
-}
-
-[data-theme="engineering"] {
   --primary: #0a0a0b;
   --primary-container: #161618;
-  --secondary: #942de8;
-  --accent: #00e5ff;
-  --accent-glow: rgba(0, 229, 255, 0.2);
+  --secondary: #d4af37;
+  --accent: #fbbf24;
+  --accent-glow: rgba(251, 191, 36, 0.2);
   --surface: #ffffff;
   --surface-low: #f8f9fa;
 }
 
-[data-theme="velocity"] {
-  --primary: #000000;
-  --primary-container: #111111;
-  --secondary: #ef4444;
-  --accent: #f97316;
-  --accent-glow: rgba(249, 115, 22, 0.2);
-  --surface: #ffffff;
-  --surface-low: #fafafa;
-}
-
-[data-theme="monolith"] {
-  --primary: #0c0c0c;
-  --primary-container: #1a1a1a;
+[data-theme="gold"] {
+  --primary: #0a0a0b;
+  --primary-container: #161618;
   --secondary: #d4af37;
   --accent: #fbbf24;
   --accent-glow: rgba(251, 191, 36, 0.2);
-  --surface: #fdfbf7;
-  --surface-low: #f5f2ed;
+  --surface: #ffffff;
+  --surface-low: #f8f9fa;
 }
 
-[data-theme="neon"] {
+[data-theme="blue"] {
+  --primary: #0f172a;
+  --primary-container: #1e293b;
+  --secondary: #3b82f6;
+  --accent: #00e5ff;
+  --accent-glow: rgba(0, 229, 255, 0.2);
+  --surface: #ffffff;
+  --surface-low: #f8fafc;
+}
+
+[data-theme="green"] {
   --primary: #050505;
-  --primary-container: #0f0f0f;
-  --secondary: #a855f7;
+  --primary-container: #0f1610;
+  --secondary: #10b981;
   --accent: #22c55e;
   --accent-glow: rgba(34, 197, 94, 0.2);
   --surface: #ffffff;
   --surface-low: #f0fdf4;
+}
+
+[data-theme="pink"] {
+  --primary: #0c0a0c;
+  --primary-container: #1a161a;
+  --secondary: #db2777;
+  --accent: #f472b6;
+  --accent-glow: rgba(244, 114, 182, 0.2);
+  --surface: #ffffff;
+  --surface-low: #fdf2f8;
+}
+
+[data-theme="orange"] {
+  --primary: #000000;
+  --primary-container: #111111;
+  --secondary: #ea580c;
+  --accent: #f97316;
+  --accent-glow: rgba(249, 115, 22, 0.2);
+  --surface: #ffffff;
+  --surface-low: #fff7ed;
 }
 
 @layer base {
