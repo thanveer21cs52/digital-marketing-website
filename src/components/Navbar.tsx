@@ -1,16 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Palette, Zap, Target, BarChart3, TrendingUp, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Zap, Target, BarChart3, TrendingUp, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import commonData from '../data/common.json';
 import servicesData from '../data/services.json';
-import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const { currentTheme, setTheme, themes } = useTheme();
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -36,11 +34,19 @@ const Navbar = () => {
         (scrolled || !isHome) ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}>
         <div className="container flex items-center justify-between px-6 lg:px-12">
-          <Link to="/" className="text-xl sm:text-2xl font-black tracking-tighter flex items-center group" onClick={() => setIsOpen(false)}>
-            <div className="flex flex-col leading-none">
-              <span className="text-white group-hover:text-accent transition-colors">{commonData.shortName.toUpperCase()}</span>
-              <span className="text-[8px] font-black tracking-[0.4em] text-accent opacity-60">PRECISION.GROWTH</span>
-            </div>
+          <Link to="/" className="flex items-center group" onClick={() => setIsOpen(false)}>
+            {commonData.logo.type === 'png' ? (
+              <img
+                src={commonData.logo.image}
+                alt={commonData.logo.alt}
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
+            ) : (
+              <div className="flex flex-col leading-none">
+                <span className="text-xl sm:text-2xl font-black tracking-tighter text-white group-hover:text-accent transition-colors">{commonData.logo.text}</span>
+                <span className="text-[8px] font-black tracking-[0.3em] text-accent opacity-60">{commonData.logo.tagline}</span>
+              </div>
+            )}
           </Link>
 
           {/* Desktop Nav */}
@@ -92,7 +98,6 @@ const Navbar = () => {
                                       </div>
                                       <div>
                                         <p className="text-[10px] font-black text-white uppercase tracking-widest group-hover/item:text-accent transition-colors">{title}</p>
-                                        <p className="text-[8px] font-medium text-white/30 uppercase tracking-[0.2em] mt-1">Growth Protocol</p>
                                       </div>
                                     </Link>
                                  </motion.div>
@@ -114,25 +119,6 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-
-            <div className="h-4 w-[1px] bg-white/10"></div>
-
-            {/* Premium Theme Switcher (Desktop) */}
-            <div className="flex items-center gap-2">
-              {themes.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setTheme(t.id)}
-                  title={t.name}
-                  className={`w-4 h-4 rounded-full border border-white/20 transition-all hover:scale-125 hover:shadow-glow active:scale-90 ${
-                    currentTheme === t.id ? 'scale-125 border-white ring-2 ring-accent' : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100'
-                  }`}
-                  style={{ backgroundColor: t.id === 'gold' ? '#fbbf24' : t.id === 'blue' ? '#00e5ff' : t.id === 'green' ? '#22c55e' : t.id === 'pink' ? '#ec4899' : '#f97316' }}
-                />
-              ))}
-            </div>
-
-            <div className="h-4 w-[1px] bg-white/10"></div>
 
             <Link to="/contact" className="btn btn-accent !py-3 !px-8 text-[9px] shadow-glow flex items-center group/btn">
               <span>{commonData.ui.sessionCta.toUpperCase()}</span>
@@ -184,25 +170,8 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            
-            <div className="pt-12 w-full max-w-sm space-y-8">
-              {/* Theme Switcher (Mobile) */}
-              <div className="flex flex-col items-center gap-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Select Protocol</span>
-                <div className="flex items-center gap-4">
-                  {themes.map((t) => (
-                    <button
-                      key={t.id}
-                      onClick={() => setTheme(t.id)}
-                      className={`w-8 h-8 rounded-full border border-white/20 transition-all ${
-                        currentTheme === t.id ? 'scale-125 border-white ring-4 ring-accent' : 'opacity-40'
-                      }`}
-                      style={{ backgroundColor: t.id === 'gold' ? '#fbbf24' : t.id === 'blue' ? '#00e5ff' : t.id === 'green' ? '#22c55e' : t.id === 'pink' ? '#ec4899' : '#f97316' }}
-                    />
-                  ))}
-                </div>
-              </div>
 
+            <div className="pt-12 w-full max-w-sm">
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
@@ -219,4 +188,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

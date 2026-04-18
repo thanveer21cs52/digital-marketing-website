@@ -2,13 +2,20 @@
   "ui": {
     "pageTitle": "Case Studies",
     "resultLabel": "Results Achieved",
+    "recentResults": "Recent results",
+    "avgGrowthValue": "4.2x",
+    "avgGrowthLabel": "Avg. revenue growth",
+    "cardsPreTitle": "Client success",
+    "cardsTitle": "Results that speak for themselves",
+    "cardCta": "Get similar results",
+    "browseServicesBtn": "Browse services",
     "ctaTitle": "Want Similar Results?",
-    "ctaSubtitle": "Let’s analyze your business and create a strategy to generate more leads, sales, and growth.",
+    "ctaSubtitle": "Let's analyze your business and create a strategy to generate more leads, sales, and growth.",
     "ctaButton": "Get Free Growth Analysis"
   },
 
   "title": "Real Results for Real Businesses",
-  "subtitle": "We help businesses grow with data-driven digital marketing strategies. Here are some of the results we’ve delivered.",
+  "subtitle": "We help businesses grow with data-driven digital marketing strategies. Here are some of the results we've delivered.",
 
   "summaryStats": [
     {

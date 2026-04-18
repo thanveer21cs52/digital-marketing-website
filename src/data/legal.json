@@ -9,7 +9,10 @@
     "principlesLabel": "Key Principles",
     "principle1": "Accurate Tracking",
     "principle2": "Secure Data Handling",
-    "principle3": "Transparent Reporting"
+    "principle3": "Transparent Reporting",
+    "documentInfoLabel": "Document info",
+    "sectionsCovered": "sections covered",
+    "alsoSee": "Also see"
   },
 
   "terms": {

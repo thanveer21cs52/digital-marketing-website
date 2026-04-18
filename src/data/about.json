@@ -1,9 +1,20 @@
 {
   "ui": {
-    "pageTitle": "About Reven Digital Marketing",
+    "pageTitle": "About Us",
     "visionTitle": "Driving Measurable Growth.",
+    "storyPreTitle": "Our story",
     "valuesPreTitle": "Our Core Values",
-    "valuesTitle": "Built on Performance, Transparency, and Results"
+    "valuesTitle": "Built on Performance, Transparency, and Results",
+    "whyUsPreTitle": "Why choose us",
+    "whyUsTitle": "What makes Reven different",
+    "heroStatValue": "100+",
+    "heroStatLabel": "Clients served",
+    "heroBadge": "Chennai, India 🇮🇳",
+    "founderQuote": "We focus on what matters — real business growth, not vanity metrics.",
+    "founderLabel": "Founder",
+    "ctaTitle": "Ready to grow your business?",
+    "ctaSubtitle": "Let's discuss how we can help you generate more leads, increase sales, and scale sustainably.",
+    "ctaButton": "Get Free Consultation"
   },
 
   "title": "We Help Businesses Grow with Digital Marketing.",
@@ -16,26 +27,47 @@
     "Our approach combines strategy, data analysis, and execution across platforms like Google Ads, social media, and SEO. Every campaign we run is optimized for growth, ensuring your marketing investment delivers tangible business outcomes."
   ],
 
+  "proofPoints": [
+    "Data-Driven Strategy",
+    "ROI-Focused Execution",
+    "Transparent Reporting",
+    "Scalable Growth"
+  ],
+
+  "stats": [
+    { "value": "100+", "label": "Clients served" },
+    { "value": "4.2x", "label": "Avg. revenue growth" },
+    { "value": "5.5x", "label": "Avg. ROAS" },
+    { "value": "1M+", "label": "Ad spend managed" }
+  ],
+
+  "whyUs": [
+    { "title": "Results over reports", "desc": "We measure success by leads, sales, and revenue — not impressions or clicks." },
+    { "title": "Indian market expertise", "desc": "We understand the local market, customer behavior, and platform dynamics that work in India." },
+    { "title": "Full transparency", "desc": "Access to live dashboards, weekly reports, and clear attribution of every rupee spent." },
+    { "title": "Scalable systems", "desc": "We build marketing engines, not one-off campaigns — so growth compounds over time." }
+  ],
+
   "values": [
-    { 
+    {
       "icon": "Zap",
-      "title": "Performance-Driven Approach", 
-      "description": "We focus on results that matter—leads, sales, and revenue. Every campaign is optimized to deliver measurable ROI." 
+      "title": "Performance-Driven Approach",
+      "description": "We focus on results that matter—leads, sales, and revenue. Every campaign is optimized to deliver measurable ROI."
     },
-    { 
+    {
       "icon": "Target",
-      "title": "Market Understanding", 
-      "description": "We understand the Indian market and customer behavior, enabling us to create strategies that truly connect with your audience." 
+      "title": "Market Understanding",
+      "description": "We understand the Indian market and customer behavior, enabling us to create strategies that truly connect with your audience."
     },
-    { 
+    {
       "icon": "BarChart3",
-      "title": "Transparency & Reporting", 
-      "description": "We provide clear reports and insights so you always know where your budget is going and what results you're getting." 
+      "title": "Transparency & Reporting",
+      "description": "We provide clear reports and insights so you always know where your budget is going and what results you're getting."
     },
-    { 
+    {
       "icon": "TrendingUp",
-      "title": "Scalable Growth", 
-      "description": "We build systems that not only generate results today but can scale as your business grows." 
+      "title": "Scalable Growth",
+      "description": "We build systems that not only generate results today but can scale as your business grows."
     }
   ]
 }

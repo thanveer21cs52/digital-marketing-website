@@ -2,6 +2,11 @@
   "ui": {
     "protocolVersion": "Growth Marketing Framework v1.0",
     "caseStudiesCta": "Explore Success Stories",
+    "heroTitleLine1": "Reven Digital",
+    "heroTitleLine2": "Marketing",
+    "heroTitleLine3": "Agency",
+    "verticalsHeading": "SECTORS WE",
+    "verticalsHeadingAccent": "DOMINATE.",
     "growthVisualizationLabel": "Client Revenue Growth",
     "growthStatValue": "+280% Avg Growth",
     "methodologyPreTitle": "Our Approach",
@@ -10,11 +15,10 @@
     "verticalsPreTitle": "Industries We Serve",
     "verticalsTitle": "Driving Growth Across Key Industries",
     "ctaTitle": "Ready to scale your business?",
-    "ctaSubtitle": "Partner with a performance-driven digital marketing agency focused on measurable results and sustainable growth."
+    "ctaSubtitle": "Get a free audit of your current marketing and a custom growth roadmap — no commitment required."
   },
-
   "hero": {
-    "title": "Rayan Digital Marketing Agency",
+    "title": "Reven Digital Marketing Agency",
     "subtitle": "We help businesses grow with performance marketing, data-driven strategies, and scalable digital systems. No guesswork—only measurable results.",
     "cta": {
       "text": "Get Free Consultation",
@@ -26,14 +30,24 @@
       "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=2000"
     ]
   },
-
   "stats": [
-    { "label": "Revenue Generated for Clients", "value": "₹150Cr+" },
-    { "label": "Brands Worked With", "value": "120+" },
-    { "label": "Average ROAS", "value": "5.8x" },
-    { "label": "Client Retention Rate", "value": "92%" }
+    {
+      "label": "Revenue Generated for Clients",
+      "value": "₹150Cr+"
+    },
+    {
+      "label": "Brands Worked With",
+      "value": "120+"
+    },
+    {
+      "label": "Average ROAS",
+      "value": "5.8x"
+    },
+    {
+      "label": "Client Retention Rate",
+      "value": "92%"
+    }
   ],
-
   "methodology": [
     {
       "step": "01",
@@ -56,38 +70,59 @@
       "description": "We continuously test, analyze, and scale campaigns to maximize ROI and long-term growth."
     }
   ],
-
   "verticals": [
     {
       "title": "E-commerce & D2C",
       "focus": "Scaling online stores with performance marketing and conversion optimization.",
-      "metrics": ["ROAS", "Conversion Rate"]
+      "metrics": [
+        "ROAS",
+        "Conversion Rate"
+      ]
     },
     {
       "title": "B2B & SaaS",
       "focus": "Generating high-quality leads and building strong sales pipelines.",
-      "metrics": ["Cost per Lead", "Pipeline Growth"]
+      "metrics": [
+        "Cost per Lead",
+        "Pipeline Growth"
+      ]
     },
     {
       "title": "Real Estate",
       "focus": "Driving qualified leads and increasing property sales through targeted campaigns.",
-      "metrics": ["Lead Quality", "Conversion Rate"]
+      "metrics": [
+        "Lead Quality",
+        "Conversion Rate"
+      ]
     }
   ],
-
   "featuredTestimonial": {
     "client": "Logistics Solutions Pvt Ltd",
     "title": "10X Increase in Qualified Leads",
     "result": "The team transformed our digital marketing strategy and implemented automated lead systems, resulting in a 10X increase in high-quality leads within 3 months.",
     "image": "/assets/analytics-viz.png"
   },
-
   "techStack": [
-    { "name": "Google Ads", "icon": "Search" },
-    { "name": "Meta Ads", "icon": "Users" },
-    { "name": "HubSpot", "icon": "Layers" },
-    { "name": "Shopify", "icon": "ShoppingBag" },
-    { "name": "Google Analytics", "icon": "Database" }
+    {
+      "name": "Google Ads",
+      "icon": "Search"
+    },
+    {
+      "name": "Meta Ads",
+      "icon": "Users"
+    },
+    {
+      "name": "HubSpot",
+      "icon": "Layers"
+    },
+    {
+      "name": "Shopify",
+      "icon": "ShoppingBag"
+    },
+    {
+      "name": "Google Analytics",
+      "icon": "Database"
+    }
   ],
   "pricing": [
     {

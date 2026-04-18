@@ -1,125 +1,303 @@
-import { motion } from 'framer-motion';
-import { 
-  ArrowRight, Search, Users, Layers, 
-  ShoppingBag, Database, ChevronDown
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  ArrowRight, Search, Zap, Target, BarChart3,
+  MessageCircle, Database, ChevronDown, Rocket,
+  TrendingUp, Users, Layers, MoveUpRight
 } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import servicesData from '../data/services.json';
 import commonData from '../data/common.json';
 
-const iconMap: Record<string, any> = {
-  PERFORMANCE: Search,
-  AUTHORITY: Users,
-  INFRASTRUCTURE: Layers,
+const iconMap: Record<string, React.ElementType> = {
+  'performance-ads': Rocket,
+  'seo-dominance': Search,
+  'social-scale': Users,
+  'whatsapp-marketing': MessageCircle,
+  'content-ecosystems': Zap,
+  'data-analytics': BarChart3,
 };
+
+const statIcons = [TrendingUp, Target, Users, Zap];
 
 const Services = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const ui = servicesData.ui;
 
   return (
-    <div className="services-page pt-32 pb-40">
-      <div className="container px-6">
-        {/* Header */}
-        <header className="mb-24 max-w-4xl">
+    <div className="services-page bg-white min-h-screen">
+
+      {/* ▌HERO */}
+      <section className="pt-36 pb-24 md:pt-48 md:pb-32 relative overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/8 blur-[120px] pointer-events-none" />
+
+        <div className="container px-6">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter mb-10 leading-[0.9]">
-              {servicesData.title}
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-10 h-[3px] bg-accent rounded-full" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
+                {ui.preTitle}
+              </span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-8 max-w-4xl">
+              {ui.heroTitle}{' '}
+              <span className="text-accent">{ui.heroTitleAccent}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-14">
               {servicesData.description}
             </p>
-          </motion.div>
-        </header>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-40">
-          {servicesData.items.map((service, i) => {
-            const Icon = (iconMap as any)[service.type] || Database;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative"
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-bold text-sm rounded-full hover:brightness-110 hover:scale-[1.03] transition-all shadow-lg shadow-accent/20"
               >
-                <Link to={`/services/${service.id}`} className="block">
-                  <div className="glass p-10 rounded-[3rem] border border-slate-100 hover:border-accent/40 shadow-sm transition-all duration-700 h-full flex flex-col justify-between overflow-hidden">
-                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform">
-                       <Icon size={120} />
-                    </div>
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 bg-primary text-white rounded-2xl mb-10 flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-all">
-                        <Icon size={24} />
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-6 leading-tight group-hover:text-accent transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-slate-500 font-medium leading-relaxed mb-10">
-                        {service.shortDesc}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-primary group-hover:text-accent transition-colors mt-auto relative z-10">
-                      Explore Specialization <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+                {ui.heroCta} <ArrowRight size={16} />
+              </Link>
+              <a
+                href="#all-services"
+                className="inline-flex items-center gap-3 px-8 py-4 border border-slate-200 text-slate-600 font-bold text-sm rounded-full hover:border-accent hover:text-accent transition-all"
+              >
+                {ui.browseServicesBtn}
+              </a>
+            </div>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Global Strategy / FAQ */}
-        <section className="bg-slate-50 p-10 md:p-24 rounded-[4rem] border border-slate-100">
-           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
-              <div className="lg:col-span-5">
-                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-10 leading-none">
-                    Common <br className="hidden md:block"/> Protocols.
-                 </h2>
-                 <p className="text-lg text-slate-500 font-medium leading-relaxed mb-12">
-                    Transparency is the metadata of trust. We maintain absolute precision in how we engineer, deploy, and scale your growth trajectory.
-                 </p>
-                 <Link to="/contact" className="btn btn-primary w-full md:w-auto text-center">
-                    {commonData.ui.auditCta}
-                 </Link>
-              </div>
-              <div className="lg:col-span-7 space-y-6">
-                 {servicesData.faqs.map((faq, i) => (
-                   <div key={i} className="bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-500">
-                      <button 
-                        className="w-full p-8 text-left flex justify-between items-center group"
-                        onClick={() => setActiveFaq(activeFaq === i ? null : i)}
+      {/* ▌STATS RIBBON */}
+      <section className="border-y border-slate-100 bg-slate-50/60">
+        <div className="container px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
+            {ui.statsRibbon.map((stat, i) => {
+              const Icon = statIcons[i] || Zap;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="py-10 md:py-14 px-6 md:px-10 flex items-center gap-5"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
+                    <Icon size={20} />
+                  </div>
+                  <div>
+                    <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">{stat.value}</p>
+                    <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ▌SERVICE CARDS */}
+      <section id="all-services" className="py-28 md:py-40">
+        <div className="container px-6">
+          <div className="flex items-end justify-between mb-20 gap-8">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{ui.servicesPreTitle}</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                {ui.servicesTitle}
+              </h2>
+            </div>
+            <Link to="/contact" className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline underline-offset-4 shrink-0">
+              {ui.customPlanCta} <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesData.items.map((service, i) => {
+              const Icon = iconMap[service.id] || Database;
+              const isHovered = hoveredCard === service.id;
+
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <Link to={`/services/${service.id}`} className="block h-full">
+                    <div className={`
+                      relative h-full p-10 rounded-3xl border transition-all duration-500 overflow-hidden
+                      ${isHovered
+                        ? 'bg-accent text-white border-accent shadow-2xl shadow-accent/20 -translate-y-2'
+                        : 'bg-white text-slate-900 border-slate-100 hover:border-slate-200 shadow-sm'
+                      }
+                    `}>
+                      <div className={`absolute -bottom-6 -right-6 transition-all duration-500 ${isHovered ? 'opacity-15 scale-110' : 'opacity-[0.03]'}`}>
+                        <Icon size={160} />
+                      </div>
+
+                      <div className="relative z-10">
+                        <div className={`
+                          w-14 h-14 rounded-2xl mb-8 flex items-center justify-center transition-all duration-500
+                          ${isHovered ? 'bg-white/20 text-white' : 'bg-accent/10 text-accent'}
+                        `}>
+                          <Icon size={24} />
+                        </div>
+
+                        <span className={`
+                          text-[9px] font-bold uppercase tracking-[0.2em] mb-4 block transition-colors
+                          ${isHovered ? 'text-white/60' : 'text-slate-400'}
+                        `}>
+                          {service.type}
+                        </span>
+
+                        <h3 className="text-xl font-bold tracking-tight mb-4 leading-snug">
+                          {service.title}
+                        </h3>
+
+                        <p className={`text-sm leading-relaxed mb-8 transition-colors ${isHovered ? 'text-white/80' : 'text-slate-500'}`}>
+                          {service.shortDesc}
+                        </p>
+
+                        <div className={`
+                          inline-flex items-center gap-2 text-xs font-bold tracking-wide transition-all
+                          ${isHovered ? 'text-white' : 'text-accent'}
+                        `}>
+                          {ui.learnMore} <ArrowRight size={14} className={`transition-transform ${isHovered ? 'translate-x-1' : ''}`} />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ▌PROCESS */}
+      <section className="py-28 md:py-40 bg-slate-950 text-white rounded-t-[4rem] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+        <div className="container px-6 relative z-10">
+          <div className="text-center mb-24">
+            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{ui.processPreTitle}</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              {ui.processTitle}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {servicesData.process.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.12 }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                {i < servicesData.process.length - 1 && (
+                  <div className="hidden lg:block absolute top-10 left-[calc(50%+2rem)] w-[calc(100%-2rem)] h-[2px] bg-white/10 z-0" />
+                )}
+
+                <div className="relative z-10 p-8 rounded-3xl bg-white/[0.04] border border-white/[0.06] hover:border-accent/30 hover:bg-white/[0.08] transition-all">
+                  <div className="w-12 h-12 rounded-full bg-accent text-primary font-extrabold text-lg flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+
+                  <h4 className="text-xl font-bold mb-4 group-hover:text-accent transition-colors">
+                    {step.title}
+                  </h4>
+                  <p className="text-white/40 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ▌FAQ */}
+      <section className="py-28 md:py-40 bg-slate-950 text-white">
+        <div className="container px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+            <div className="lg:col-span-5">
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{ui.faqPreTitle}</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
+                {ui.faqTitle}
+              </h2>
+              <p className="text-lg text-white/40 leading-relaxed mb-12">
+                {ui.faqDesc}
+              </p>
+              <Link to="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-bold text-sm rounded-full hover:brightness-110 transition-all">
+                {commonData.ui.auditCta} <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <div className="lg:col-span-7 space-y-4">
+              {servicesData.faqs.map((faq, i) => (
+                <div key={i} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] overflow-hidden transition-all hover:border-white/10">
+                  <button
+                    className="w-full p-7 text-left flex justify-between items-center gap-6 group"
+                    onClick={() => setActiveFaq(activeFaq === i ? null : i)}
+                  >
+                    <span className="text-base font-semibold text-white group-hover:text-accent transition-colors">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      size={18}
+                      className={`text-white/30 shrink-0 transition-transform duration-400 ${activeFaq === i ? 'rotate-180 text-accent' : ''}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {activeFaq === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
                       >
-                         <span className="text-sm font-black uppercase tracking-tight text-primary group-hover:text-accent transition-colors">
-                            {faq.question}
-                         </span>
-                         <ChevronDown size={18} className={`transition-transform duration-500 ${activeFaq === i ? 'rotate-180' : ''}`} />
-                      </button>
-                      <AnimatePresence>
-                         {activeFaq === i && (
-                           <motion.div 
-                             initial={{ height: 0, opacity: 0 }}
-                             animate={{ height: 'auto', opacity: 1 }}
-                             exit={{ height: 0, opacity: 0 }}
-                             className="overflow-hidden md:px-8 pb-8 px-6"
-                           >
-                              <p className="text-slate-500 font-medium leading-relaxed pt-2 border-t border-slate-50">
-                                 {faq.answer}
-                              </p>
-                           </motion.div>
-                         )}
-                      </AnimatePresence>
-                   </div>
-                 ))}
-              </div>
-           </div>
-        </section>
-      </div>
+                        <p className="px-7 pb-7 text-white/40 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ▌CTA */}
+      <section className="py-28 md:py-40 bg-accent text-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjA1KSIvPjwvc3ZnPg==')] pointer-events-none" />
+
+        <div className="container px-6 relative z-10 text-center">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 max-w-3xl mx-auto">
+            {ui.ctaTitle}
+          </h2>
+          <p className="text-lg md:text-xl text-primary/60 max-w-2xl mx-auto mb-14 leading-relaxed">
+            {ui.ctaSubtitle}
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-bold text-sm rounded-full hover:scale-105 transition-all shadow-xl"
+          >
+            {ui.ctaButton} <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

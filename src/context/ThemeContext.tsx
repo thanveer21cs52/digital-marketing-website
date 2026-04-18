@@ -16,7 +16,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState(() => {
-    return localStorage.getItem('reven-theme') || 'reven';
+    return 'gold';
   });
 
   useEffect(() => {

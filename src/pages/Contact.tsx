@@ -1,119 +1,237 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageCircle, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, MessageCircle, Clock, Send, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import contactData from '../data/contact.json';
 import commonData from '../data/common.json';
 
 const Contact = () => {
+  const ui = contactData.ui;
+
   return (
-    <div className="contact-page pt-32 pb-40">
-      <div className="container px-6">
-        {/* Header */}
-        <header className="mb-24 max-w-4xl">
-           <motion.div
-             initial={{ opacity: 0, x: -30 }}
-             animate={{ opacity: 1, x: 0 }}
-           >
-              <span className="text-secondary text-accent mb-6 block uppercase font-black tracking-widest text-[9px] md:text-xs">{contactData.ui.pageTitle}</span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter mb-10 leading-[0.9]">
-                 {contactData.title}
+    <div className="contact-page bg-white min-h-screen">
+
+      {/* ▌HERO */}
+      <section className="pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] pointer-events-none" />
+
+        <div className="container px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-10 h-[3px] bg-accent rounded-full" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
+                  {ui.preTitle}
+                </span>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-8">
+                {ui.heroTitle}{' '}
+                <span className="text-accent">{ui.heroTitleAccent}</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
-                 {contactData.subtitle}
+
+              <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl">
+                {ui.heroSubtitle}
               </p>
-           </motion.div>
-        </header>
+            </motion.div>
 
-        {/* Global Access Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-40">
-           {[
-             { icon: MessageCircle, title: contactData.ui.generalInquiry, value: commonData.hq.email, href: `mailto:${commonData.hq.email}` },
-             { icon: Phone, title: contactData.ui.directLine, value: commonData.hq.phone, href: `tel:${commonData.hq.phone.replace(/\s+/g, '')}` },
-             { icon: MapPin, title: contactData.ui.officeTitle, value: commonData.hq.city, href: "#" }
-           ].map((contact, i) => (
-             <motion.a
-               key={contact.title}
-               href={contact.href}
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ delay: i * 0.1 }}
-               viewport={{ once: true }}
-               className="glass p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100 flex flex-col items-center text-center group hover:border-accent shadow-sm"
-             >
-                <div className="w-16 h-16 bg-primary text-white rounded-[1.5rem] mb-10 flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-all duration-500 group-hover:scale-110">
-                   <contact.icon size={28} />
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="hidden lg:block"
+            >
+              <div className="relative">
+                <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src={ui.heroImage}
+                    alt={ui.pageTitle}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
                 </div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{contact.title}</p>
-                <p className="text-2xl font-black text-primary tracking-tighter uppercase leading-none group-hover:text-accent transition-colors">{contact.value}</p>
-             </motion.a>
-           ))}
+
+                <div className="absolute -bottom-5 -left-5 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-900">{ui.onlineStatus}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{ui.responseTime}</p>
+                  </div>
+                </div>
+
+                <div className="absolute -top-4 -right-4 bg-accent text-primary px-5 py-3 rounded-2xl shadow-lg">
+                  <p className="text-xs font-bold">{ui.heroBadge}</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
-        {/* Form and Office Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-32 items-start">
-           <div className="lg:col-span-7">
-              <div className="bg-slate-50 p-8 md:p-16 rounded-[3rem] md:rounded-[4rem] border border-slate-100">
-                 <h2 className="text-3xl md:text-5xl font-black text-primary uppercase tracking-tighter mb-12 flex items-center gap-6">
-                    {contactData.ui.formTitle}
-                 </h2>
-                 <form className="space-y-8 md:space-y-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                       <div className="space-y-4">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">{contactData.ui.labels.fullName}</label>
-                          <input type="text" className="w-full bg-white border border-slate-200 rounded-[1.5rem] px-8 py-5 text-sm font-black uppercase tracking-tight focus:border-accent/40 focus:ring-4 focus:ring-accent/5 transition-all outline-none" />
-                       </div>
-                       <div className="space-y-4">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">{contactData.ui.labels.emailAddress}</label>
-                          <input type="email" className="w-full bg-white border border-slate-200 rounded-[1.5rem] px-8 py-5 text-sm font-black uppercase tracking-tight focus:border-accent/40 focus:ring-4 focus:ring-accent/5 transition-all outline-none" />
-                       </div>
-                    </div>
-                    <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">{contactData.ui.labels.serviceType}</label>
-                       <select className="w-full bg-white border border-slate-200 rounded-[1.5rem] px-8 py-5 text-sm font-black uppercase tracking-tight focus:border-accent/40 focus:ring-4 focus:ring-accent/5 transition-all outline-none appearance-none">
-                          <option>Performance Ads</option>
-                          <option>Search Dominance</option>
-                          <option>Social Automation</option>
-                       </select>
-                    </div>
-                    <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">{contactData.ui.labels.message}</label>
-                       <textarea rows={6} className="w-full bg-white border border-slate-200 rounded-[2rem] px-8 py-6 text-sm font-black uppercase tracking-tight focus:border-accent/40 focus:ring-4 focus:ring-accent/5 transition-all outline-none resize-none"></textarea>
-                    </div>
-                    <button type="button" className="btn btn-primary w-full !py-8 !text-xs !rounded-[2rem] shadow-glow flex items-center justify-center gap-6 group">
-                       Initialize Protocol Engagement <Send size={18} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
-                    </button>
-                 </form>
-              </div>
-           </div>
-
-           <div className="lg:col-span-5 space-y-16">
-              <div>
-                 <h2 className="text-3xl font-black text-primary uppercase tracking-tighter mb-10">{contactData.ui.locationTitle}</h2>
-                 <div className="p-10 md:p-14 bg-slate-900 text-white rounded-[3.5rem] relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:scale-110 transition-transform">
-                       <MapPin size={100} />
-                    </div>
-                    <span className="text-accent font-black text-[10px] uppercase tracking-widest mb-6 block">Headquarters Protocol</span>
-                    <p className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4">{commonData.hq.address}</p>
-                    <p className="text-white/40 text-lg font-medium leading-relaxed">{commonData.hq.city}, {commonData.hq.pincode}</p>
-                    <div className="mt-12 w-full h-px bg-white/10"></div>
-                    <div className="mt-12 flex justify-between items-center">
-                       <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">Operational 24/7</span>
-                       <a href="#" className="flex items-center gap-3 text-accent text-[10px] font-black uppercase tracking-widest hover:translate-x-2 transition-transform">
-                          Get Directions <ArrowRight size={14} />
-                       </a>
-                    </div>
-                 </div>
-              </div>
-
-              <div className="p-12 md:p-16 border-l-4 border-accent bg-slate-50 rounded-r-[3.5rem]">
-                 <span className="text-accent text-[10px] font-black uppercase tracking-[0.6em] mb-8 block">Response SLA</span>
-                 <p className="text-xl md:text-2xl text-primary font-black uppercase tracking-tighter leading-tight italic">
-                    "All high-signal growth inquiries are triaged and processed within standard 4-hour performance windows."
-                 </p>
-              </div>
-           </div>
+      {/* ▌CONTACT INFO BAR */}
+      <section className="border-y border-slate-100 bg-slate-50/60">
+        <div className="container px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            {[
+              { icon: Mail, label: ui.emailLabel, value: commonData.hq.email, href: `mailto:${commonData.hq.email}` },
+              { icon: Phone, label: ui.callLabel, value: commonData.hq.phone, href: `tel:${commonData.hq.phone.replace(/\s/g, '')}` },
+              { icon: MapPin, label: ui.visitLabel, value: `${commonData.hq.address}, ${commonData.hq.city}`, href: commonData.hq.mapEmbed },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-10 md:py-14 px-6 md:px-10 flex items-center gap-5 group hover:bg-white transition-colors"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-primary transition-all">
+                  <item.icon size={20} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{item.label}</p>
+                  <p className="text-sm font-semibold text-slate-900 truncate">{item.value}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* ▌FORM + SIDEBAR */}
+      <section className="py-28 md:py-40">
+        <div className="container px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-8"
+            >
+              <div className="bg-white p-10 md:p-16 rounded-3xl border border-slate-100 shadow-lg">
+                <div className="mb-12">
+                  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+                    {ui.formTitle}
+                  </h2>
+                  <p className="text-slate-500">{ui.formSubtitle}</p>
+                </div>
+
+                <form className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {contactData.formFields.filter(f => f.type !== 'textarea').map((field) => (
+                      <div key={field.label}>
+                        <label className="text-xs font-semibold text-slate-500 mb-2 block">{field.label}</label>
+                        {field.type === 'select' ? (
+                          <div className="relative">
+                            <select className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 pr-12 text-sm font-medium focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none appearance-none cursor-pointer">
+                              {ui.serviceOptions.map(opt => (
+                                <option key={opt}>{opt}</option>
+                              ))}
+                            </select>
+                            <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                          </div>
+                        ) : (
+                          <input
+                            type={field.type}
+                            className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 text-sm font-medium focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none"
+                            placeholder={field.placeholder}
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {contactData.formFields.filter(f => f.type === 'textarea').map((field) => (
+                    <div key={field.label}>
+                      <label className="text-xs font-semibold text-slate-500 mb-2 block">{field.label}</label>
+                      <textarea
+                        rows={5}
+                        className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 text-sm font-medium focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none resize-none"
+                        placeholder={field.placeholder}
+                      />
+                    </div>
+                  ))}
+
+                  <button
+                    type="button"
+                    className="w-full inline-flex items-center justify-center gap-3 py-5 bg-accent text-primary rounded-full font-bold text-sm hover:brightness-110 hover:scale-[1.01] transition-all shadow-lg shadow-accent/20"
+                  >
+                    <Send size={18} />
+                    {ui.submitButton}
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+
+            <div className="lg:col-span-4 space-y-6">
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="p-8 rounded-3xl bg-slate-950 text-white"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
+                    <Clock size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">{ui.quickResponseTitle}</p>
+                    <p className="text-xs text-white/40">{ui.quickResponseSubtitle}</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {ui.benefits.map(item => (
+                    <div key={item} className="flex items-center gap-3 text-sm text-white/60">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.a
+                href={commonData.socials.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-5 p-8 rounded-3xl bg-[#25D366] text-white hover:brightness-110 transition-all shadow-lg group"
+              >
+                <MessageCircle size={28} />
+                <div>
+                  <p className="font-bold text-sm">{ui.whatsappTitle}</p>
+                  <p className="text-xs text-white/80">{ui.whatsappSubtitle}</p>
+                </div>
+                <ArrowRight size={16} className="ml-auto group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="rounded-3xl overflow-hidden border border-slate-100 shadow-lg aspect-[4/3]"
+              >
+                <iframe
+                  src={commonData.hq.mapEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

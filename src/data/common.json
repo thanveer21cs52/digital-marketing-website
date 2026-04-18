@@ -4,6 +4,14 @@
   "tagline": "Performance-Driven Digital Marketing Agency",
   "founder": "Thanveer",
 
+  "logo": {
+    "type": "text",
+    "text": "REVEN",
+    "tagline": "DIGITAL MARKETING",
+    "image": "/assets/logo.png",
+    "alt": "Reven Digital Marketing"
+  },
+
   "hq": {
     "address": "414/4A2, Nellikuppam Road, Kayarambedu",
     "city": "Chennai, Tamil Nadu",
@@ -11,7 +19,7 @@
     "country": "India",
     "phone": "+91 73582 56590",
     "email": "contact@revendigital.com",
-    "mapEmbed": "https://maps.google.com/?q=Kayarambedu+Chennai"
+    "mapEmbed": "https://maps.google.com/maps?q=414/4A2,Nellikuppam+Road,Kayarambedu,Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed"
   },
 
   "navLinks": [

@@ -1,47 +1,45 @@
 {
   "ui": {
+    "preTitle": "Get in touch",
     "pageTitle": "Contact Us",
-    "generalInquiry": "General Inquiry",
-    "directLine": "Call Us",
-    "officeTitle": "Our Office",
+    "heroTitle": "Let's grow your",
+    "heroTitleAccent": "business",
+    "heroSubtitle": "Tell us about your goals and we'll create a custom marketing plan to help you generate more leads, sales, and revenue.",
+    "heroImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    "onlineStatus": "We're online",
+    "responseTime": "Reply within 12h",
+    "heroBadge": "Free Consultation ✦",
+    "emailLabel": "Email us",
+    "callLabel": "Call us",
+    "visitLabel": "Visit us",
     "formTitle": "Get Free Marketing Consultation",
-    "locationTitle": "Our Locations",
-    "labels": {
-      "fullName": "Full Name",
-      "emailAddress": "Email Address",
-      "serviceType": "Service Interested In",
-      "message": "Tell Us About Your Business"
-    }
+    "formSubtitle": "Fill in your details and we'll get back within 12 hours.",
+    "submitButton": "Send Enquiry",
+    "quickResponseTitle": "Quick response",
+    "quickResponseSubtitle": "We reply within 12 hours",
+    "whatsappTitle": "Chat on WhatsApp",
+    "whatsappSubtitle": "Get instant response",
+    "serviceOptions": [
+      "Google Ads & Meta Ads",
+      "Search Engine Optimization",
+      "Social Media Marketing",
+      "WhatsApp Marketing",
+      "Content Marketing",
+      "Analytics & Tracking"
+    ],
+    "benefits": [
+      "Free marketing audit",
+      "Custom growth strategy",
+      "No long-term contracts",
+      "Transparent reporting"
+    ]
   },
 
-  "title": "Let’s Grow Your Business.",
-  "subtitle": "Talk to our digital marketing experts and discover how we can help you generate more leads, increase sales, and scale your brand.",
-
-  "formfields": [
-    { "label": "Company / Brand Name", "type": "text", "required": true },
-    { "label": "Full Name", "type": "text", "required": true },
-    { "label": "Work Email", "type": "email", "required": true },
-    {
-      "label": "Service Required",
-      "type": "select",
-      "options": [
-        "SEO (Search Engine Optimization)",
-        "Google Ads (PPC)",
-        "Social Media Marketing",
-        "Website Development",
-        "Complete Digital Marketing"
-      ],
-      "required": true
-    },
-    {
-      "label": "Monthly Marketing Budget",
-      "type": "select",
-      "options": ["Below ₹50K", "₹50K - ₹2L", "₹2L - ₹10L", "₹10L+"]
-    },
-    {
-      "label": "Your Business Goals",
-      "type": "textarea",
-      "required": true
-    }
+  "formFields": [
+    { "label": "Full name", "type": "text", "placeholder": "John Doe" },
+    { "label": "Email address", "type": "email", "placeholder": "john@company.com" },
+    { "label": "Phone number", "type": "tel", "placeholder": "+91 98765 43210" },
+    { "label": "Service interested in", "type": "select" },
+    { "label": "Tell us about your business", "type": "textarea", "placeholder": "What are your marketing goals? What's your current monthly ad spend?" }
   ]
 }

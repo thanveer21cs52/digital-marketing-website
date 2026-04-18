@@ -69,9 +69,9 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-white text-[32px] sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] sm:leading-[0.9] tracking-tighter mb-8 uppercase"
             >
-              Rayan Digital <br/>
-              <span className="text-secondary">Marketing</span> <br/>
-              <span className="text-accent underline decoration-slate-800 decoration-8 underline-offset-8">Agency</span>
+              {homeData.ui.heroTitleLine1} <br/>
+              <span className="text-secondary">{homeData.ui.heroTitleLine2}</span> <br/>
+              <span className="text-accent underline decoration-slate-800 decoration-8 underline-offset-8">{homeData.ui.heroTitleLine3}</span>
             </motion.h1>
             
             <motion.p 
@@ -214,7 +214,7 @@ const Home = () => {
             <div className="max-w-2xl text-center lg:text-left w-full lg:w-auto">
               <span className="text-accent font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">{homeData.ui.verticalsPreTitle}</span>
               <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter leading-[1.1]">
-                SECTORS WE <br/> <span className="text-accent">DOMINATE.</span>
+                {homeData.ui.verticalsHeading} <br/> <span className="text-accent">{homeData.ui.verticalsHeadingAccent}</span>
               </h2>
             </div>
             
@@ -257,11 +257,9 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 sm:py-40 bg-slate-950 relative overflow-hidden border-t border-white/5">
-        {/* Animated Background Mesh */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--accent-glow)_0%,_transparent_70%)]"></div>
-        </div>
+      <section className="py-24 sm:py-40 bg-accent relative overflow-hidden">
+        {/* Subtle dot pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjA1KSIvPjwvc3ZnPg==')] pointer-events-none" />
          <div className="container relative z-10 px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -269,11 +267,14 @@ const Home = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-white text-4xl sm:text-6xl font-black uppercase mb-12 leading-[0.9] tracking-tighter">
+              <h2 className="text-primary text-4xl sm:text-6xl font-extrabold tracking-tight mb-8 leading-[1.05]">
                 {homeData.ui.ctaTitle}
               </h2>
-              <Link to="/contact" className="btn btn-accent !py-6 !px-12 !text-xs !rounded-2xl shadow-glow">
-                {commonData.ui.auditCta.toUpperCase()}
+              <p className="text-lg md:text-xl text-primary/50 max-w-2xl mx-auto mb-14 leading-relaxed">
+                {homeData.ui.ctaSubtitle}
+              </p>
+              <Link to="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-bold text-sm rounded-full hover:scale-105 transition-all shadow-xl">
+                {commonData.ui.auditCta.toUpperCase()} <ArrowRight size={16} />
               </Link>
             </motion.div>
          </div>
