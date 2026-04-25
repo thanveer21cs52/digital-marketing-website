@@ -7,14 +7,14 @@ const ParticlesBackground = () => {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
-        initParticlesEngine(async (engine) => {
+        initParticlesEngine(async (engine: any) => {
             await loadSlim(engine);
         }).then(() => {
             setInit(true);
         });
     }, []);
 
-    const particlesLoaded = async (container?: Container): Promise<void> => {
+    const particlesLoaded = async (_container?: Container): Promise<void> => {
         // console.log("Particles loaded", container);
     };
 
