@@ -8,7 +8,7 @@ const Testimonials = () => {
   const ui = testimonialsData.ui;
 
   return (
-    <div className="case-studies-page bg-white min-h-screen">
+    <div className="case-studies-page min-h-screen">
 
       {/* ▌HERO */}
       <section className="pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
@@ -34,7 +34,7 @@ const Testimonials = () => {
                 ))}
               </h1>
 
-              <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl">
                 {testimonialsData.subtitle}
               </p>
             </motion.div>
@@ -46,7 +46,7 @@ const Testimonials = () => {
               className="hidden lg:block"
             >
               <div className="relative">
-                <div className="bg-slate-950 rounded-3xl p-10 shadow-2xl">
+                <div className="glass-dark rounded-3xl p-10 shadow-2xl border border-white/10">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-8">{ui.recentResults}</p>
                   <div className="space-y-5">
                     {testimonialsData.items.map((item, i) => (
@@ -87,9 +87,9 @@ const Testimonials = () => {
       </section>
 
       {/* ▌STATS RIBBON */}
-      <section className="border-y border-slate-100 bg-slate-50/60">
+      <section className="border-y border-white/5">
         <div className="container px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5">
             {testimonialsData.summaryStats.map((stat, i) => {
               const icons = [TrendingUp, Target, Users];
               const Icon = icons[i] || BarChart3;
@@ -105,8 +105,8 @@ const Testimonials = () => {
                     <Icon size={22} />
                   </div>
                   <div>
-                    <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">{stat.value}</p>
-                    <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                    <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">{stat.value}</p>
+                    <p className="text-xs text-white/40 font-medium mt-0.5">{stat.label}</p>
                   </div>
                 </motion.div>
               );
@@ -134,14 +134,14 @@ const Testimonials = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-10 md:p-14 rounded-3xl border border-slate-100 bg-white hover:border-accent/30 hover:shadow-xl transition-all group">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-10 md:p-14 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group">
 
                   <div className="lg:col-span-3 flex flex-col justify-center">
-                    <div className="bg-slate-50 rounded-2xl p-8 text-center border border-slate-100 group-hover:bg-accent/5 group-hover:border-accent/20 transition-all">
+                    <div className="bg-white/5 rounded-2xl p-8 text-center border border-white/10 group-hover:bg-accent/5 group-hover:border-accent/20 transition-all">
                       <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-accent mb-2">
                         {item.result.split(' ')[0]}
                       </p>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">
                         {item.result.split(' ').slice(1).join(' ')}
                       </p>
                     </div>
@@ -153,7 +153,7 @@ const Testimonials = () => {
                         <Star key={j} size={14} className="fill-accent text-accent" />
                       ))}
                     </div>
-                    <blockquote className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6 italic">
+                    <blockquote className="text-lg md:text-xl text-white/70 leading-relaxed mb-6 italic">
                       "{item.content}"
                     </blockquote>
                     <div className="flex items-center gap-4">
@@ -161,8 +161,8 @@ const Testimonials = () => {
                         {item.name.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-slate-900">{item.name}</p>
-                        <p className="text-xs text-slate-400">{item.company}</p>
+                        <p className="text-sm font-bold text-white">{item.name}</p>
+                        <p className="text-xs text-white/40">{item.company}</p>
                       </div>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const Testimonials = () => {
                   <div className="lg:col-span-3 flex items-center justify-center lg:justify-end">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 border border-slate-200 text-sm font-bold text-slate-600 rounded-full hover:border-accent hover:text-accent transition-all group-hover:border-accent group-hover:text-accent"
+                      className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 text-sm font-bold text-white/60 rounded-full hover:border-accent hover:text-accent transition-all group-hover:border-accent group-hover:text-accent"
                     >
                       {ui.cardCta} <ArrowRight size={14} />
                     </Link>
@@ -183,11 +183,11 @@ const Testimonials = () => {
       </section>
 
       {/* ▌TRUST SIGNALS */}
-      <section className="py-16 border-y border-slate-100 bg-slate-50/60">
+      <section className="py-16 border-y border-white/5">
         <div className="container px-6">
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {commonData.trustSignals.map(signal => (
-              <div key={signal} className="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+              <div key={signal} className="flex items-center gap-2 text-xs font-semibold text-white/40 uppercase tracking-wider">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 {signal}
               </div>
@@ -197,7 +197,7 @@ const Testimonials = () => {
       </section>
 
       {/* ▌CTA */}
-      <section className="py-28 md:py-40 bg-slate-950 text-white relative overflow-hidden">
+      <section className="py-28 md:py-40 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
         <div className="container px-6 relative z-10">

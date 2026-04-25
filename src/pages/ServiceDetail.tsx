@@ -24,7 +24,7 @@ const ServiceDetail = () => {
   if (!service) {
     return (
       <div className="pt-40 text-center container min-h-screen">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-6">{ui.notFound}</h1>
+        <h1 className="text-4xl font-extrabold text-white mb-6">{ui.notFound}</h1>
         <Link to="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-primary font-bold text-sm rounded-full">
           {ui.backToServices}
         </Link>
@@ -36,7 +36,7 @@ const ServiceDetail = () => {
   const otherServices = servicesData.items.filter(s => s.id !== service.id).slice(0, 3);
 
   return (
-    <div className="service-detail bg-white min-h-screen">
+    <div className="service-detail min-h-screen">
 
       {/* ▌HERO */}
       <section className="pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
@@ -54,7 +54,7 @@ const ServiceDetail = () => {
                 <div className="flex items-center gap-2 text-xs text-slate-400 font-medium mb-10">
                   <Link to="/services" className="hover:text-accent transition-colors">{ui.breadcrumbRoot}</Link>
                   <span>/</span>
-                  <span className="text-slate-600">{service.title}</span>
+                  <span className="text-white/60">{service.title}</span>
                 </div>
 
                 <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-accent/10 text-accent">
@@ -66,7 +66,7 @@ const ServiceDetail = () => {
                   {service.title}
                 </h1>
 
-                <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl mb-12">
+                <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl mb-12">
                   {service.description}
                 </p>
 
@@ -88,30 +88,30 @@ const ServiceDetail = () => {
               transition={{ delay: 0.3 }}
               className="lg:col-span-5"
             >
-              <div className="bg-slate-50 rounded-3xl p-10 border border-slate-100">
+              <div className="glass-dark rounded-3xl p-10 border border-white/10">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-2xl bg-accent text-primary flex items-center justify-center">
                     <Icon size={22} />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900">{ui.whatsIncluded}</p>
-                    <p className="text-xs text-slate-400">{service.features.length} {ui.coreDeliverables}</p>
+                    <p className="text-sm font-bold text-white">{ui.whatsIncluded}</p>
+                    <p className="text-xs text-white/40">{service.features.length} {ui.coreDeliverables}</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   {service.features.map((feature: string) => (
-                    <div key={feature} className="flex items-start gap-3 p-4 bg-white rounded-2xl border border-slate-100">
+                    <div key={feature} className="flex items-start gap-3 p-4 bg-white/5 rounded-2xl border border-white/5">
                       <CheckCircle2 size={18} className="text-accent shrink-0 mt-0.5" />
-                      <span className="text-sm font-semibold text-slate-700">{feature}</span>
+                      <span className="text-sm font-semibold text-white/70">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-8 pt-8 border-t border-white/10 flex items-center justify-between">
                   <div>
-                    <p className="text-3xl font-extrabold tracking-tight text-slate-900">{ui.conversionLiftValue}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">{ui.conversionLiftLabel}</p>
+                    <p className="text-3xl font-extrabold tracking-tight text-white">{ui.conversionLiftValue}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mt-1">{ui.conversionLiftLabel}</p>
                   </div>
                   <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
                     <BarChart3 size={20} className="text-accent" />
@@ -124,7 +124,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* ▌PROCESS */}
-      <section className="py-28 md:py-40 bg-slate-50 border-y border-slate-100">
+      <section className="py-28 md:py-40 border-y border-white/5">
         <div className="container px-6">
           <div className="text-center mb-20">
             <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">
@@ -150,13 +150,13 @@ const ServiceDetail = () => {
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   {i < servicesData.process.length - 1 && (
-                    <div className="w-[2px] flex-1 bg-slate-200 my-2" />
+                    <div className="w-[2px] flex-1 bg-white/10 my-2" />
                   )}
                 </div>
 
                 <div className="pb-16">
-                  <h4 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">{step.title}</h4>
-                  <p className="text-slate-500 leading-relaxed">{step.description}</p>
+                  <h4 className="text-xl font-bold mb-3 text-white group-hover:text-accent transition-colors">{step.title}</h4>
+                  <p className="text-white/50 leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -191,12 +191,12 @@ const ServiceDetail = () => {
                   viewport={{ once: true }}
                 >
                   <Link to={`/services/${s.id}`} className="block group">
-                    <div className="p-8 rounded-3xl border border-slate-100 bg-white hover:border-accent/30 hover:shadow-lg transition-all">
+                    <div className="p-8 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
                       <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-primary transition-all">
                         <SIcon size={20} />
                       </div>
-                      <h3 className="text-lg font-bold mb-3 group-hover:text-accent transition-colors">{s.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{s.shortDesc}</p>
+                      <h3 className="text-lg font-bold mb-3 text-white group-hover:text-accent transition-colors">{s.title}</h3>
+                      <p className="text-sm text-white/50 leading-relaxed">{s.shortDesc}</p>
                     </div>
                   </Link>
                 </motion.div>
@@ -209,7 +209,7 @@ const ServiceDetail = () => {
       {/* ▌CTA */}
       <section className="pb-20">
         <div className="container px-6">
-          <div className="bg-slate-950 text-white p-14 md:p-24 rounded-[3rem] text-center relative overflow-hidden">
+          <div className="glass-dark text-white p-14 md:p-24 rounded-[3rem] text-center relative overflow-hidden border border-white/10">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
             <div className="relative z-10">

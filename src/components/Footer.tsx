@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import commonData from '../data/common.json';
 import servicesData from '../data/services.json';
+import homeData from '../data/home.json';
+
+const ui = homeData.footerUi;
 
 const Footer = () => {
   return (
@@ -11,8 +14,7 @@ const Footer = () => {
             {commonData.shortName.toUpperCase()}<span className="text-accent">.</span>
           </Link>
           <p className="text-slate-100 text-sm leading-relaxed mb-8 max-w-xs opacity-70">
-            Revenue-first performance engineering based in {commonData.hq.city}.
-            Dominating audits, scaling benchmarks, and engineering digital dominance.
+            {ui.description}
           </p>
           <div className="flex space-x-6">
             {Object.entries(commonData.socials).map(([platform, link]) => (
@@ -30,7 +32,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">Solutions</h4>
+          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">{ui.solutionsTitle}</h4>
           <ul className="space-y-4">
             {servicesData.items.map(service => (
               <li key={service.id}>
@@ -43,7 +45,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">Navigation</h4>
+          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">{ui.navigationTitle}</h4>
           <ul className="space-y-4">
             {commonData.navLinks.filter(l => l.type === 'link').map(link => (
               <li key={link.href}>
@@ -58,7 +60,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">Headquarters</h4>
+          <h4 className="text-xs font-black uppercase tracking-[.3em] mb-8 text-accent">{ui.headquartersTitle}</h4>
           <p className="text-slate-300 text-sm leading-relaxed mb-4">
             {commonData.hq.address}<br />
             {commonData.hq.city}<br />
@@ -67,7 +69,9 @@ const Footer = () => {
           <a href={`mailto:${commonData.hq.email}`} className="text-accent font-black text-sm block mb-2 underline decoration-accent/30 underline-offset-4">
             {commonData.hq.email}
           </a>
-          <p className="text-slate-300 text-sm">{commonData.hq.phone}</p>
+          <a href={`tel:${commonData.hq.phone.replace(/\s/g, '')}`} className="text-slate-300 text-sm hover:text-white transition-colors">
+            {commonData.hq.phone}
+          </a>
         </div>
       </div>
 

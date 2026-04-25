@@ -26,7 +26,7 @@ const Services = () => {
   const ui = servicesData.ui;
 
   return (
-    <div className="services-page bg-white min-h-screen">
+    <div className="services-page min-h-screen">
 
       {/* ▌HERO */}
       <section className="pt-36 pb-24 md:pt-48 md:pb-32 relative overflow-hidden">
@@ -50,7 +50,7 @@ const Services = () => {
               <span className="text-accent">{ui.heroTitleAccent}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-14">
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mb-14">
               {servicesData.description}
             </p>
 
@@ -63,7 +63,7 @@ const Services = () => {
               </Link>
               <a
                 href="#all-services"
-                className="inline-flex items-center gap-3 px-8 py-4 border border-slate-200 text-slate-600 font-bold text-sm rounded-full hover:border-accent hover:text-accent transition-all"
+                className="inline-flex items-center gap-3 px-8 py-4 border border-white/10 text-white/60 font-bold text-sm rounded-full hover:border-accent hover:text-accent transition-all"
               >
                 {ui.browseServicesBtn}
               </a>
@@ -73,9 +73,9 @@ const Services = () => {
       </section>
 
       {/* ▌STATS RIBBON */}
-      <section className="border-y border-slate-100 bg-slate-50/60">
+      <section className="border-y border-white/5">
         <div className="container px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5">
             {ui.statsRibbon.map((stat, i) => {
               const Icon = statIcons[i] || Zap;
               return (
@@ -90,8 +90,8 @@ const Services = () => {
                     <Icon size={20} />
                   </div>
                   <div>
-                    <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">{stat.value}</p>
-                    <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                    <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">{stat.value}</p>
+                    <p className="text-xs text-white/40 font-medium mt-0.5">{stat.label}</p>
                   </div>
                 </motion.div>
               );
@@ -134,8 +134,8 @@ const Services = () => {
                     <div className={`
                       relative h-full p-10 rounded-3xl border transition-all duration-500 overflow-hidden
                       ${isHovered
-                        ? 'bg-accent text-white border-accent shadow-2xl shadow-accent/20 -translate-y-2'
-                        : 'bg-white text-slate-900 border-slate-100 hover:border-slate-200 shadow-sm'
+                        ? 'glass-dark border-accent/30 shadow-[0_20px_60px_-15px_rgba(0,242,255,0.2)] -translate-y-2 text-white'
+                        : 'glass-dark text-white'
                       }
                     `}>
                       <div className={`absolute -bottom-6 -right-6 transition-all duration-500 ${isHovered ? 'opacity-15 scale-110' : 'opacity-[0.03]'}`}>
@@ -145,14 +145,14 @@ const Services = () => {
                       <div className="relative z-10">
                         <div className={`
                           w-14 h-14 rounded-2xl mb-8 flex items-center justify-center transition-all duration-500
-                          ${isHovered ? 'bg-white/20 text-white' : 'bg-accent/10 text-accent'}
+                          ${isHovered ? 'bg-accent/20 text-accent' : 'bg-accent/10 text-accent'}
                         `}>
                           <Icon size={24} />
                         </div>
 
                         <span className={`
                           text-[9px] font-bold uppercase tracking-[0.2em] mb-4 block transition-colors
-                          ${isHovered ? 'text-white/60' : 'text-slate-400'}
+                          ${isHovered ? 'text-white/60' : 'text-white/40'}
                         `}>
                           {service.type}
                         </span>
@@ -161,7 +161,7 @@ const Services = () => {
                           {service.title}
                         </h3>
 
-                        <p className={`text-sm leading-relaxed mb-8 transition-colors ${isHovered ? 'text-white/80' : 'text-slate-500'}`}>
+                        <p className={`text-sm leading-relaxed mb-8 transition-colors ${isHovered ? 'text-white/80' : 'text-white/50'}`}>
                           {service.shortDesc}
                         </p>
 
@@ -182,7 +182,7 @@ const Services = () => {
       </section>
 
       {/* ▌PROCESS */}
-      <section className="py-28 md:py-40 bg-slate-950 text-white rounded-t-[4rem] relative overflow-hidden">
+      <section className="py-28 md:py-40 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
         <div className="container px-6 relative z-10">
@@ -207,7 +207,7 @@ const Services = () => {
                   <div className="hidden lg:block absolute top-10 left-[calc(50%+2rem)] w-[calc(100%-2rem)] h-[2px] bg-white/10 z-0" />
                 )}
 
-                <div className="relative z-10 p-8 rounded-3xl bg-white/[0.04] border border-white/[0.06] hover:border-accent/30 hover:bg-white/[0.08] transition-all">
+                <div className="relative z-10 p-8 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
                   <div className="w-12 h-12 rounded-full bg-accent text-primary font-extrabold text-lg flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                     {String(i + 1).padStart(2, '0')}
                   </div>
@@ -226,7 +226,7 @@ const Services = () => {
       </section>
 
       {/* ▌FAQ */}
-      <section className="py-28 md:py-40 bg-slate-950 text-white">
+      <section className="py-28 md:py-40 text-white">
         <div className="container px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-5">
@@ -280,19 +280,21 @@ const Services = () => {
       </section>
 
       {/* ▌CTA */}
-      <section className="py-28 md:py-40 bg-accent text-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjA1KSIvPjwvc3ZnPg==')] pointer-events-none" />
+      <section className="py-28 md:py-40 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-1/2 h-full bg-accent/5 blur-[150px] rounded-full"></div>
+        </div>
 
         <div className="container px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 max-w-3xl mx-auto text-white">
             {ui.ctaTitle}
           </h2>
-          <p className="text-lg md:text-xl text-primary/60 max-w-2xl mx-auto mb-14 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-14 leading-relaxed">
             {ui.ctaSubtitle}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-bold text-sm rounded-full hover:scale-105 transition-all shadow-xl"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-primary font-bold text-sm rounded-full hover:scale-105 transition-all shadow-glow"
           >
             {ui.ctaButton} <ArrowRight size={16} />
           </Link>

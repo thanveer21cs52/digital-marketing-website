@@ -15,7 +15,31 @@
     "verticalsPreTitle": "Industries We Serve",
     "verticalsTitle": "Driving Growth Across Key Industries",
     "ctaTitle": "Ready to scale your business?",
-    "ctaSubtitle": "Get a free audit of your current marketing and a custom growth roadmap — no commitment required."
+    "ctaSubtitle": "Get a free audit of your current marketing and a custom growth roadmap — no commitment required.",
+    "ctaButton": "Request Free Audit"
+  },
+  "pricingUi": {
+    "preTitle": "Execution Tiers",
+    "title": "GROWTH PROTOCOLS",
+    "subtitle": "Transparent pricing models engineered for high-velocity scaling and market dominance.",
+    "popularBadge": "Most Deployed"
+  },
+  "caseStudyUi": {
+    "preTitle": "Success Protocols",
+    "titleLine1": "ENGINEERED",
+    "titleLine2": "RESULTS",
+    "viewCta": "View Case Study",
+    "primaryMetricLabel": "Primary Metric",
+    "primaryMetricSubtext": "Performance benchmark exceeded",
+    "stat2Label": "Output",
+    "stat3Label": "Efficiency",
+    "protocolLabel": "Protocol"
+  },
+  "footerUi": {
+    "solutionsTitle": "Solutions",
+    "navigationTitle": "Navigation",
+    "headquartersTitle": "Headquarters",
+    "description": "Revenue-first performance engineering. Dominating audits, scaling benchmarks, and engineering digital dominance."
   },
   "hero": {
     "title": "Reven Digital Marketing Agency",
@@ -23,12 +47,7 @@
     "cta": {
       "text": "Get Free Consultation",
       "link": "/contact"
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
-      "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=2000"
-    ]
+    }
   },
   "stats": [
     {
@@ -96,34 +115,6 @@
       ]
     }
   ],
-  "featuredTestimonial": {
-    "client": "Logistics Solutions Pvt Ltd",
-    "title": "10X Increase in Qualified Leads",
-    "result": "The team transformed our digital marketing strategy and implemented automated lead systems, resulting in a 10X increase in high-quality leads within 3 months.",
-    "image": "/assets/analytics-viz.png"
-  },
-  "techStack": [
-    {
-      "name": "Google Ads",
-      "icon": "Search"
-    },
-    {
-      "name": "Meta Ads",
-      "icon": "Users"
-    },
-    {
-      "name": "HubSpot",
-      "icon": "Layers"
-    },
-    {
-      "name": "Shopify",
-      "icon": "ShoppingBag"
-    },
-    {
-      "name": "Google Analytics",
-      "icon": "Database"
-    }
-  ],
   "pricing": [
     {
       "name": "Starter Protocol",
@@ -171,6 +162,35 @@
       ],
       "cta": "Contact for Elite",
       "popular": false
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "10X Lead Velocity",
+      "client": "TechEdge Global",
+      "category": "SAAS Growth",
+      "description": "Multi-channel funnel optimization protocol for SAAS dominance. Engineered a precision targeting system that transformed cold traffic into qualified pipeline.",
+      "metrics": "420% CTR",
+      "stat2": "3.2x Pipeline",
+      "stat3": "68% Lower CAC"
+    },
+    {
+      "title": "Market Dominance Engine",
+      "client": "LuxVibe Retail",
+      "category": "D2C Scaling",
+      "description": "Architectural conversion framework for D2C scaling. Built a full-funnel revenue engine with AI-powered audience segmentation and dynamic creative optimization.",
+      "metrics": "5.8x ROAS",
+      "stat2": "₹4.2Cr Revenue",
+      "stat3": "2.1x AOV"
+    },
+    {
+      "title": "Global Scale Protocol",
+      "client": "Nexus Logistics",
+      "category": "Enterprise",
+      "description": "Enterprise data integration and predictive lead scoring. Deployed cross-platform attribution modeling with real-time performance dashboards.",
+      "metrics": "₹12Cr Revenue",
+      "stat2": "340% Growth",
+      "stat3": "92% Retention"
     }
   ]
 }

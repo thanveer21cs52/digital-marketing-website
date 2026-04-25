@@ -93,7 +93,7 @@
   }
 
   .glass-dark {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl;
+    @apply bg-white/[0.08] backdrop-blur-md border border-white/10 shadow-2xl;
   }
 
   .reven-gradient {

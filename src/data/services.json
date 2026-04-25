@@ -6,10 +6,22 @@
     "heroCta": "Start a project",
     "browseServicesBtn": "Browse services",
     "statsRibbon": [
-      { "value": "240%", "label": "Avg. organic lift" },
-      { "value": "6.4x", "label": "Avg. ROAS" },
-      { "value": "50+", "label": "Active clients" },
-      { "value": "<12h", "label": "Response time" }
+      {
+        "value": "240%",
+        "label": "Avg. organic lift"
+      },
+      {
+        "value": "6.4x",
+        "label": "Avg. ROAS"
+      },
+      {
+        "value": "50+",
+        "label": "Active clients"
+      },
+      {
+        "value": "<12h",
+        "label": "Response time"
+      }
     ],
     "servicesPreTitle": "Core capabilities",
     "servicesTitle": "Everything you need to scale",
@@ -35,10 +47,8 @@
     "viewAll": "View all",
     "breadcrumbRoot": "Services"
   },
-
   "title": "Our Digital Marketing Services",
   "description": "We provide end-to-end digital marketing services designed to help businesses generate leads, increase sales, and grow online.",
-
   "items": [
     {
       "id": "performance-ads",
@@ -46,8 +56,11 @@
       "title": "Google Ads & Meta Ads",
       "shortDesc": "Drive leads and sales with high-performing paid campaigns.",
       "description": "We create and manage advertising campaigns on Google and Meta platforms to generate high-quality leads and maximize return on ad spend.",
-      "features": ["Campaign Setup & Management", "Audience Targeting", "Conversion Tracking"],
-      "image": "/assets/service-paid.png"
+      "features": [
+        "Campaign Setup & Management",
+        "Audience Targeting",
+        "Conversion Tracking"
+      ]
     },
     {
       "id": "seo-dominance",
@@ -55,8 +68,11 @@
       "title": "Search Engine Optimization (SEO)",
       "shortDesc": "Rank higher on Google and get organic traffic.",
       "description": "We optimize your website and content to improve search engine rankings and drive consistent, long-term traffic.",
-      "features": ["Keyword Research", "On-Page SEO", "Technical SEO"],
-      "image": "/assets/service-paid.png"
+      "features": [
+        "Keyword Research",
+        "On-Page SEO",
+        "Technical SEO"
+      ]
     },
     {
       "id": "social-scale",
@@ -64,8 +80,11 @@
       "title": "Social Media Marketing",
       "shortDesc": "Build your brand and engage your audience.",
       "description": "We manage your social media presence, create engaging content, and run campaigns that build brand awareness and drive conversions.",
-      "features": ["Content Strategy", "Ad Campaigns", "Account Management"],
-      "image": "/assets/service-paid.png"
+      "features": [
+        "Content Strategy",
+        "Ad Campaigns",
+        "Account Management"
+      ]
     },
     {
       "id": "whatsapp-marketing",
@@ -73,8 +92,11 @@
       "title": "WhatsApp Marketing & Automation",
       "shortDesc": "Convert leads through direct communication.",
       "description": "We set up WhatsApp automation to nurture leads, send updates, and improve customer engagement.",
-      "features": ["Automation Flows", "Broadcast Campaigns", "CRM Integration"],
-      "image": "/assets/about-hero.png"
+      "features": [
+        "Automation Flows",
+        "Broadcast Campaigns",
+        "CRM Integration"
+      ]
     },
     {
       "id": "content-ecosystems",
@@ -82,8 +104,11 @@
       "title": "Content Marketing",
       "shortDesc": "Create content that attracts and converts.",
       "description": "We produce high-quality content including videos, blogs, and landing pages that drive engagement and conversions.",
-      "features": ["Video Content", "Blog Writing", "Landing Pages"],
-      "image": "/assets/service-paid.png"
+      "features": [
+        "Video Content",
+        "Blog Writing",
+        "Landing Pages"
+      ]
     },
     {
       "id": "data-analytics",
@@ -91,11 +116,13 @@
       "title": "Analytics & Tracking",
       "shortDesc": "Track performance and make data-driven decisions.",
       "description": "We implement tracking systems and dashboards to monitor performance and optimize campaigns effectively.",
-      "features": ["Google Analytics Setup", "Conversion Tracking", "Custom Reports"],
-      "image": "/assets/analytics-viz.png"
+      "features": [
+        "Google Analytics Setup",
+        "Conversion Tracking",
+        "Custom Reports"
+      ]
     }
   ],
-
   "process": [
     {
       "title": "Audit & Analysis",
@@ -114,7 +141,6 @@
       "description": "We continuously improve performance and scale successful campaigns for better results."
     }
   ],
-
   "faqs": [
     {
       "question": "What results can I expect?",

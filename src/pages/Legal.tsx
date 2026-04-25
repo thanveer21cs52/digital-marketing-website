@@ -8,7 +8,7 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
   const ui = legalData.ui;
 
   return (
-    <div className="legal-page bg-white min-h-screen">
+    <div className="legal-page min-h-screen">
 
       {/* ▌HERO — Split layout with document card */}
       <section className="pt-36 pb-16 md:pt-48 md:pb-20 relative overflow-hidden">
@@ -41,7 +41,7 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="hidden lg:block"
             >
-              <div className="bg-slate-950 p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+              <div className="glass-dark p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-white/10">
                 <div className="absolute top-6 right-6 opacity-[0.06]">
                   <ShieldCheck size={140} />
                 </div>
@@ -99,17 +99,17 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
                     transition={{ delay: i * 0.05 }}
                     className="group"
                   >
-                    <div className="flex gap-6 md:gap-10 py-10 border-b border-slate-100 last:border-none">
+                    <div className="flex gap-6 md:gap-10 py-10 border-b border-white/5 last:border-none">
                       {/* Section number */}
-                      <span className="text-3xl font-extrabold text-slate-100 group-hover:text-accent/20 transition-colors shrink-0 pt-1 tabular-nums">
+                      <span className="text-3xl font-extrabold text-white/10 group-hover:text-accent/20 transition-colors shrink-0 pt-1 tabular-nums">
                         {section.id}
                       </span>
 
                       <div>
-                        <h2 className="text-xl font-bold tracking-tight mb-4 group-hover:text-accent transition-colors">
+                        <h2 className="text-xl font-bold tracking-tight mb-4 text-white group-hover:text-accent transition-colors">
                           {section.heading}
                         </h2>
-                        <p className="text-base text-slate-500 leading-relaxed">
+                        <p className="text-base text-white/50 leading-relaxed">
                           {section.text}
                         </p>
                       </div>
@@ -122,7 +122,7 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
             {/* Sidebar */}
             <aside className="lg:col-span-4 space-y-6">
               {/* Commitment card */}
-              <div className="p-8 rounded-3xl bg-slate-950 text-white">
+              <div className="p-8 rounded-3xl glass-dark text-white border border-white/10">
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldCheck size={20} className="text-accent" />
                   <h3 className="text-lg font-bold">{ui.integrityTitle}</h3>
@@ -133,36 +133,36 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
               </div>
 
               {/* Principles */}
-              <div className="p-8 rounded-3xl border border-slate-100 bg-white">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6">{ui.principlesLabel}</p>
+              <div className="p-8 rounded-3xl glass-dark border border-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-6">{ui.principlesLabel}</p>
                 <div className="space-y-3">
                   {[
                     { icon: Activity, text: ui.principle1 },
                     { icon: Layers, text: ui.principle2 },
                     { icon: Clock, text: ui.principle3 },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
                       <div className="w-9 h-9 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
                         <item.icon size={16} />
                       </div>
-                      <span className="text-sm font-semibold text-slate-700">{item.text}</span>
+                      <span className="text-sm font-semibold text-white/70">{item.text}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Quick nav */}
-              <div className="p-8 rounded-3xl border border-slate-100 bg-white">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">{ui.alsoSee}</p>
+              <div className="p-8 rounded-3xl glass-dark border border-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-4">{ui.alsoSee}</p>
                 <div className="space-y-3">
                   <Link
                     to={type === 'terms' ? '/privacy' : '/terms'}
-                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-accent/30 transition-all group"
+                    className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all group"
                   >
-                    <span className="text-sm font-semibold text-slate-700 group-hover:text-accent transition-colors">
+                    <span className="text-sm font-semibold text-white/70 group-hover:text-accent transition-colors">
                       {type === 'terms' ? 'Privacy Policy' : 'Terms of Service'}
                     </span>
-                    <ArrowRight size={14} className="text-slate-400 group-hover:text-accent transition-colors" />
+                    <ArrowRight size={14} className="text-white/40 group-hover:text-accent transition-colors" />
                   </Link>
                 </div>
               </div>

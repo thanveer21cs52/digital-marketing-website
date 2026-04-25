@@ -5,7 +5,7 @@
     "heroTitle": "Let's grow your",
     "heroTitleAccent": "business",
     "heroSubtitle": "Tell us about your goals and we'll create a custom marketing plan to help you generate more leads, sales, and revenue.",
-    "heroImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    "heroImage": "/assets/contact-hero.png",
     "onlineStatus": "We're online",
     "responseTime": "Reply within 12h",
     "heroBadge": "Free Consultation ✦",
@@ -34,12 +34,30 @@
       "Transparent reporting"
     ]
   },
-
   "formFields": [
-    { "label": "Full name", "type": "text", "placeholder": "John Doe" },
-    { "label": "Email address", "type": "email", "placeholder": "john@company.com" },
-    { "label": "Phone number", "type": "tel", "placeholder": "+91 98765 43210" },
-    { "label": "Service interested in", "type": "select" },
-    { "label": "Tell us about your business", "type": "textarea", "placeholder": "What are your marketing goals? What's your current monthly ad spend?" }
+    {
+      "label": "Full name",
+      "type": "text",
+      "placeholder": "John Doe"
+    },
+    {
+      "label": "Email address",
+      "type": "email",
+      "placeholder": "john@company.com"
+    },
+    {
+      "label": "Phone number",
+      "type": "tel",
+      "placeholder": "+91 98765 43210"
+    },
+    {
+      "label": "Service interested in",
+      "type": "select"
+    },
+    {
+      "label": "Tell us about your business",
+      "type": "textarea",
+      "placeholder": "What are your marketing goals? What's your current monthly ad spend?"
+    }
   ]
 }

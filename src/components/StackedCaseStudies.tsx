@@ -1,36 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import homeData from '../data/home.json';
 
-const cases = [
-  {
-    title: "10X Lead Velocity",
-    client: "TechEdge Global",
-    category: "SAAS Growth",
-    description: "Multi-channel funnel optimization protocol for SAAS dominance. Engineered a precision targeting system that transformed cold traffic into qualified pipeline.",
-    metrics: "420% CTR",
-    stat2: "3.2x Pipeline",
-    stat3: "68% Lower CAC"
-  },
-  {
-    title: "Market Dominance Engine",
-    client: "LuxVibe Retail",
-    category: "D2C Scaling",
-    description: "Architectural conversion framework for D2C scaling. Built a full-funnel revenue engine with AI-powered audience segmentation and dynamic creative optimization.",
-    metrics: "5.8x ROAS",
-    stat2: "₹4.2Cr Revenue",
-    stat3: "2.1x AOV"
-  },
-  {
-    title: "Global Scale Protocol",
-    client: "Nexus Logistics",
-    category: "Enterprise",
-    description: "Enterprise data integration and predictive lead scoring. Deployed cross-platform attribution modeling with real-time performance dashboards.",
-    metrics: "₹12Cr Revenue",
-    stat2: "340% Growth",
-    stat3: "92% Retention"
-  }
-];
+const cases = homeData.caseStudies;
+const ui = homeData.caseStudyUi;
 
 const StackedCaseStudies = () => {
   const [index, setIndex] = useState(0);
@@ -73,11 +48,11 @@ const StackedCaseStudies = () => {
               className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-dark rounded-full"
             >
               <Sparkles size={12} className="text-accent" />
-              <span className="text-[9px] font-black uppercase tracking-[0.4em] text-accent">Success Protocols</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.4em] text-accent">{ui.preTitle}</span>
             </motion.div>
             <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9]">
-              ENGINEERED<br />
-              <span className="text-accent">RESULTS</span>
+              {ui.titleLine1}<br />
+              <span className="text-accent">{ui.titleLine2}</span>
             </h2>
           </div>
 
@@ -133,7 +108,7 @@ const StackedCaseStudies = () => {
                       {cases[index].category}
                     </span>
                     <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30">
-                      Protocol {index + 1}/{cases.length}
+                      {ui.protocolLabel} {index + 1}/{cases.length}
                     </span>
                   </div>
 
@@ -150,9 +125,9 @@ const StackedCaseStudies = () => {
                   </p>
 
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-transform cursor-pointer shadow-glow">
-                      View Case Study <ArrowRight size={14} />
-                    </span>
+                    <Link to="/case-studies" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-transform shadow-glow">
+                      {ui.viewCta} <ArrowRight size={14} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -163,24 +138,24 @@ const StackedCaseStudies = () => {
                 <div className="glass-dark rounded-[2rem] p-8 sm:p-10 flex-1 flex flex-col justify-center border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative z-10">
-                    <p className="text-[9px] font-black uppercase tracking-[0.5em] text-white/30 mb-3">Primary Metric</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.5em] text-white/30 mb-3">{ui.primaryMetricLabel}</p>
                     <p className="text-5xl sm:text-7xl font-black text-accent tracking-tighter leading-none mb-2">
                       {cases[index].metrics}
                     </p>
-                    <p className="text-white/40 text-xs font-bold">Performance benchmark exceeded</p>
+                    <p className="text-white/40 text-xs font-bold">{ui.primaryMetricSubtext}</p>
                   </div>
                 </div>
 
                 {/* Secondary Metrics Row */}
                 <div className="grid grid-cols-2 gap-6">
                   <div className="glass-dark rounded-[1.5rem] p-6 border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
-                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">Output</p>
+                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">{ui.stat2Label}</p>
                     <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter leading-none">
                       {cases[index].stat2}
                     </p>
                   </div>
                   <div className="glass-dark rounded-[1.5rem] p-6 border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
-                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">Efficiency</p>
+                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">{ui.stat3Label}</p>
                     <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter leading-none">
                       {cases[index].stat3}
                     </p>

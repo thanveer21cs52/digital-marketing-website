@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import homeData from '../data/home.json';
+
+const ui = homeData.pricingUi;
 
 const PricingGrid = () => {
   return (
     <section className="py-24 sm:py-32 relative overflow-hidden">
       <div className="container px-6 lg:px-12">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <span className="text-accent font-black uppercase tracking-[0.5em] text-[11px] mb-4 block">Execution Tiers</span>
-          <h2 className="text-section-title text-white tracking-tighter uppercase leading-[1.1] mb-6">GROWTH PROTOCOLS</h2>
+          <span className="text-accent font-black uppercase tracking-[0.5em] text-[11px] mb-4 block">{ui.preTitle}</span>
+          <h2 className="text-section-title text-white tracking-tighter uppercase leading-[1.1] mb-6">{ui.title}</h2>
           <p className="text-body text-slate-300 font-medium leading-relaxed max-w-3xl opacity-80">
-            Transparent pricing models engineered for high-velocity scaling and market dominance.
+            {ui.subtitle}
           </p>
         </div>
 
@@ -29,7 +32,7 @@ const PricingGrid = () => {
             >
               {tier.popular && (
                 <div className="absolute top-[-20px] left-1/2 -translate-x-1/2 bg-accent text-primary px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-[0.4em] shadow-glow z-20 whitespace-nowrap">
-                  Most Deployed
+                  {ui.popularBadge}
                 </div>
               )}
 
@@ -67,12 +70,15 @@ const PricingGrid = () => {
                 ))}
               </div>
 
-              <button className={`w-full py-5 rounded-[20px] font-black text-[11px] uppercase tracking-[0.4em] transition-all active:scale-95 ${tier.popular
-                ? 'bg-accent text-primary hover:bg-white shadow-glow'
-                : 'bg-primary text-white hover:bg-accent hover:text-primary'
-                }`}>
+              <Link
+                to="/contact"
+                className={`w-full py-5 rounded-[20px] font-black text-[11px] uppercase tracking-[0.4em] transition-all active:scale-95 block text-center ${tier.popular
+                  ? 'bg-accent text-primary hover:bg-white shadow-glow'
+                  : 'bg-primary text-white hover:bg-accent hover:text-primary'
+                  }`}
+              >
                 {tier.cta}
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
