@@ -18,64 +18,18 @@
   --shadow-glow: 0 0 30px var(--accent-glow);
 }
 
+/* Main Dark Theme */
 :root {
-  --primary: #0a0a0b;
-  --primary-container: #161618;
-  --secondary: #d4af37;
-  --accent: #fbbf24;
-  --accent-glow: rgba(251, 191, 36, 0.2);
-  --surface: #ffffff;
-  --surface-low: #f8f9fa;
-}
-
-[data-theme="gold"] {
-  --primary: #0a0a0b;
-  --primary-container: #161618;
-  --secondary: #d4af37;
-  --accent: #fbbf24;
-  --accent-glow: rgba(251, 191, 36, 0.2);
-  --surface: #ffffff;
-  --surface-low: #f8f9fa;
-}
-
-[data-theme="blue"] {
-  --primary: #0f172a;
-  --primary-container: #1e293b;
-  --secondary: #3b82f6;
-  --accent: #00e5ff;
-  --accent-glow: rgba(0, 229, 255, 0.2);
-  --surface: #ffffff;
-  --surface-low: #f8fafc;
-}
-
-[data-theme="green"] {
-  --primary: #050505;
-  --primary-container: #0f1610;
-  --secondary: #10b981;
-  --accent: #22c55e;
-  --accent-glow: rgba(34, 197, 94, 0.2);
-  --surface: #ffffff;
-  --surface-low: #f0fdf4;
-}
-
-[data-theme="pink"] {
-  --primary: #0c0a0c;
-  --primary-container: #1a161a;
-  --secondary: #db2777;
-  --accent: #f472b6;
-  --accent-glow: rgba(244, 114, 182, 0.2);
-  --surface: #ffffff;
-  --surface-low: #fdf2f8;
-}
-
-[data-theme="orange"] {
-  --primary: #000000;
-  --primary-container: #111111;
-  --secondary: #ea580c;
-  --accent: #f97316;
-  --accent-glow: rgba(249, 115, 22, 0.2);
-  --surface: #ffffff;
-  --surface-low: #fff7ed;
+  --primary: #020617;
+  /* Rich Deep Navy */
+  --primary-container: #0f172a;
+  --secondary: #a855f7;
+  /* Vibrant Purple */
+  --accent: #00f2ff;
+  /* Electric Cyan */
+  --accent-glow: rgba(0, 242, 255, 0.3);
+  --surface: #020617;
+  --surface-low: #010413;
 }
 
 @layer base {
@@ -84,7 +38,7 @@
   }
 
   body {
-    @apply font-inter bg-surface text-slate-900 selection:bg-accent/30 selection:text-primary overflow-x-hidden transition-colors duration-500 text-base leading-relaxed;
+    @apply font-inter bg-surface text-white selection:bg-accent/30 selection:text-white overflow-x-hidden transition-colors duration-500 text-base leading-relaxed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -120,7 +74,11 @@
     font-weight: 700;
   }
 
-  p, li, span, label, a {
+  p,
+  li,
+  span,
+  label,
+  a {
     font-size: inherit;
   }
 }
@@ -131,15 +89,15 @@
   }
 
   .glass {
-    @apply bg-white/40 backdrop-blur-2xl border border-white/20 shadow-premium;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-premium;
   }
 
   .glass-dark {
-    @apply bg-primary-container/40 backdrop-blur-2xl border border-white/5 shadow-premium;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl;
   }
 
   .reven-gradient {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 50%, var(--secondary) 100%);
+    background: linear-gradient(135deg, #00f2ff 0%, #a855f7 100%);
   }
 
   .btn {
@@ -163,18 +121,23 @@
   .perspective-1000 {
     perspective: 1000px;
   }
+
   .perspective-1500 {
     perspective: 1500px;
   }
+
   .preserve-3d {
     transform-style: preserve-3d;
   }
+
   .translate-z-20 {
     transform: translateZ(20px);
   }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -182,9 +145,20 @@
 }
 
 @keyframes stack-exit {
-  0% { transform: translateY(0) translateZ(0) rotateZ(0) rotateX(0); opacity: 1; }
-  40% { transform: translateX(120%) translateY(-20%) rotateZ(20deg) scale(0.9); opacity: 0.8; }
-  100% { transform: translateX(0) translateY(100px) translateZ(-200px) scale(0.5); opacity: 0; }
+  0% {
+    transform: translateY(0) translateZ(0) rotateZ(0) rotateX(0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateX(120%) translateY(-20%) rotateZ(20deg) scale(0.9);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(0) translateY(100px) translateZ(-200px) scale(0.5);
+    opacity: 0;
+  }
 }
 
 .animate-stack-exit {
@@ -192,8 +166,17 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--accent)); }
-  50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--accent)); }
+
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px var(--accent));
+  }
+
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 20px var(--accent));
+  }
 }
 
 .animate-pulse-glow {

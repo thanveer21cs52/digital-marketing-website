@@ -30,9 +30,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 h-20 flex items-center ${
-        (scrolled || !isHome) ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 h-20 flex items-center ${(scrolled || !isHome) ? 'bg-primary/80 backdrop-blur-2xl border-b border-white/10' : 'bg-transparent border-b border-transparent'
+        }`}>
         <div className="container flex items-center justify-between px-6 lg:px-12">
           <Link to="/" className="flex items-center group" onClick={() => setIsOpen(false)}>
             {commonData.logo.type === 'png' ? (
@@ -54,55 +53,55 @@ const Navbar = () => {
             {commonData.navLinks.map((link) => (
               <div key={link.name} className="relative group/nav">
                 {link.type === 'dropdown' ? (
-                  <div 
+                  <div
                     className="relative py-2"
                     onMouseEnter={() => setActiveDropdown('services')}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <Link 
+                    <Link
                       to={link.href || '/services'}
                       className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-white/70 hover:text-accent transition-all"
                     >
                       {link.name} <ChevronDown size={10} className={`ml-2 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
                     </Link>
-                    
+
                     <AnimatePresence>
                       {activeDropdown === 'services' && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, y: 15, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 15, scale: 0.98 }}
                           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute top-full left-[-20px] mt-4 w-[320px] bg-slate-950/95 backdrop-blur-2xl rounded-[32px] p-4 border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] overflow-hidden"
+                          className="absolute top-full left-[-20px] mt-4 w-[320px] bg-primary/95 backdrop-blur-2xl rounded-[32px] p-4 border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] overflow-hidden"
                         >
                           <div className="flex flex-col gap-2">
-                             {(link.items || servicesData.items).map((item: any, i) => {
-                               const title = item.name || item.title;
-                               const href = item.href || `/services/${item.id}`;
-                               return (
-                                 <motion.div
-                                    key={href}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: i * 0.05 }}
-                                 >
-                                    <Link 
-                                      to={href}
-                                      className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group/item border border-transparent hover:border-white/5"
-                                    >
-                                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent group-hover/item:bg-accent group-hover/item:text-primary transition-all">
-                                        {i % 4 === 0 && <Zap size={18} />}
-                                        {i % 4 === 1 && <BarChart3 size={18} />}
-                                        {i % 4 === 2 && <Target size={18} />}
-                                        {i % 4 === 3 && <TrendingUp size={18} />}
-                                      </div>
-                                      <div>
-                                        <p className="text-[10px] font-black text-white uppercase tracking-widest group-hover/item:text-accent transition-colors">{title}</p>
-                                      </div>
-                                    </Link>
-                                 </motion.div>
-                               );
-                             })}
+                            {(link.items || servicesData.items).map((item: any, i) => {
+                              const title = item.name || item.title;
+                              const href = item.href || `/services/${item.id}`;
+                              return (
+                                <motion.div
+                                  key={href}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: i * 0.05 }}
+                                >
+                                  <Link
+                                    to={href}
+                                    className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group/item border border-transparent hover:border-white/5"
+                                  >
+                                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent group-hover/item:bg-accent group-hover/item:text-primary transition-all">
+                                      {i % 4 === 0 && <Zap size={18} />}
+                                      {i % 4 === 1 && <BarChart3 size={18} />}
+                                      {i % 4 === 2 && <Target size={18} />}
+                                      {i % 4 === 3 && <TrendingUp size={18} />}
+                                    </div>
+                                    <div>
+                                      <p className="text-[10px] font-black text-white uppercase tracking-widest group-hover/item:text-accent transition-colors">{title}</p>
+                                    </div>
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
                           </div>
                         </motion.div>
                       )}
@@ -127,8 +126,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
+          <button
+            onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-3 text-white bg-white/5 rounded-2xl border border-white/5 shadow-sm active:scale-95 transition-all"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -143,12 +142,12 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[55] bg-slate-950 px-6 pt-32 flex flex-col items-center text-center space-y-8 overflow-y-auto no-scrollbar"
+            className="fixed inset-0 z-[55] bg-primary px-6 pt-32 flex flex-col items-center text-center space-y-8 overflow-y-auto no-scrollbar"
           >
             {commonData.navLinks.map((link) => (
               <div key={link.name} className="flex flex-col items-center">
-                <Link 
-                  to={link.href || '/'} 
+                <Link
+                  to={link.href || '/'}
                   onClick={() => setIsOpen(false)}
                   className="text-4xl sm:text-5xl font-black text-white hover:text-accent uppercase tracking-tighter"
                 >
@@ -157,7 +156,7 @@ const Navbar = () => {
                 {link.type === 'dropdown' && (
                   <div className="mt-4 flex flex-wrap justify-center gap-4">
                     {(link.items || servicesData.items).map((item: any) => (
-                      <Link 
+                      <Link
                         key={item.id || item.name}
                         to={item.href || `/services/${item.id}`}
                         onClick={() => setIsOpen(false)}
