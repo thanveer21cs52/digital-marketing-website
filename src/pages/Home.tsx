@@ -23,16 +23,16 @@ const Home = () => {
   return (
     <div className="home-page overflow-hidden">
       {/* Premium Hero Section with Particle Background */}
-      <section className="relative h-screen w-full overflow-hidden bg-transparent">
+      <section className="relative min-h-screen w-full overflow-hidden bg-transparent">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent z-10"></div>
 
-        <div className="relative z-20 h-full flex flex-col justify-center items-center px-6 max-w-7xl mx-auto text-center">
-          <div className="max-w-4xl pt-16 w-full">
+        <div className="relative z-20 min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 max-w-7xl mx-auto text-center">
+          <div className="max-w-4xl pt-20 sm:pt-16 w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex items-center gap-2 mb-8 bg-accent text-primary px-4 py-2 rounded-lg font-black text-[10px] uppercase tracking-[0.3em] shadow-glow"
+              className="inline-flex items-center gap-2 mb-6 sm:mb-8 bg-accent text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-black text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] shadow-glow"
             >
               <PlayCircle size={14} className="animate-pulse" />
               <span>{homeData.ui.protocolVersion}</span>
@@ -42,7 +42,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-white text-[32px] sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] sm:leading-[0.9] tracking-tighter mb-8 uppercase"
+              className="text-white text-[28px] sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.9] tracking-tighter mb-6 sm:mb-8 uppercase"
             >
               {homeData.ui.heroTitleLine1} <br />
               <span className="text-secondary">{homeData.ui.heroTitleLine2}</span> <br />
@@ -53,7 +53,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-slate-100 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed mb-10 opacity-90"
+              className="text-slate-100 text-xs sm:text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed mb-8 sm:mb-10 opacity-90"
             >
               {homeData.hero.subtitle}
             </motion.p>
@@ -68,7 +68,7 @@ const Home = () => {
                 {homeData.hero.cta.text}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
               </Link>
-              <Link to="/case-studies" className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white/20 transition-all w-full sm:w-auto">
+              <Link to="/case-studies" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white/20 transition-all w-full sm:w-auto text-center">
                 {homeData.ui.caseStudiesCta}
               </Link>
             </motion.div>
@@ -80,12 +80,12 @@ const Home = () => {
 
 
       {/* High-Performance Metric Ribbon */}
-      <section className="py-20 relative overflow-hidden border-y border-white/5">
+      <section className="py-12 sm:py-20 relative overflow-hidden border-y border-white/5">
         {/* Subtle background glow */}
         <div className="absolute top-0 left-1/4 w-1/2 h-full bg-accent/5 blur-[100px] pointer-events-none"></div>
 
         <div className="container px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-y divide-white/5 lg:divide-y-0">
             {homeData.stats.map((stat, i) => {
               const icons = [TrendingUp, Target, Zap, Award];
               const Icon = icons[i] || Zap;
@@ -97,22 +97,22 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
-                  className={`px-8 py-6 group ${i !== homeData.stats.length - 1 ? 'lg:border-r border-white/5' : ''}`}
+                  className={`px-4 sm:px-8 py-4 sm:py-6 group ${i !== homeData.stats.length - 1 ? 'lg:border-r border-white/5' : ''}`}
                 >
-                  <div className="flex flex-col items-center lg:items-start space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-500 shadow-premium">
-                      <Icon size={24} />
+                  <div className="flex flex-col items-center lg:items-start space-y-2 sm:space-y-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-500 shadow-premium">
+                      <Icon size={20} />
                     </div>
 
                     <div className="space-y-1 text-center lg:text-left">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.5 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-black text-accent tracking-tighter"
+                        className="text-3xl sm:text-5xl lg:text-6xl font-black text-accent tracking-tighter"
                       >
                         {stat.value}
                       </motion.div>
-                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white group-hover:text-accent transition-colors duration-300">
+                      <div className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white group-hover:text-accent transition-colors duration-300">
                         {stat.label}
                       </div>
                     </div>
@@ -129,7 +129,7 @@ const Home = () => {
       {/* Methodology Section */}
       <section className="section-padding relative">
         <div className="container px-6 lg:px-12">
-          <div className="text-center mb-24 max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-24 max-w-3xl mx-auto">
             <span className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-6 block">{homeData.ui.methodologyPreTitle}</span>
             <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none mb-10">
               {homeData.ui.methodologyTitle}
@@ -137,7 +137,7 @@ const Home = () => {
             <div className="h-1.5 w-24 bg-accent mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {homeData.methodology.map((step, i) => (
               <motion.div
                 key={step.step}
@@ -145,7 +145,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="glass-dark p-10 rounded-[3rem] border border-white/10 hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group relative overflow-hidden cursor-pointer"
+                className="glass-dark p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border border-white/10 hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group relative overflow-hidden cursor-pointer"
               >
                 <div className="text-8xl font-black text-white/5 absolute -top-4 -right-4 transition-colors group-hover:text-accent/10">
                   {step.step}
@@ -163,9 +163,9 @@ const Home = () => {
       <PricingGrid />
 
       {/* Industries Slider (Horizontal Scroll) */}
-      <section className="py-24 text-white relative">
+      <section className="py-16 sm:py-24 text-white relative">
         <div className="container px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-10 sm:mb-16 gap-6 sm:gap-8">
             <div className="max-w-2xl text-center lg:text-left w-full lg:w-auto">
               <span className="text-accent font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">{homeData.ui.verticalsPreTitle}</span>
               <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter leading-[1.1]">
@@ -195,7 +195,7 @@ const Home = () => {
             className="flex overflow-x-auto gap-6 no-scrollbar pt-6 pb-12 snap-x snap-mandatory"
           >
             {homeData.verticals.map((v) => (
-              <div key={v.title} className="min-w-[280px] sm:min-w-[400px] glass-dark p-10 rounded-[3rem] border border-white/10 hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 cursor-pointer group snap-start">
+              <div key={v.title} className="min-w-[280px] sm:min-w-[400px] glass-dark p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border border-white/10 hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 cursor-pointer group snap-start">
                 <h3 className="text-2xl font-black mb-4 uppercase tracking-tighter group-hover:text-accent">{v.title}</h3>
                 <p className="text-white/60 text-sm font-medium leading-relaxed mb-8">{v.focus}</p>
                 <div className="flex flex-wrap gap-2">

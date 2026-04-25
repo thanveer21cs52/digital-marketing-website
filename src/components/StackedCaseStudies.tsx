@@ -30,7 +30,7 @@ const StackedCaseStudies = () => {
   };
 
   return (
-    <section className="relative py-32 sm:py-40 overflow-hidden">
+    <section className="relative py-20 sm:py-32 lg:py-40 overflow-hidden">
       {/* Subtle ambient glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 right-0 w-1/3 h-1/2 bg-accent/5 blur-[150px] rounded-full"></div>
@@ -39,7 +39,7 @@ const StackedCaseStudies = () => {
 
       <div className="container px-6 lg:px-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 sm:mb-20 gap-6 sm:gap-8">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const StackedCaseStudies = () => {
               <Sparkles size={12} className="text-accent" />
               <span className="text-[9px] font-black uppercase tracking-[0.4em] text-accent">{ui.preTitle}</span>
             </motion.div>
-            <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+            <h2 className="text-3xl sm:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9]">
               {ui.titleLine1}<br />
               <span className="text-accent">{ui.titleLine2}</span>
             </h2>
@@ -96,7 +96,7 @@ const StackedCaseStudies = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Left: Main Card */}
-              <div className="lg:col-span-7 glass-dark rounded-[2.5rem] p-10 sm:p-14 border border-white/10 relative overflow-hidden group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
+              <div className="lg:col-span-7 glass-dark rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 border border-white/10 relative overflow-hidden group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
                 {/* Large step number */}
                 <div className="absolute -top-6 -right-4 text-[12rem] font-black text-white/[0.02] leading-none select-none pointer-events-none">
                   0{index + 1}
@@ -135,7 +135,7 @@ const StackedCaseStudies = () => {
               {/* Right: Metrics Stack */}
               <div className="lg:col-span-5 flex flex-col gap-6">
                 {/* Primary Metric */}
-                <div className="glass-dark rounded-[2rem] p-8 sm:p-10 flex-1 flex flex-col justify-center border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 relative overflow-hidden">
+                <div className="glass-dark rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 lg:p-10 flex-1 flex flex-col justify-center border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative z-10">
                     <p className="text-[9px] font-black uppercase tracking-[0.5em] text-white/30 mb-3">{ui.primaryMetricLabel}</p>

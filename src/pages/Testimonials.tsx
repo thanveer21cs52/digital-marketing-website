@@ -134,7 +134,7 @@ const Testimonials = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-10 md:p-14 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 p-6 sm:p-10 md:p-14 rounded-2xl sm:rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group">
 
                   <div className="lg:col-span-3 flex flex-col justify-center">
                     <div className="bg-white/5 rounded-2xl p-8 text-center border border-white/10 group-hover:bg-accent/5 group-hover:border-accent/20 transition-all">
@@ -202,14 +202,14 @@ const Testimonials = () => {
 
         <div className="container px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="text-center lg:text-left">
               <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8">
                 {ui.ctaTitle}
               </h2>
               <p className="text-lg text-white/40 leading-relaxed mb-12 max-w-lg">
                 {ui.ctaSubtitle}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-primary font-bold text-sm rounded-full hover:brightness-110 transition-all shadow-lg shadow-accent/30"

@@ -99,7 +99,7 @@ const Legal = ({ type }: { type: 'terms' | 'privacy' }) => {
                     transition={{ delay: i * 0.05 }}
                     className="group"
                   >
-                    <div className="flex gap-6 md:gap-10 py-10 border-b border-white/5 last:border-none">
+                    <div className="flex gap-4 sm:gap-6 md:gap-10 py-8 sm:py-10 border-b border-white/5 last:border-none">
                       {/* Section number */}
                       <span className="text-3xl font-extrabold text-white/10 group-hover:text-accent/20 transition-colors shrink-0 pt-1 tabular-nums">
                         {section.id}

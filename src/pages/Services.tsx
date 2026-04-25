@@ -75,7 +75,7 @@ const Services = () => {
       {/* ▌STATS RIBBON */}
       <section className="border-y border-white/5">
         <div className="container px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-white/5">
             {ui.statsRibbon.map((stat, i) => {
               const Icon = statIcons[i] || Zap;
               return (
@@ -103,7 +103,7 @@ const Services = () => {
       {/* ▌SERVICE CARDS */}
       <section id="all-services" className="py-28 md:py-40">
         <div className="container px-6">
-          <div className="flex items-end justify-between mb-20 gap-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 sm:mb-20 gap-4 sm:gap-8">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{ui.servicesPreTitle}</span>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -132,7 +132,7 @@ const Services = () => {
                 >
                   <Link to={`/services/${service.id}`} className="block h-full">
                     <div className={`
-                      relative h-full p-10 rounded-3xl border transition-all duration-500 overflow-hidden
+                      relative h-full p-6 sm:p-10 rounded-2xl sm:rounded-3xl border transition-all duration-500 overflow-hidden
                       ${isHovered
                         ? 'glass-dark border-accent/30 shadow-[0_20px_60px_-15px_rgba(0,242,255,0.2)] -translate-y-2 text-white'
                         : 'glass-dark text-white'
@@ -207,7 +207,7 @@ const Services = () => {
                   <div className="hidden lg:block absolute top-10 left-[calc(50%+2rem)] w-[calc(100%-2rem)] h-[2px] bg-white/10 z-0" />
                 )}
 
-                <div className="relative z-10 p-8 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
+                <div className="relative z-10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
                   <div className="w-12 h-12 rounded-full bg-accent text-primary font-extrabold text-lg flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                     {String(i + 1).padStart(2, '0')}
                   </div>

@@ -143,7 +143,7 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-8 group"
+                className="flex gap-4 sm:gap-8 group"
               >
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-12 h-12 rounded-full bg-accent text-primary font-extrabold text-sm flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
@@ -167,7 +167,7 @@ const ServiceDetail = () => {
       {/* ▌RELATED SERVICES */}
       <section className="py-28 md:py-40">
         <div className="container px-6">
-          <div className="flex items-end justify-between mb-16 gap-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-8">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{ui.relatedPreTitle}</span>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -209,7 +209,7 @@ const ServiceDetail = () => {
       {/* ▌CTA */}
       <section className="pb-20">
         <div className="container px-6">
-          <div className="glass-dark text-white p-14 md:p-24 rounded-[3rem] text-center relative overflow-hidden border border-white/10">
+          <div className="glass-dark text-white p-8 sm:p-14 lg:p-24 rounded-2xl sm:rounded-[3rem] text-center relative overflow-hidden border border-white/10">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
             <div className="relative z-10">

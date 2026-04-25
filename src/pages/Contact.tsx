@@ -87,7 +87,7 @@ const Contact = () => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-8 px-8 flex items-center gap-5 group glass-dark rounded-2xl hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
+                className="py-6 sm:py-8 px-6 sm:px-8 flex items-center gap-4 sm:gap-5 group glass-dark rounded-2xl hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-primary transition-all">
                   <item.icon size={20} />
@@ -113,7 +113,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="lg:col-span-8"
             >
-              <div className="glass-dark p-10 md:p-16 rounded-3xl border border-white/10">
+              <div className="glass-dark p-6 sm:p-10 md:p-16 rounded-2xl sm:rounded-3xl border border-white/10">
                 <div className="mb-12">
                   <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-white">
                     {ui.formTitle}

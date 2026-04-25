@@ -94,7 +94,7 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-primary/90 backdrop-blur-sm text-white p-8 rounded-3xl shadow-2xl max-w-[260px] border border-white/10">
+              <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-primary/90 backdrop-blur-sm text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl max-w-[220px] sm:max-w-[260px] border border-white/10 hidden sm:block">
                 <Quote size={20} className="text-accent mb-4" />
                 <p className="text-sm font-semibold italic leading-relaxed mb-4">
                   "{ui.founderQuote}"
@@ -123,7 +123,7 @@ const About = () => {
                 ))}
               </div>
 
-              <div className="mt-10 grid grid-cols-2 gap-4">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {aboutData.proofPoints.map(item => (
                   <div key={item} className="flex items-center gap-3 p-4 glass-dark rounded-2xl">
                     <CheckCircle2 size={16} className="text-accent shrink-0" />
@@ -146,7 +146,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="py-8 px-6 text-center glass-dark rounded-2xl hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
+                className="py-6 sm:py-8 px-4 sm:px-6 text-center glass-dark rounded-2xl hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
               >
                 <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-1">{stat.value}</p>
                 <p className="text-xs text-white/40 font-medium">{stat.label}</p>
@@ -180,7 +180,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="group p-8 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
+                  className="group p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-3 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-primary transition-all">
                     <Icon size={24} />
@@ -216,7 +216,7 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-6 p-8 rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group"
+                className="flex gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass-dark hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 group"
               >
                 <div className="w-12 h-12 rounded-full bg-accent text-primary font-extrabold text-sm flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                   {String(i + 1).padStart(2, '0')}

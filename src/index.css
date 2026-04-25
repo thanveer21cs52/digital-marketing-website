@@ -34,7 +34,13 @@
 
 @layer base {
   html {
-    font-size: 17px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 17px;
+    }
   }
 
   body {
@@ -101,7 +107,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center px-10 py-5 rounded-xl font-bold transition-all duration-500 uppercase tracking-widest text-xs;
+    @apply inline-flex items-center px-6 py-4 sm:px-10 sm:py-5 rounded-xl font-bold transition-all duration-500 uppercase tracking-widest text-xs;
   }
 
   .btn-primary {
@@ -114,7 +120,7 @@
 }
 
 .section-padding {
-  @apply py-24 md:py-40;
+  @apply py-16 sm:py-24 md:py-40;
 }
 
 @layer utilities {

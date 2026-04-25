@@ -142,7 +142,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[55] bg-primary px-6 pt-32 flex flex-col items-center text-center space-y-8 overflow-y-auto no-scrollbar"
+            className="fixed inset-0 z-[55] bg-primary px-6 pt-32 pb-24 flex flex-col items-center text-center space-y-8 overflow-y-auto no-scrollbar"
           >
             {commonData.navLinks.map((link) => (
               <div key={link.name} className="flex flex-col items-center">
