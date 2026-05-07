@@ -215,6 +215,29 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* ▌MAP SECTION */}
+      <section className="section-light pb-28 md:pb-40">
+        <div className="container px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden border border-[#4A1C11]/10 shadow-lg grayscale hover:grayscale-0 transition-all duration-700"
+          >
+            <iframe
+              src={commonData.hq.mapEmbed}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            ></iframe>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
