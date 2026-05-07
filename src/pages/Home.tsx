@@ -1,14 +1,26 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, PlayCircle, TrendingUp, Target, Zap, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
-import homeData from '../data/home.json';
-import commonData from '../data/common.json';
+import { useRef, useState, useEffect } from 'react';
+import homeDataJson from '../data/home.json';
+import commonDataJson from '../data/common.json';
 import PricingGrid from '../components/PricingGrid';
 import StackedCaseStudies from '../components/StackedCaseStudies';
+import { getWebsiteData } from '../utils/dataLoader';
 
 const Home = () => {
+  const [homeData, setHomeData] = useState(getWebsiteData('home', homeDataJson));
+  const [commonData, setCommonData] = useState(getWebsiteData('common', commonDataJson));
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setHomeData(getWebsiteData('home', homeDataJson));
+      setCommonData(getWebsiteData('common', commonDataJson));
+    };
+    window.addEventListener('websiteDataUpdated', handleUpdate);
+    return () => window.removeEventListener('websiteDataUpdated', handleUpdate);
+  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {

@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, Zap, TrendingUp, BarChart3, ArrowRight, CheckCircle2, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import aboutData from '../data/about.json';
-import commonData from '../data/common.json';
+import aboutDataJson from '../data/about.json';
+import commonDataJson from '../data/common.json';
+import { getWebsiteData } from '../utils/dataLoader';
 
 const iconMap: Record<string, React.ElementType> = {
   Target,
@@ -13,7 +15,18 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const About = () => {
+  const [aboutData, setAboutData] = useState(getWebsiteData('about', aboutDataJson));
+  const [commonData, setCommonData] = useState(getWebsiteData('common', commonDataJson));
   const ui = aboutData.ui;
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setAboutData(getWebsiteData('about', aboutDataJson));
+      setCommonData(getWebsiteData('common', commonDataJson));
+    };
+    window.addEventListener('websiteDataUpdated', handleUpdate);
+    return () => window.removeEventListener('websiteDataUpdated', handleUpdate);
+  }, []);
 
   return (
     <div className="about-page min-h-screen">

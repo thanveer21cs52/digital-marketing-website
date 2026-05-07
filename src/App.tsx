@@ -9,6 +9,9 @@ import Contact from './pages/Contact';
 import Legal from './pages/Legal';
 import Testimonials from './pages/Testimonials';
 import { ThemeProvider } from './context/ThemeContext';
+import Login from './pages/admin/Login';
+import AdminDashboard from './pages/admin/Dashboard';
+import ProtectedRoute from './components/admin/ProtectedRoute';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +36,12 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Legal type="terms" />} />
             <Route path="/privacy" element={<Legal type="privacy" />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            </Route>
           </Routes>
         </Layout>
       </Router>

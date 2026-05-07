@@ -1,11 +1,32 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageCircle, Clock, Send, ChevronDown } from 'lucide-react';
-
 import contactData from '../data/contact.json';
 import commonData from '../data/common.json';
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
   const ui = contactData.ui;
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const enquiry = {
+      id: Math.random().toString(36).substr(2, 9),
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone_number') as string,
+      service: formData.get('interested_in') as string,
+      message: formData.get('message') as string,
+      date: new Date().toISOString(),
+      status: 'new'
+    };
+
+    const existing = JSON.parse(localStorage.getItem('website_enquiries') || '[]');
+    localStorage.setItem('website_enquiries', JSON.stringify([enquiry, ...existing]));
+
+    setSubmitted(true);
+  };
 
   return (
     <div className="contact-page min-h-screen">
@@ -121,50 +142,80 @@ const Contact = () => {
                   <p className="text-[#4A1C11]/60 font-medium">{ui.formSubtitle}</p>
                 </div>
 
-                <form className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {contactData.formFields.filter(f => f.type !== 'textarea').map((field) => (
+                {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-20"
+                  >
+                    <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                      <Send size={32} />
+                    </div>
+                    <h3 className="text-3xl font-black text-[#4a1c11] uppercase tracking-tighter mb-4">Message Sent!</h3>
+                    <p className="text-[#4a1c11]/60 font-medium max-w-sm mx-auto">
+                      Thank you for reaching out. Our team will review your enquiry and get back to you within 24 hours.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="mt-10 text-xs font-black uppercase tracking-widest text-accent hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form className="space-y-8" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {contactData.formFields.filter(f => f.type !== 'textarea').map((field) => (
+                        <div key={field.label}>
+                          <label className="text-xs font-semibold text-[#4A1C11]/50 mb-2 block">{field.label}</label>
+                          {field.type === 'select' ? (
+                            <div className="relative">
+                              <select
+                                name={field.label.toLowerCase().replace(' ', '_')}
+                                className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 pr-12 text-sm font-medium text-[#4A1C11] focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none appearance-none cursor-pointer"
+                                required
+                              >
+                                {ui.serviceOptions.map(opt => (
+                                  <option key={opt} value={opt} className="bg-white text-[#4A1C11]">{opt}</option>
+                                ))}
+                              </select>
+                              <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#4A1C11]/40 pointer-events-none" />
+                            </div>
+                          ) : (
+                            <input
+                              type={field.type}
+                              name={field.label.toLowerCase().replace(' ', '_')}
+                              className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none"
+                              placeholder={field.placeholder}
+                              required
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+
+                    {contactData.formFields.filter(f => f.type === 'textarea').map((field) => (
                       <div key={field.label}>
                         <label className="text-xs font-semibold text-[#4A1C11]/50 mb-2 block">{field.label}</label>
-                        {field.type === 'select' ? (
-                          <div className="relative">
-                            <select className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 pr-12 text-sm font-medium text-[#4A1C11] focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none appearance-none cursor-pointer">
-                              {ui.serviceOptions.map(opt => (
-                                <option key={opt} className="bg-white text-[#4A1C11]">{opt}</option>
-                              ))}
-                            </select>
-                            <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#4A1C11]/40 pointer-events-none" />
-                          </div>
-                        ) : (
-                          <input
-                            type={field.type}
-                            className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none"
-                            placeholder={field.placeholder}
-                          />
-                        )}
+                        <textarea
+                          name={field.label.toLowerCase().replace(' ', '_')}
+                          rows={5}
+                          className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none resize-none"
+                          placeholder={field.placeholder}
+                          required
+                        />
                       </div>
                     ))}
-                  </div>
 
-                  {contactData.formFields.filter(f => f.type === 'textarea').map((field) => (
-                    <div key={field.label}>
-                      <label className="text-xs font-semibold text-[#4A1C11]/50 mb-2 block">{field.label}</label>
-                      <textarea
-                        rows={5}
-                        className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none resize-none"
-                        placeholder={field.placeholder}
-                      />
-                    </div>
-                  ))}
-
-                  <button
-                    type="button"
-                    className="w-full inline-flex items-center justify-center gap-3 py-5 bg-accent text-[#4a1c11] rounded-full font-bold text-sm hover:brightness-110 hover:scale-[1.01] transition-all shadow-glow"
-                  >
-                    <Send size={18} />
-                    {ui.submitButton}
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      className="w-full inline-flex items-center justify-center gap-3 py-5 bg-accent text-[#4a1c11] rounded-full font-bold text-sm hover:brightness-110 hover:scale-[1.01] transition-all shadow-glow"
+                    >
+                      <Send size={18} />
+                      {ui.submitButton}
+                    </button>
+                  </form>
+                )}
               </div>
             </motion.div>
 

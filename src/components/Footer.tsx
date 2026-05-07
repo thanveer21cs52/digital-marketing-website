@@ -62,6 +62,11 @@ const Footer = () => {
             ))}
             <li><Link to="/privacy" className="text-white/80 hover:text-accent transition-colors text-sm font-medium">{commonData.ui.privacyTitle}</Link></li>
             <li><Link to="/terms" className="text-white/80 hover:text-accent transition-colors text-sm font-medium">{commonData.ui.termsTitle}</Link></li>
+            <li className="pt-4 border-t border-white/5">
+              <Link to="/admin/login" className="text-accent/50 hover:text-accent transition-colors text-[10px] font-black uppercase tracking-widest">
+                Admin Portal
+              </Link>
+            </li>
           </ul>
         </div>
 
