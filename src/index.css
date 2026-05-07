@@ -245,7 +245,7 @@
   }
 
   .section-light {
-    background: #fdfbf7;
+    background: rgba(255, 255, 255, 0.171);
     color: #4A1C11;
   }
 

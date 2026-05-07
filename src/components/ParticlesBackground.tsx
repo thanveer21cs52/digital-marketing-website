@@ -16,104 +16,132 @@ const ParticlesBackground = () => {
         });
     }, []);
 
-    const particlesLoaded = async (_container?: Container): Promise<void> => {
-        // console.log("Particles loaded", container);
+    const particlesLoaded = async (
+        _container?: Container,
+    ): Promise<void> => {
+        // particles loaded
     };
 
     const options: ISourceOptions = useMemo(
         () => ({
             background: {
                 color: {
-                    value: "#4A1C11",
+                    value:
+                        currentTheme === "dark"
+                            ? "#0b0b0b"
+                            : "#fdfbf7",
                 },
             },
-            fpsLimit: 120,
+
+            fpsLimit: 60,
+
             interactivity: {
                 events: {
                     onClick: {
-                        enable: true,
+                        enable: false,
                         mode: "push",
                     },
+
                     onHover: {
-                        enable: true,
+                        enable: false,
                         mode: "grab",
                     },
+
                     resize: {
-                        enable: true
-                    }
+                        enable: true,
+                    },
                 },
+
                 modes: {
                     push: {
                         quantity: 2,
                     },
+
                     grab: {
-                        distance: 200,
+                        distance: 180,
                         links: {
-                            opacity: 0.5
-                        }
+                            opacity: 0.4,
+                        },
                     },
                 },
             },
+
             particles: {
                 color: {
-                    value: typeof window !== "undefined"
-                        ? getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || "#fcf8f1"
-                        : "#fcf8f1",
+                    value:
+                        currentTheme === "dark"
+                            ? "#ffffff"
+                            : "#6b3b14",
                 },
+
                 links: {
-                    color: typeof window !== "undefined"
-                        ? getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || "#764024"
-                        : "#764024",
-                    distance: 150,
+                    color:
+                        currentTheme === "dark"
+                            ? "#ffffff"
+                            : "#b07a4f",
+
+                    distance: 170,
                     enable: true,
-                    opacity: 0.4,
+                    opacity: 0.28,
                     width: 1,
                 },
+
                 move: {
                     direction: "none",
                     enable: true,
+
                     outModes: {
                         default: "bounce",
                     },
-                    random: false,
-                    speed: 1.5,
+
+                    random: true,
+                    speed: 1.1,
                     straight: false,
                 },
+
                 number: {
                     density: {
                         enable: true,
-                        area: 800
+                        area: 1000,
                     },
-                    value: 80,
+
+                    value: 120,
                 },
+
                 opacity: {
-                    value: 0.28,
+                    value: 0.3,
                 },
+
                 shape: {
                     type: "circle",
                 },
+
                 size: {
-                    value: { min: 1, max: 3 },
+                    value: {
+                        min: 1.2,
+                        max: 3.5,
+                    },
                 },
             },
+
             detectRetina: true,
         }),
         [currentTheme],
     );
 
-    if (init) {
-        return (
-            <Particles
-                id="tsparticles"
-                className="fixed inset-0"
-                style={{ zIndex: -1 }}
-                particlesLoaded={particlesLoaded}
-                options={options}
-            />
-        );
-    }
+    if (!init) return null;
 
-    return null;
+    return (
+        <Particles
+            id="tsparticles"
+            className="fixed inset-0 pointer-events-none"
+            style={{
+                zIndex: -1,
+            }}
+            particlesLoaded={particlesLoaded}
+            options={options}
+        />
+    );
 };
 
 export default ParticlesBackground;
