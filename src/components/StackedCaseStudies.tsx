@@ -30,11 +30,12 @@ const StackedCaseStudies = () => {
   };
 
   return (
-    <section className="relative py-20 sm:py-32 lg:py-40 overflow-hidden">
+    <section className="section-brown relative py-20 sm:py-32 lg:py-40 overflow-hidden">
       {/* Subtle ambient glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-1/3 h-1/2 bg-accent/5 blur-[150px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-secondary/5 blur-[150px] rounded-full"></div>
+        <div className="absolute top-1/4 right-0 w-1/3 h-1/2 bg-secondary/14 blur-[180px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-secondary/20 blur-[180px] rounded-full"></div>
+        <div className="absolute inset-0 opacity-[0.045] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
       </div>
 
       <div className="container px-6 lg:px-12 relative z-10">
@@ -45,7 +46,7 @@ const StackedCaseStudies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-dark rounded-full"
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/8 backdrop-blur-md rounded-full border border-white/10"
             >
               <Sparkles size={12} className="text-accent" />
               <span className="text-[9px] font-black uppercase tracking-[0.4em] text-accent">{ui.preTitle}</span>
@@ -60,13 +61,13 @@ const StackedCaseStudies = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={prevCard}
-              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-all active:scale-95"
+              className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center text-white hover:bg-accent hover:text-secondary transition-all active:scale-95"
             >
               <ArrowLeft size={18} />
             </button>
             <button
               onClick={nextCard}
-              className="w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center hover:bg-white transition-all active:scale-95 shadow-glow"
+              className="w-12 h-12 rounded-full bg-accent text-[#4a1c11] flex items-center justify-center hover:bg-white transition-all active:scale-95 shadow-glow"
             >
               <ArrowRight size={18} />
             </button>
@@ -77,7 +78,7 @@ const StackedCaseStudies = () => {
                 <button
                   key={i}
                   onClick={() => { setIsAutoPlaying(false); setIndex(i); }}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? 'w-8 bg-accent' : 'w-1.5 bg-white/20 hover:bg-white/40'
+                  className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? 'w-8 bg-accent' : 'w-1.5 bg-white/25 hover:bg-white/50'
                     }`}
                 />
               ))}
@@ -96,9 +97,9 @@ const StackedCaseStudies = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Left: Main Card */}
-              <div className="lg:col-span-7 glass-dark rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 border border-white/10 relative overflow-hidden group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
+              <div className="lg:col-span-7 rounded-3xl sm:rounded-[2.75rem] p-6 sm:p-10 lg:p-14 border border-white/10 relative overflow-hidden group bg-primary/5 backdrop-blur-3xl shadow-[0_30px_90px_-30px_rgba(0,0,0,0.38)] hover:-translate-y-2 hover:shadow-[0_35px_110px_-35px_rgba(0,0,0,0.46)] transition-all duration-500">
                 {/* Large step number */}
-                <div className="absolute -top-6 -right-4 text-[12rem] font-black text-white/[0.02] leading-none select-none pointer-events-none">
+                <div className="absolute -top-6 -right-4 text-[12rem] font-black text-white/[0.05] leading-none select-none pointer-events-none">
                   0{index + 1}
                 </div>
 
@@ -107,7 +108,7 @@ const StackedCaseStudies = () => {
                     <span className="text-[9px] font-black uppercase tracking-[0.5em] text-accent px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
                       {cases[index].category}
                     </span>
-                    <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30">
+                    <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/35">
                       {ui.protocolLabel} {index + 1}/{cases.length}
                     </span>
                   </div>
@@ -116,16 +117,16 @@ const StackedCaseStudies = () => {
                     {cases[index].title}
                   </h3>
 
-                  <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-8">
+                  <p className="text-white/45 text-[10px] font-black uppercase tracking-[0.3em] mb-8">
                     {cases[index].client}
                   </p>
 
-                  <p className="text-white/70 text-base sm:text-lg leading-relaxed font-medium max-w-xl mb-10">
+                  <p className="text-white/80 text-base sm:text-lg leading-relaxed font-medium max-w-xl mb-10">
                     {cases[index].description}
                   </p>
 
                   <div className="flex items-center gap-3">
-                    <Link to="/case-studies" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-transform shadow-glow">
+                    <Link to="/case-studies" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-[#4a1c11] rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-transform shadow-glow">
                       {ui.viewCta} <ArrowRight size={14} />
                     </Link>
                   </div>
@@ -135,27 +136,27 @@ const StackedCaseStudies = () => {
               {/* Right: Metrics Stack */}
               <div className="lg:col-span-5 flex flex-col gap-6">
                 {/* Primary Metric */}
-                <div className="glass-dark rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 lg:p-10 flex-1 flex flex-col justify-center border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 flex-1 flex flex-col justify-center border border-white/10 bg-primary/10 backdrop-blur-xl group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_25px_75px_-25px_rgba(0,0,0,0.36)] transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative z-10">
-                    <p className="text-[9px] font-black uppercase tracking-[0.5em] text-white/30 mb-3">{ui.primaryMetricLabel}</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.5em] text-white/35 mb-3">{ui.primaryMetricLabel}</p>
                     <p className="text-5xl sm:text-7xl font-black text-accent tracking-tighter leading-none mb-2">
                       {cases[index].metrics}
                     </p>
-                    <p className="text-white/40 text-xs font-bold">{ui.primaryMetricSubtext}</p>
+                    <p className="text-white/50 text-xs font-bold">{ui.primaryMetricSubtext}</p>
                   </div>
                 </div>
 
                 {/* Secondary Metrics Row */}
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="glass-dark rounded-[1.5rem] p-6 border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
-                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">{ui.stat2Label}</p>
+                  <div className="rounded-[1.5rem] p-6 border border-white/10 bg-primary/10 backdrop-blur-xl group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_25px_75px_-25px_rgba(0,0,0,0.36)] transition-all duration-500">
+                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/35 mb-2">{ui.stat2Label}</p>
                     <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter leading-none">
                       {cases[index].stat2}
                     </p>
                   </div>
-                  <div className="glass-dark rounded-[1.5rem] p-6 border border-white/10 group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500">
-                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">{ui.stat3Label}</p>
+                  <div className="rounded-[1.5rem] p-6 border border-white/10 bg-primary/10 backdrop-blur-xl group hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_25px_75px_-25px_rgba(0,0,0,0.36)] transition-all duration-500">
+                    <p className="text-[8px] font-black uppercase tracking-[0.4em] text-white/35 mb-2">{ui.stat3Label}</p>
                     <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter leading-none">
                       {cases[index].stat3}
                     </p>

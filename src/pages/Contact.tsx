@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight, MessageCircle, Clock, Send, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Clock, Send, ChevronDown } from 'lucide-react';
 
 import contactData from '../data/contact.json';
 import commonData from '../data/common.json';
@@ -11,7 +11,7 @@ const Contact = () => {
     <div className="contact-page min-h-screen">
 
       {/* ▌HERO */}
-      <section className="pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
+      <section className="section-light pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] pointer-events-none" />
 
         <div className="container px-6 relative z-10">
@@ -28,12 +28,12 @@ const Contact = () => {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-8">
+              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-8 text-[#4A1C11]">
                 {ui.heroTitle}{' '}
                 <span className="text-accent">{ui.heroTitleAccent}</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-[#4A1C11]/70 leading-relaxed max-w-xl font-medium">
                 {ui.heroSubtitle}
               </p>
             </motion.div>
@@ -51,21 +51,21 @@ const Contact = () => {
                     alt={ui.pageTitle}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4a1c11]/40 via-transparent to-transparent" />
                 </div>
 
-                <div className="absolute -bottom-5 -left-5 bg-primary/90 backdrop-blur-sm p-5 rounded-2xl shadow-xl border border-white/10 flex items-center gap-4">
+                <div className="absolute -bottom-5 -left-5 bg-white p-5 rounded-2xl shadow-xl border border-[#4A1C11]/10 flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-white">{ui.onlineStatus}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">{ui.responseTime}</p>
+                    <p className="text-sm font-bold text-[#4A1C11]">{ui.onlineStatus}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#4A1C11]/40">{ui.responseTime}</p>
                   </div>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-accent text-primary px-5 py-3 rounded-2xl shadow-lg">
-                  <p className="text-xs font-bold">{ui.heroBadge}</p>
+                <div className="absolute -top-4 -right-4 bg-accent text-[#4a1c11] px-5 py-3 rounded-2xl shadow-lg font-black uppercase text-[10px] tracking-widest">
+                  <p>{ui.heroBadge}</p>
                 </div>
               </div>
             </motion.div>
@@ -74,7 +74,7 @@ const Contact = () => {
       </section>
 
       {/* ▌CONTACT INFO BAR */}
-      <section className="py-12">
+      <section className="section-light py-12 border-y border-[#4A1C11]/10">
         <div className="container px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -87,14 +87,14 @@ const Contact = () => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-6 sm:py-8 px-6 sm:px-8 flex items-center gap-4 sm:gap-5 group glass-dark rounded-2xl hover:border-accent/30 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,242,255,0.15)] transition-all duration-500"
+                className="py-6 sm:py-8 px-6 sm:px-8 flex items-center gap-4 sm:gap-5 group bg-white border border-[#4A1C11]/10 rounded-2xl hover:border-accent/40 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(74,28,17,0.12)] transition-all duration-500 shadow-sm"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-primary transition-all">
+                <div className="w-12 h-12 rounded-xl bg-accent/15 text-accent border border-accent/20 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-[#4a1c11] transition-all">
                   <item.icon size={20} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">{item.label}</p>
-                  <p className="text-sm font-semibold text-white truncate">{item.value}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#4A1C11]/40 mb-1">{item.label}</p>
+                  <p className="text-sm font-semibold text-[#4A1C11] truncate">{item.value}</p>
                 </div>
               </a>
             ))}
@@ -103,7 +103,7 @@ const Contact = () => {
       </section>
 
       {/* ▌FORM + SIDEBAR */}
-      <section className="py-28 md:py-40">
+      <section className="section-light py-28 md:py-40">
         <div className="container px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
@@ -113,32 +113,32 @@ const Contact = () => {
               viewport={{ once: true }}
               className="lg:col-span-8"
             >
-              <div className="glass-dark p-6 sm:p-10 md:p-16 rounded-2xl sm:rounded-3xl border border-white/10">
+              <div className="bg-white p-6 sm:p-10 md:p-16 rounded-2xl sm:rounded-3xl border border-[#4A1C11]/10 shadow-sm">
                 <div className="mb-12">
-                  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-white">
+                  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-[#4A1C11]">
                     {ui.formTitle}
                   </h2>
-                  <p className="text-white/50">{ui.formSubtitle}</p>
+                  <p className="text-[#4A1C11]/60 font-medium">{ui.formSubtitle}</p>
                 </div>
 
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {contactData.formFields.filter(f => f.type !== 'textarea').map((field) => (
                       <div key={field.label}>
-                        <label className="text-xs font-semibold text-white/50 mb-2 block">{field.label}</label>
+                        <label className="text-xs font-semibold text-[#4A1C11]/50 mb-2 block">{field.label}</label>
                         {field.type === 'select' ? (
                           <div className="relative">
-                            <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 pr-12 text-sm font-medium text-white focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none appearance-none cursor-pointer">
+                            <select className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 pr-12 text-sm font-medium text-[#4A1C11] focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none appearance-none cursor-pointer">
                               {ui.serviceOptions.map(opt => (
-                                <option key={opt} className="bg-primary text-white">{opt}</option>
+                                <option key={opt} className="bg-white text-[#4A1C11]">{opt}</option>
                               ))}
                             </select>
-                            <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
+                            <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#4A1C11]/40 pointer-events-none" />
                           </div>
                         ) : (
                           <input
                             type={field.type}
-                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm font-medium text-white placeholder:text-white/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none"
+                            className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none"
                             placeholder={field.placeholder}
                           />
                         )}
@@ -148,10 +148,10 @@ const Contact = () => {
 
                   {contactData.formFields.filter(f => f.type === 'textarea').map((field) => (
                     <div key={field.label}>
-                      <label className="text-xs font-semibold text-white/50 mb-2 block">{field.label}</label>
+                      <label className="text-xs font-semibold text-[#4A1C11]/50 mb-2 block">{field.label}</label>
                       <textarea
                         rows={5}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm font-medium text-white placeholder:text-white/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none resize-none"
+                        className="w-full bg-white border border-[#4A1C11]/15 rounded-2xl px-6 py-4 text-sm font-medium text-[#4A1C11] placeholder:text-[#4A1C11]/30 focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all outline-none resize-none"
                         placeholder={field.placeholder}
                       />
                     </div>
@@ -159,7 +159,7 @@ const Contact = () => {
 
                   <button
                     type="button"
-                    className="w-full inline-flex items-center justify-center gap-3 py-5 bg-accent text-primary rounded-full font-bold text-sm hover:brightness-110 hover:scale-[1.01] transition-all shadow-glow"
+                    className="w-full inline-flex items-center justify-center gap-3 py-5 bg-accent text-[#4a1c11] rounded-full font-bold text-sm hover:brightness-110 hover:scale-[1.01] transition-all shadow-glow"
                   >
                     <Send size={18} />
                     {ui.submitButton}
@@ -174,7 +174,7 @@ const Contact = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-8 rounded-3xl glass-dark border border-white/10 text-white"
+                className="p-8 rounded-3xl bg-white border border-[#4A1C11]/10 text-[#4A1C11] shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
@@ -182,12 +182,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold">{ui.quickResponseTitle}</p>
-                    <p className="text-xs text-white/40">{ui.quickResponseSubtitle}</p>
+                    <p className="text-xs text-[#4A1C11]/40 font-black uppercase tracking-widest">{ui.quickResponseSubtitle}</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   {ui.benefits.map(item => (
-                    <div key={item} className="flex items-center gap-3 text-sm text-white/60">
+                    <div key={item} className="flex items-center gap-3 text-sm text-[#4A1C11]/70 font-medium">
                       <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                       {item}
                     </div>
@@ -210,24 +210,7 @@ const Contact = () => {
                   <p className="font-bold text-sm">{ui.whatsappTitle}</p>
                   <p className="text-xs text-white/80">{ui.whatsappSubtitle}</p>
                 </div>
-                <ArrowRight size={16} className="ml-auto group-hover:translate-x-1 transition-transform" />
               </motion.a>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="rounded-3xl overflow-hidden border border-white/10 shadow-lg aspect-[4/3]"
-              >
-                <iframe
-                  src={commonData.hq.mapEmbed}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                />
-              </motion.div>
             </div>
           </div>
         </div>

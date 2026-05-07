@@ -59,6 +59,27 @@
         "surface": "#ffffff",
         "surfaceLow": "#fff7ed"
       }
+    },
+    {
+      "id": "luxury-light",
+      "name": "Heritage Brown Gold",
+      "colors": {
+        "primary": "#ff9f0a",
+        "primaryContainer": "#f8b94b",
+        "secondary": "#4A1C11",
+        "accent": "#ff9f0a",
+        "surface": "#8a4d2e",
+        "surfaceLow": "#94583b",
+        "surfaceLowest": "#a16345",
+        "textDark": "#fcf8f1",
+        "textMuted": "#e8e3db",
+        "background": "#4A1C11",
+        "glass": "rgba(74, 28, 17, 0.78)",
+        "glassStrong": "rgba(94, 43, 25, 0.92)",
+        "border": "rgba(255, 159, 10, 0.15)",
+        "shadowGlow": "rgba(255, 159, 10, 0.22)",
+        "shadowSoft": "rgba(0, 0, 0, 0.25)"
+      }
     }
   ]
 }

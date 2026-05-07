@@ -2,9 +2,11 @@ import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { Container, ISourceOptions } from "@tsparticles/engine";
+import { useTheme } from "../context/ThemeContext";
 
 const ParticlesBackground = () => {
     const [init, setInit] = useState(false);
+    const { currentTheme } = useTheme();
 
     useEffect(() => {
         initParticlesEngine(async (engine: any) => {
@@ -22,7 +24,7 @@ const ParticlesBackground = () => {
         () => ({
             background: {
                 color: {
-                    value: "transparent",
+                    value: "#4A1C11",
                 },
             },
             fpsLimit: 120,
@@ -54,10 +56,14 @@ const ParticlesBackground = () => {
             },
             particles: {
                 color: {
-                    value: "#06b6d4",
+                    value: typeof window !== "undefined"
+                        ? getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || "#fcf8f1"
+                        : "#fcf8f1",
                 },
                 links: {
-                    color: "#a855f7",
+                    color: typeof window !== "undefined"
+                        ? getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || "#764024"
+                        : "#764024",
                     distance: 150,
                     enable: true,
                     opacity: 0.4,
@@ -81,7 +87,7 @@ const ParticlesBackground = () => {
                     value: 80,
                 },
                 opacity: {
-                    value: 0.5,
+                    value: 0.28,
                 },
                 shape: {
                     type: "circle",
@@ -92,7 +98,7 @@ const ParticlesBackground = () => {
             },
             detectRetina: true,
         }),
-        [],
+        [currentTheme],
     );
 
     if (init) {
