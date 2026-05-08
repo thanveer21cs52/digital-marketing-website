@@ -5,7 +5,6 @@ import {
   MessageSquare,
   Settings,
   LogOut,
-  Save,
   Trash2,
   ExternalLink,
   ChevronRight,
@@ -21,7 +20,7 @@ import servicesDataJson from '../../data/services.json';
 import contactDataJson from '../../data/contact.json';
 import commonDataJson from '../../data/common.json';
 import testimonialsDataJson from '../../data/testimonials.json';
-import { getWebsiteData, saveWebsiteOverride } from '../../utils/dataLoader';
+import { getWebsiteData } from '../../utils/dataLoader';
 import DynamicForm from '../../components/admin/DynamicForm';
 
 // Types for our data
@@ -63,12 +62,7 @@ const AdminDashboard = () => {
     }
   }, [selectedPage]);
 
-  const handleSave = () => {
-    if (selectedPage) {
-      saveWebsiteOverride(selectedPage, editData);
-      alert(`${selectedPage.toUpperCase()} content has been published to live site.`);
-    }
-  };
+
 
   useEffect(() => {
     // Load enquiries from localStorage
@@ -432,8 +426,6 @@ const AdminDashboard = () => {
                     {editData ? (
                       <DynamicForm 
                         data={editData} 
-                        onChange={setEditData} 
-                        onSave={handleSave} 
                       />
                     ) : (
                       <div className="flex items-center justify-center h-64">

@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Save, AlertCircle, FileText, List as ListIcon, Box, ChevronRight, Hash, Type } from 'lucide-react';
+import { AlertCircle, FileText, List as ListIcon, Box, ChevronRight, Hash, Type } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface DynamicFormProps {
   data: any;
-  onChange: (newData: any) => void;
-  onSave: () => void;
 }
 
-const DynamicForm: React.FC<DynamicFormProps> = ({ data, onChange, onSave }) => {
+const DynamicForm: React.FC<DynamicFormProps> = ({ data }) => {
   const [activeGroup, setActiveGroup] = useState<string | null>(Object.keys(data)[0] || null);
 
   const renderField = (key: string, value: any, path: string[]) => {
@@ -53,15 +51,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ data, onChange, onSave }) => 
       );
     }
 
-    const handleChange = (newValue: any) => {
-      const newData = JSON.parse(JSON.stringify(data));
-      let current = newData;
-      for (let i = 0; i < path.length; i++) {
-        current = current[path[i]];
-      }
-      current[key] = newValue;
-      onChange(newData);
-    };
+
 
     const isLongText = typeof value === 'string' && value.length > 50;
     const isNumber = typeof value === 'number';
